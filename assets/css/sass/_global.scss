@@ -1,0 +1,2258 @@
+@use "colors";
+@use "mixins";
+
+//***** Start Variables *****//
+
+$ltr: 'html[lang="en"]';
+$rtl: 'html[lang="ar"]';
+
+$main-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$main-transition: all 0.3s ease-in-out;
+$img-transition: all 450ms linear;
+$sm-btn-height: 38px;
+$sm-btn-width: 34px;
+
+$screen-xxl: 1720px;
+$screen-xx: 1600px;
+$screen-xl: 1280px;
+$screen-lg2: 1200px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+$screen-product: 500px;
+$screen-xs: 425px;
+$screen-xxs: 375px;
+
+@font-face {
+  font-family: fontDemi;
+  src: url("~/assets/fonts/29LT_KAFF-SEMI.OTF");
+}
+
+@font-face {
+  font-family: fontMed;
+  src: url("~/assets/fonts/29LTKaff-Medium.ttf");
+}
+
+@font-face {
+  font-family: fontReg;
+  src: url("~/assets/fonts/29LTKaff-Regular.otf");
+}
+
+@font-face {
+  font-family: fontLight;
+  src: url("~/assets/fonts/alfont_com_29LT-Kaff-Light.ttf");
+}
+
+.ff-reg {
+  font-family: fontReg;
+}
+
+.ff-demi {
+  font-family: fontDemi;
+}
+
+.ff-med {
+  font-family: fontMed;
+}
+
+.ff-light {
+  font-family: fontLight;
+}
+
+//***** End Variables *****//
+
+::-moz-selection {
+  color: map_get(colors.$theme-colors, selectionColor);
+  background: map_get(colors.$theme-colors, selectionBg);
+}
+
+::selection {
+  color: map_get(colors.$theme-colors, selectionColor);
+  background: map_get(colors.$theme-colors, selectionBg);
+}
+
+::-webkit-scrollbar-track {
+  background: map_get(colors.$theme-colors, scrollTrackBg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: map_get(colors.$theme-colors, primary);
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: map_get(colors.$theme-colors, scrollThumbHoverBg);
+  }
+}
+
+/* start common style*/
+
+* {
+  outline: 0;
+  line-height: initial;
+  @include mixins.prefix(box-sizing, border-box, webkit ms o);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "fontLight", sans-serif;
+  text-align: right;
+  direction: rtl;
+  font-size: 14px;
+  // height: 8000px;
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 12px;
+  }
+}
+html[lang="en"] {
+  body {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  @include mixins.transition(background 0.3s ease-in-out);
+}
+
+::-webkit-scrollbar-track {
+  @include mixins.border-radius(50px);
+}
+
+::-webkit-scrollbar-thumb {
+  @include mixins.border-radius(50px);
+}
+
+p {
+  color: map_get(colors.$theme-colors, text);
+  line-height: 1.8;
+}
+
+.btn {
+  @include mixins.border-radius(5px);
+  @include mixins.transition(all 0.5s ease-in-out);
+  @extend .flex-center;
+  gap: 7px;
+  height: 44px;
+  min-width: 120px;
+  font-size: 13px;
+  max-width: fit-content;
+  &:hover,
+  &:focus {
+    outline: none;
+    @include mixins.prefix(box-shadow, none, webkit ms o);
+  }
+
+  &.btn-white {
+    color: map_get(colors.$theme-colors, primary);
+    background-color: #fff;
+    border-color: map_get(colors.$theme-colors, primary);
+  }
+
+  &.modal_btn {
+    min-width: 100%;
+    height: 47px;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 12px;
+    min-width: 115px;
+    padding-inline: 12px;
+  }
+
+  .ic {
+    font-size: 12px;
+    max-width: 17px;
+  }
+
+  i {
+    font-size: 13px;
+  }
+
+  &.sm {
+    height: 34px;
+    font-size: 12px;
+    min-width: 75px;
+  }
+
+  &.sm-btn {
+    height: $sm-btn-height;
+    min-width: $sm-btn-width;
+  }
+
+  &.lg {
+    height: 44px;
+  }
+
+  &.clear_btn {
+    background-color: rgba(
+      $color: map_get(colors.$theme-colors, red),
+      $alpha: 0.12
+    );
+    color: map_get(colors.$theme-colors, red);
+  }
+}
+
+.sm-button {
+  width: 40px;
+  height: 40px;
+  font-size: 13px;
+  @include mixins.border-radius(5px);
+  @include mixins.transition(all 0.5s ease-in-out);
+  @extend .flex-center;
+  gap: 7px;
+
+  &.transparent-red {
+    color: map_get(colors.$theme-colors, red);
+    background-color: transparent;
+    border: 1px solid map_get(colors.$theme-colors, red);
+  }
+}
+
+.modal {
+  overflow-y: auto;
+}
+
+a,
+button {
+  @include mixins.transition(all 0.5s ease-in-out);
+}
+
+:placeholder-shown::-webkit-input-placeholder {
+  opacity: 1;
+  color: map_get(colors.$theme-colors, primary);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: map_get(colors.$theme-colors, primary);
+  &.text-hover {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover {
+    color: map_get(colors.$theme-colors, primary) !important;
+  }
+}
+
+ul {
+  @include mixins.reset-list;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  font-size: inherit;
+}
+
+// lazyload
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+:is(
+    .pi-angle-double-left,
+    .pi-angle-double-right,
+    .pi-angle-left,
+    .pi-angle-right
+  ) {
+  #{$ltr} & {
+    transform: rotate(180deg);
+  }
+}
+
+/************ Font Size ***********/
+@for $i from 9 through 40 {
+  .fs#{$i} {
+    font-size: $i + px !important;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: ($i - 2px) !important;
+    }
+  }
+}
+
+/************ Width ***********/
+@for $i from 10 through 550 {
+  .w#{$i} {
+    width: $i + px !important;
+  }
+}
+
+/************ Height ***********/
+@for $i from 10 through 100 {
+  .h#{$i} {
+    height: $i + px !important;
+  }
+}
+
+/************ Start Classes ***********/
+.w-fit {
+  width: fit-content !important;
+}
+
+.minw-100 {
+  min-width: 100%;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.mt-6 {
+  margin-top: 3.8rem;
+}
+
+.main_padding {
+  padding: 40px 0;
+
+  @media screen and (max-width: $screen-xs) {
+    padding: 25px 0;
+  }
+}
+
+.dir-slider {
+  direction: ltr !important;
+}
+
+.socail_hover {
+  transition: $main-transition;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.price_con {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  font-size: 14px;
+  color: map_get(colors.$theme-colors, dark);
+  font-family: fontMed;
+  margin-bottom: 0;
+
+  &.old {
+    color: map_get(colors.$theme-colors, gray_mid);
+    text-decoration: line-through;
+    font-family: inherit;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 12px;
+  }
+}
+
+.bg_main {
+  // background-color: #e8eff6 !important;
+  background: linear-gradient(180deg, #e5edf5ba 0%, #e3ebf4 100%);
+}
+
+.bg_sec {
+  background-color: rgba(
+    $color: map_get(colors.$theme-colors, primary),
+    $alpha: 0.1
+  ) !important;
+}
+
+.bg_banner {
+  background-color: #d6e3ef !important;
+}
+
+.section_bg {
+  background-color: map_get(colors.$theme-colors, info) !important;
+}
+
+.radio_card {
+  background-color: #fff !important;
+  border: 1px solid map_get(colors.$theme-colors, border) !important;
+  border-radius: 5px !important;
+
+  &.pd {
+    padding: 22px 18px;
+  }
+}
+
+.section_style {
+  border-radius: 5px;
+  background-color: map_get(colors.$theme-colors, info) !important;
+
+  &.pd {
+    padding: 40px;
+
+    @media screen and (max-width: $screen-md) {
+      padding: 25px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      padding: 25px 15px;
+    }
+  }
+}
+
+.done_style {
+  border: 2px solid map_get(colors.$theme-colors, gray_light) !important;
+  border-radius: 7px;
+
+  &.pd {
+    padding: 40px 80px;
+
+    @media screen and (max-width: $screen-md) {
+      padding: 25px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      padding: 40px 25px;
+    }
+  }
+
+  .logo_done {
+    width: 185px;
+    height: 55px;
+    margin-inline: auto;
+    display: flex;
+    margin-bottom: 35px;
+
+    @media screen and (max-width: $screen-xs) {
+      width: 150px;
+      height: 50px;
+    }
+  }
+
+  .done_title {
+    text-align: center;
+    font-size: 15px;
+    font-family: fontMed;
+    color: map_get(colors.$theme-colors, dark);
+    margin-bottom: 35px;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg2) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1250px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.c-black {
+  color: #202020 !important;
+}
+
+.bell {
+  animation: bell-animation 4s infinite ease-in-out;
+}
+
+.ps-5 {
+  padding-inline-start: 3rem !important;
+}
+
+.ps-6 {
+  padding-inline-start: 4rem !important;
+}
+
+@keyframes bell-animation {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+
+@for $i from 1 through 10 {
+  .clamp_#{$i} {
+    @include mixins.clamp($i);
+  }
+}
+
+.main_shadow {
+  @include mixins.prefix(box-shadow, $main-shadow, webkit ms o);
+}
+
+.main_title {
+  font-size: 18px;
+  color: map_get(colors.$theme-colors, primary);
+  position: relative;
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 15px;
+  }
+
+  &.lg {
+    font-size: 24px;
+
+    @media screen and (max-width: $screen-md) {
+      font-size: 19px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 16px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    @include mixins.dir-left(0);
+    width: 50px;
+    max-width: 100%;
+    border: 2px solid map_get(colors.$theme-colors, primary);
+    @include mixins.transition(all 0.3s ease-in-out);
+    @include mixins.border-radius(0 10px);
+
+    @media screen and (max-width: $screen-xs) {
+      border-width: 1px;
+    }
+  }
+
+  &::after {
+    display: none !important;
+  }
+
+  &.white {
+    color: #fff;
+    &::before {
+      border-color: #fff !important;
+    }
+  }
+
+  &.black {
+    color: #202020;
+  }
+
+  &.center {
+    &::before {
+      @include mixins.dir-left(unset !important);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.sec_line {
+    &::before {
+      border: 2px solid map_get(colors.$theme-colors, secondary);
+      width: 100%;
+    }
+  }
+}
+
+.main_desc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: map_get(colors.$theme-colors, secondary);
+  font-weight: 700;
+
+  &.sm {
+    font-size: 15px;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 15px;
+  }
+}
+
+.grid-5 {
+  @include mixins.grid(210px, 15px);
+
+  @media screen and (max-width: $screen-product) {
+    @include mixins.grid(150px, 10px);
+  }
+
+  @media screen and (max-width: 365px) {
+    @include mixins.grid(180px, 10px);
+  }
+}
+
+.grid-4 {
+  @include mixins.grid(250px, 20px);
+  @media screen and (max-width: $screen-lg) {
+    @include mixins.grid(200px, 20px);
+  }
+
+  @media screen and (max-width: $screen-md) {
+    @include mixins.grid(200px, 20px);
+  }
+
+  &.grid-res {
+    @media screen and (max-width: $screen-md) {
+      @include mixins.grid(180px, 12px);
+    }
+  }
+}
+
+.grid-3 {
+  @include mixins.grid(310px, 20px);
+  @media screen and (max-width: $screen-lg) {
+    @include mixins.grid(250px, 20px);
+  }
+
+  @media screen and (max-width: $screen-md) {
+    @include mixins.grid(200px, 10px);
+  }
+}
+
+.grid-2 {
+  @include mixins.grid(400px, 20px);
+  @media screen and (max-width: $screen-lg) {
+    @include mixins.grid(250px, 20px);
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid
+    rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5) !important;
+}
+
+.cu-pointer {
+  cursor: pointer;
+}
+
+.cu-auto {
+  cursor: default !important;
+}
+
+.circle_img {
+  @include mixins.shape(80px, 50%);
+
+  @media screen and (max-width: $screen-xs) {
+    @include mixins.shape(70px, 50%);
+  }
+
+  &.xxs {
+    @include mixins.shape(22px, 50%);
+  }
+
+  &.xs {
+    @include mixins.shape(30px, 50%);
+  }
+
+  &.sm {
+    @include mixins.shape(50px, 50%);
+  }
+
+  &.md {
+    @include mixins.shape(65px, 50%);
+  }
+
+  &.lg {
+    @include mixins.shape(100px, 50%);
+
+    @media screen and (max-width: $screen-xs) {
+      @include mixins.shape(80px, 50%);
+    }
+  }
+}
+
+// Social Icons
+.foot-social {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+
+  .social-icon {
+    @include mixins.shape(32px, 3px);
+    background-color: map_get(colors.$theme-colors, primary);
+    @include mixins.center;
+    .ic {
+      max-width: 15px;
+      max-height: 15px;
+    }
+  }
+}
+
+// tel_link
+.tel_link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  width: fit-content;
+  transition: $main-transition;
+  font-size: 14px;
+  // cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  color: map_get(colors.$theme-colors, text);
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    #{$ltr} & {
+      transform: translateX(5px);
+    }
+    #{$rtl} & {
+      transform: translateX(-5px);
+    }
+  }
+
+  i {
+    font-size: 11px;
+    color: map_get(colors.$theme-colors, primary);
+  }
+
+  .ic {
+    max-width: 15px;
+    max-height: 15px;
+  }
+}
+
+.upload_img {
+  width: 100%;
+  height: 210px;
+  @include mixins.border-radius(10px);
+  object-fit: cover;
+
+  &.lg {
+    height: 280px;
+  }
+}
+
+.breadcrumb_m {
+  @extend .flex-center;
+  gap: 10px;
+
+  @media screen and (max-width: $screen-xs) {
+    gap: 5px;
+  }
+
+  .breadcrumb_link {
+    font-size: 15px;
+    font-weight: 600;
+    color: map_get(colors.$theme-colors, secondary);
+
+    &.active {
+      color: map_get(colors.$theme-colors, primary);
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 13px;
+    }
+  }
+
+  .ic {
+    color: map_get(colors.$theme-colors, hint);
+  }
+
+  &.sec {
+    justify-content: flex-start;
+
+    .breadcrumb_link {
+      font-size: 15px;
+      font-weight: 500;
+      color: map_get(colors.$theme-colors, hint);
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  #{$ltr} {
+    transform: scaleX(-1);
+  }
+}
+
+.p-component{
+  font-family: inherit;
+}
+
+.card_style {
+  border: 3px solid map_get(colors.$theme-colors, info);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  transition: $main-transition;
+  padding: 8px 12px 0;
+
+  @media screen and (max-width: $screen-xs) {
+    padding: 8px 8px 0;
+  }
+
+  &.pd {
+    padding: 28px 20px;
+  }
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  }
+
+  &.not_hover {
+    border: none;
+    padding: 25px;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.card_title {
+  color: map_get(colors.$theme-colors, dark);
+  font-size: 14px;
+  padding-bottom: 12px;
+  font-family: fontReg;
+}
+
+.card_link {
+  color: map_get(colors.$theme-colors, primary);
+  font-size: 12px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 11px;
+  }
+
+  i {
+    font-size: 12px;
+  }
+
+  &.pro_link {
+    @media screen and (max-width: $screen-product) {
+      display: none;
+    }
+  }
+}
+
+/************ End Classes ***********/
+
+/************ Start Input Style ***********/
+
+.input-g {
+  margin-bottom: 20px !important;
+}
+
+.main-label {
+  color: map_get(colors.$theme-colors, dark);
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-family: fontReg;
+}
+
+.main-input {
+  position: relative;
+
+  .input-me {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: map_get(colors.$theme-colors, primary);
+    @include mixins.transition(all 0.3s ease-in-out);
+    background-color: #fff;
+    border: 1px solid map_get(colors.$theme-colors, border);
+    @include mixins.border-radius(5px);
+
+    &::placeholder {
+      font-size: 12px;
+      color: map_get(colors.$theme-colors, gray_mid) !important;
+      @include mixins.transition(all 0.3s ease-in-out);
+
+      @media screen and (max-width: 400px) {
+        font-size: 11px !important;
+      }
+    }
+
+    &:focus {
+      background-color: #fff;
+      border-color: map_get(colors.$theme-colors, secondary) !important;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &.photo-input {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 12px;
+      color: map_get(colors.$theme-colors, gray_mid) !important;
+    }
+
+    &.text-area {
+      height: 145px;
+      padding: 12px;
+
+      &.sm {
+        height: 110px;
+      }
+
+      &.lg {
+        height: 230px;
+      }
+    }
+
+    &.telephone {
+      padding: 0 12px !important;
+      padding-inline-end: 106px !important;
+    }
+
+    &.disabled {
+      // opacity: .3;
+      background-color: map_get(colors.$theme-colors, line) !important;
+    }
+  }
+
+  .main-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include mixins.dir-right(18px);
+    color: map_get(colors.$theme-colors, gray);
+    font-size: 12px !important;
+    cursor: pointer;
+    pointer-events: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+
+    &.ic,
+    .ic {
+      max-width: 22px;
+    }
+
+    &.selectedCountry {
+      display: flex;
+      align-items: center;
+      max-width: fit-content;
+      pointer-events: auto;
+      height: 100%;
+      padding: 0 12px;
+      @include mixins.dir-right(0);
+      padding-inline-start: 15px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include mixins.dir-left(0);
+        width: 1px;
+        height: 20px;
+        background-color: rgba(
+          $color: map_get(colors.$theme-colors, stroke),
+          $alpha: 0.5
+        );
+      }
+    }
+
+    &.pass-icon {
+      pointer-events: initial;
+    }
+
+    &.sec {
+      @include mixins.dir-right(unset);
+      @include mixins.dir-left(14px);
+    }
+  }
+}
+
+.input-g {
+  .input_vaild {
+    display: none;
+  }
+
+  &.error {
+    .input_vaild {
+      display: block;
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input {
+  #{$ltr} & {
+    direction: ltr;
+  }
+  #{$rtl} & {
+    direction: rtl;
+  }
+}
+
+select {
+  appearance: none;
+  font-size: 13px;
+  color: map_get(colors.$theme-colors, primary);
+}
+
+textarea {
+  resize: none !important;
+}
+
+/********************* Check Box *********************/
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-start;
+  .form-check-input {
+    margin: 0;
+    float: none;
+    box-shadow: none !important;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-color: map_get(colors.$theme-colors, gray);
+    @include mixins.border-radius(3px);
+
+    &:checked[type="checkbox"] {
+      background-size: 12px;
+      background-image: url("../imgs/icons/correct.png") !important;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      background-color: none;
+      box-shadow: none;
+    }
+
+    &:checked {
+      background-color: map_get(colors.$theme-colors, primary);
+      border-color: map_get(colors.$theme-colors, primary);
+    }
+  }
+
+  .form-check-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+
+  &.sm {
+    .form-check-input {
+      width: 17px;
+      height: 17px;
+
+      &:checked[type="checkbox"] {
+        background-size: 10px;
+      }
+    }
+  }
+
+  &.main {
+    .form-check-input {
+      width: 21px;
+      height: 21px;
+      border-color: map_get(colors.$theme-colors, primary);
+      &:checked[type="checkbox"] {
+        background-image: url("../imgs/right.png") !important;
+        background-color: transparent;
+        background-size: 10px;
+      }
+    }
+  }
+}
+
+/********************* radio Box *********************/
+
+.radio-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  // margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .input-radio {
+    width: 14px;
+    height: 14px;
+    border-color: map_get(colors.$theme-colors, primary);
+    accent-color: map_get(colors.$theme-colors, primary);
+    cursor: pointer;
+    @include mixins.transition(all 0.3s ease-in-out);
+  }
+
+  .label-radio {
+    font-size: 13px;
+    color: map_get(colors.$theme-colors, gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    line-height: 1;
+  }
+
+  .radio-img {
+    width: 36px;
+    margin-inline-end: 3px;
+  }
+
+  // &.radio-imgs{
+  //   align-items: center;
+  //   gap: 6px;
+
+  //   .label-radio{
+  //     font-size: 14px;
+  //   }
+  // }
+}
+
+/********************* upload File *********************/
+
+.upload-label {
+  position: relative;
+  width: 110px;
+  height: 95px;
+  border-radius: 7px;
+  border: 3px solid rgba(#d9d9d9, 0.5);
+  @extend .flex-center;
+  flex-direction: column;
+  gap: 5px;
+  color: #b6b6b6;
+  font-size: 12px;
+  color: map_get(colors.$theme-colors, grey);
+  background-color: map_get(colors.$theme-colors, gray_light);
+  word-break: break-all;
+  padding: 5px;
+
+  .ic {
+    color: map_get(colors.$theme-colors, secondary);
+    max-width: 22px;
+  }
+
+  .ic2 {
+    color: map_get(colors.$theme-colors, gray_mid);
+  }
+
+  &.fill {
+    width: 100%;
+    height: 160px;
+    border-width: 5px;
+    border-radius: 10px;
+    color: map_get(colors.$theme-colors, grey);
+    font-size: 13px;
+  }
+
+  &.sm {
+    height: 120px;
+  }
+
+  &.white_input {
+    background-color: #fff;
+    border: 1px solid map_get(colors.$theme-colors, line);
+    @include mixins.border-radius(0 10px);
+    gap: 14px;
+  }
+}
+
+.remove-img,
+.remove_img_modal {
+  position: absolute;
+  top: -7px;
+  @include mixins.dir-right(-7px);
+  @include mixins.shape(18px, 50%);
+  background-color: map_get(colors.$theme-colors, red);
+  color: #fff;
+  @extend .flex-center;
+  cursor: pointer;
+  font-size: 10px;
+  border: none;
+
+  i {
+    font-size: 8px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.photo-con {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  &.fill {
+    position: unset;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+
+    .upload-label {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:has(.hidden-img, .upload-label) {
+    position: absolute;
+    border: 3px solid rgba(#d9d9d9, 0.5);
+    border-radius: 10px;
+
+    &.fill {
+      height: 160px;
+    }
+    &.sm {
+      height: 120px;
+    }
+  }
+}
+
+#notMore {
+  display: none;
+}
+
+.hidden-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+// user-photo-con
+.user-photo-con {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .user-text {
+    font-size: 14px;
+    color: black;
+  }
+}
+
+.user-img {
+  position: relative;
+  @include mixins.shape(100px, 50%);
+
+  @media screen and (max-width: $screen-xs) {
+    @include mixins.shape(80px, 50%);
+  }
+
+  .profile-img {
+    @include mixins.shape(100%, 50%);
+    overflow: hidden;
+    @extend .flex-center;
+
+    img {
+      max-width: 40px;
+
+      &.wid {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-width: none;
+      }
+    }
+  }
+
+  .user-camera {
+    position: absolute;
+    bottom: 5px;
+    @include mixins.dir-right(-5px);
+    @include mixins.shape(30px, 50%);
+    @extend .flex-center;
+    cursor: pointer;
+    background-color: #fff;
+    // border: 1px solid $white;
+    // outline: 1px solid $sec;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    img {
+      max-width: 14px;
+      max-height: 15px;
+    }
+  }
+}
+
+.hidden-img {
+  position: relative;
+  &,
+  .fancybox {
+    display: block;
+    width: 100%;
+    height: 180px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid map_get(colors.$theme-colors, border);
+    @include mixins.border-radius(5px);
+  }
+}
+
+/************ End Input Style ***********/
+
+/********************* dropdown *********************/
+.dropdown-menu {
+  display: block !important;
+  opacity: 0;
+  pointer-events: none;
+  @include mixins.transition(all 0.3s ease-in-out);
+  // background-color: $gray !important;
+  padding: 0 !important;
+  @include mixins.border-radius(5px);
+  @include mixins.prefix(
+    box-shadow,
+    0 0 10px 0 rgba(0, 0, 0, 0.1),
+    webkit ms o
+  );
+  border: 1px solid map_get(colors.$theme-colors, info);
+
+  min-width: 250px;
+  overflow: hidden;
+  #{$ltr} & {
+    inset: 30px auto auto 0%;
+  }
+  #{$rtl} & {
+    inset: 30px 0% auto auto;
+  }
+  transform: translate3d(0px, 0px, 0px);
+  transform-origin: top left;
+  padding: 10px !important;
+  max-height: 340px;
+  overflow-y: auto;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    #{$ltr} & {
+      inset: 30px auto auto 0% !important;
+    }
+    #{$rtl} & {
+      inset: 30px 0% auto auto !important;
+    }
+    transform: translate3d(0px, 0px, 0px) !important;
+  }
+
+  &.left {
+    #{$ltr} & {
+      inset: 30px 0% auto auto;
+    }
+    #{$rtl} & {
+      inset: 30px auto auto 0%;
+    }
+
+    &.show {
+      #{$ltr} & {
+        inset: 30px 0% auto auto !important;
+      }
+      #{$rtl} & {
+        inset: 30px auto auto 0% !important;
+      }
+    }
+  }
+
+  &.drop-lang {
+    min-width: 140px;
+    padding: 10px !important;
+  }
+
+  &.sm {
+    min-width: 180px !important;
+  }
+
+  &.lg {
+    min-width: 290px !important;
+  }
+
+  &.xl {
+    min-width: 310px !important;
+
+    @media screen and (max-width: $screen-sm) {
+      min-width: 270px !important;
+    }
+
+    @media screen and (max-width: 390px) {
+      min-width: 250px !important;
+    }
+  }
+
+  li {
+    &:last-child {
+      .profile-item {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .logout {
+    @include mixins.border-radius(3px);
+    min-width: 100%;
+    margin-block: 12px;
+    font-size: 12px;
+  }
+}
+
+.drop-ic {
+  font-size: 11px;
+  color: map_get(colors.$theme-colors, dark);
+  max-width: 16px;
+}
+
+.dropend {
+  .dropdown-menu {
+    #{$ltr} & {
+      inset: 0px calc(-100%) auto auto;
+    }
+    #{$rtl} & {
+      inset: 0px calc(100% + 25px) auto auto;
+    }
+    transform: translate3d(0px, 0px, 0px);
+
+    @media screen and (max-width: $screen-lg) {
+      #{$ltr} & {
+        inset: 100% 0 auto auto;
+      }
+      #{$rtl} & {
+        inset: 100% 0 auto auto;
+      }
+      width: 100%;
+    }
+
+    &.show {
+      #{$ltr} & {
+        inset: 0px calc(-100%) auto auto !important;
+      }
+      #{$rtl} & {
+        inset: 0px calc(100% + 25px) auto auto !important;
+      }
+      transform: translate3d(0px, 0px, 0px) !important;
+
+      @media screen and (max-width: $screen-lg) {
+        #{$ltr} & {
+          inset: 100% 0 auto auto !important;
+        }
+        #{$rtl} & {
+          inset: 100% 0 auto auto !important;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  // color: white;
+  color: map_get(colors.$theme-colors, dark);
+  box-shadow: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  font-size: 13px;
+
+  .flag {
+    width: 26px;
+  }
+
+  .profile_img {
+    @include mixins.shape(30px, 50%);
+    object-fit: cover;
+    border: 2px solid map_get(colors.$theme-colors, primary);
+  }
+
+  .drop-text {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.profile-item {
+  padding: 12px 0;
+  color: map_get(colors.$theme-colors, gray);
+  justify-content: center;
+  font-size: 12px;
+  border-bottom: 1px solid
+    rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.4);
+
+  &:hover {
+    background-color: map_get(colors.$theme-colors, info);
+  }
+}
+
+/* end dropdown */
+
+/********************* Prime Rating *********************/
+.p-rating {
+  // justify-content: flex-end;
+
+  &.md {
+    .p-rating-item {
+      cursor: pointer;
+      .p-rating-icon.p-icon {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+
+  &.small {
+    .p-rating-item {
+      .p-rating-icon.p-icon {
+        width: 12px !important;
+        height: 12px !important;
+      }
+    }
+  }
+  .p-rating-item {
+    &.p-rating-item-active {
+      .p-rating-icon.p-icon {
+        color: map_get(colors.$theme-colors, yellow);
+      }
+    }
+
+    &.p-focus {
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      .p-rating-icon.p-icon {
+        color: map_get(colors.$theme-colors, secondary) !important;
+      }
+    }
+
+    .p-rating-icon.p-icon {
+      color: map_get(colors.$theme-colors, border);
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+}
+
+/********************* Prime Tabs *********************/
+
+.p-tabview {
+  .p-tabview-panels {
+    padding: 0 !important;
+  }
+
+  .p-tabview-nav {
+    gap: 25px;
+    border-bottom: 1px solid
+      rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
+
+    .p-tabview-header {
+      .p-tabview-nav-link {
+        padding: 0 0 20px !important;
+        border-color: rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
+
+        .p-tabview-title {
+          font-size: 14px;
+          color: map_get(colors.$theme-colors, gray);
+          font-weight: 500;
+          font-family: fontLight;
+        }
+      }
+    }
+
+    .p-highlight {
+      .p-tabview-nav-link {
+        border-color: map_get(colors.$theme-colors, primary) !important;
+
+        .p-tabview-title {
+          color: map_get(colors.$theme-colors, primary) !important;
+        }
+      }
+    }
+  }
+}
+
+/********************* Prime Dropdown *********************/
+
+.p-dropdown,
+.p-multiselect {
+  position: relative;
+  border-radius: 0;
+
+  .p-dropdown-trigger {
+    width: fit-content !important;
+  }
+
+  &.p-focus,
+  &:hover {
+    box-shadow: none !important;
+    border-color: map_get(colors.$theme-colors, border) !important;
+  }
+
+  .p-dropdown-label {
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: fontLight;
+    font-size: 12px;
+    .selected {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      height: 100%;
+      font-size: 11px;
+      color: #969696;
+
+      .ic {
+        font-size: 11px;
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 11px;
+      }
+    }
+
+    .p-multiselect-label {
+      height: 100%;
+    }
+  }
+
+  .p-icon {
+    display: none;
+  }
+
+  .p-multiselect-label-container {
+    .p-multiselect-label {
+      color: map_get(colors.$theme-colors, dark) !important;
+      font-size: 12px !important;
+      display: flex;
+      align-items: center;
+      font-family: fontLight;
+      height: 100%;
+      padding: 0;
+      gap: 7px;
+      .p-multiselect-token {
+        gap: 12px;
+        margin: 0;
+        background-color: rgba(
+          $color: map_get(colors.$theme-colors, primary),
+          $alpha: 0.1
+        );
+
+        .p-multiselect-token-label {
+          color: map_get(colors.$theme-colors, primary) !important;
+          // font-size: 12px !important;
+          // font-family: fontLight;
+        }
+
+        .p-multiselect-token-icon {
+          display: block !important;
+          margin: 0;
+          max-width: 12px;
+        }
+      }
+    }
+  }
+}
+
+.p-dropdown-panel,
+.p-multiselect-panel {
+  border-radius: 0 !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+
+  .p-dropdown-items-wrapper {
+    .p-dropdown-empty-message {
+      font-size: 13px !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+  }
+
+  .p-dropdown-items {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    .p-dropdown-item {
+      width: 100%;
+      background-color: transparent;
+      padding: 18px 12px;
+      color: map_get(colors.$theme-colors, gray);
+      justify-content: center;
+      font-size: 12px;
+      border-bottom: 1px solid
+        rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.4);
+      transition: $main-transition;
+      font-family: fontReg;
+
+      &:hover,
+      &.p-highlight {
+        background-color: map_get(colors.$theme-colors, info);
+      }
+
+      &:last-of-type {
+        border-bottom: none !important;
+      }
+
+      // &.p-h
+
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+
+  .p-multiselect-header {
+    gap: 10px;
+    padding: 12px;
+    background-color: transparent;
+
+    .p-checkbox {
+      .p-checkbox-box {
+        background-color: #fff;
+        box-shadow: none !important;
+        border-color: map_get(colors.$theme-colors, gray_light);
+
+        &.p-highlight {
+          background-color: map_get(colors.$theme-colors, primary) !important;
+        }
+
+        .p-checkbox-icon {
+          color: #fff !important;
+          max-width: 10px;
+        }
+      }
+    }
+
+    .p-multiselect-filter-container {
+      position: relative;
+
+      .p-multiselect-filter-icon {
+        @include mixins.dir-left(unset);
+        @include mixins.dir-right(12px);
+        color: map_get(colors.$theme-colors, hint);
+        font-size: 11px !important;
+        max-width: 11px;
+        cursor: pointer;
+        pointer-events: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+      }
+
+      .p-multiselect-filter {
+        padding: 7px 0 !important;
+        padding-inline-start: 12px !important;
+        height: 42px;
+        // border-radius: 0;
+        box-shadow: none !important;
+        border: 1px solid map_get(colors.$theme-colors, border);
+        font-size: 12px;
+
+        &:focus {
+          border: 1px solid map_get(colors.$theme-colors, primary) !important;
+        }
+      }
+    }
+
+    .p-multiselect-close-icon {
+      color: map_get(colors.$theme-colors, red);
+      max-width: 12px;
+    }
+  }
+
+  .p-multiselect-items {
+    padding: 0 !important;
+
+    .p-multiselect-empty-message {
+      font-size: 13px !important;
+    }
+
+    .p-multiselect-item {
+      font-family: fontMed !important;
+      font-size: 13px;
+      gap: 10px;
+      margin: 5px;
+      transition: $main-transition;
+
+      &.p-highlight,
+      &:hover {
+        background-color: #f9f9f9 !important;
+        color: map_get(colors.$theme-colors, primary) !important;
+        .p-checkbox {
+          .p-checkbox-box {
+            background-color: map_get(colors.$theme-colors, border) !important;
+          }
+        }
+      }
+
+      .p-checkbox {
+        .p-checkbox-box {
+          background-color: #fff;
+          box-shadow: none !important;
+          border-color: map_get(colors.$theme-colors, gray_light);
+
+          &.p-highlight {
+            background-color: map_get(colors.$theme-colors, primary) !important;
+          }
+
+          .p-checkbox-icon {
+            color: #fff !important;
+            max-width: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.option-img {
+  width: 22px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+/********************* Prime Modal *********************/
+.p-dialog {
+  font-family: fontReg !important;
+  border-radius: 7px !important;
+  overflow: hidden;
+  background-color: #fff;
+  min-width: 400px;
+  margin: 0 10px;
+  box-shadow: none !important;
+
+  &.xl {
+    min-width: 700px;
+
+    @media screen and (max-width: $screen-lg) {
+      min-width: 600px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      min-width: 500px;
+    }
+  }
+
+  &.alert_modal {
+    position: relative;
+
+    .p-dialog-header {
+      position: absolute;
+      top: 0;
+      @include mixins.dir-left(0);
+      width: 100%;
+      background-color: transparent;
+      z-index: 5;
+    }
+
+    .p-dialog-content {
+      padding: 0 !important;
+      border-radius: 0 !important;
+
+      .alert_img {
+        height: 420px;
+        width: 100%;
+        object-fit: cover;
+
+        @media screen and (max-width: $screen-xs) {
+          height: 300px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    width: 100%;
+    min-width: fit-content !important;
+  }
+
+  &.without-close {
+    padding: 50px 15px;
+
+    @media screen and (max-width: $screen-xs) {
+      width: calc(100% - 30px);
+      min-width: fit-content;
+    }
+
+    .p-dialog-header {
+      display: none !important;
+      padding: 0 !important;
+    }
+
+    .p-dialog-content {
+      padding: 0 !important;
+      margin-bottom: 40px;
+    }
+
+    .p-dialog-footer {
+      padding: 0 !important;
+
+      button {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .p-dialog-header {
+    justify-content: center;
+    padding-bottom: 15px !important;
+    .p-dialog-title {
+      font-size: 16px;
+      color: #484d45;
+      font-family: fontDemi;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 14px;
+      }
+    }
+
+    .p-dialog-header-icon {
+      position: absolute;
+      top: 20px;
+      @include mixins.dir-left(20px);
+      color: #fff;
+      background-color: map_get(colors.$theme-colors, red);
+      @include mixins.shape(26px, 50%);
+
+      .p-icon {
+        max-width: 12px !important;
+      }
+    }
+  }
+
+  .p-dialog-content {
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .right_img {
+    width: 190px;
+    height: 190px;
+    display: block;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    color: map_get(colors.$theme-colors, dark);
+    font-family: fontDemi;
+  }
+
+  .scroll {
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 0 15px;
+
+    .radio-box {
+      &:last-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+
+  .p-dialog-footer {
+    button {
+      margin: 0 !important;
+    }
+  }
+}
+
+/********************* Prime slider *********************/
+.p-slider {
+  .p-slider-range {
+    background-color: #e2ebf3 !important;
+    border-color: map_get(colors.$theme-colors, border) !important;
+  }
+
+  .p-slider-handle {
+    border-color: map_get(colors.$theme-colors, primary) !important;
+    background-color: map_get(colors.$theme-colors, primary) !important;
+    box-shadow: none !important;
+  }
+}
+
+/********************* Start OTP Inputs *********************/
+
+.otp-input {
+  @include mixins.shape(56px, 5px);
+  padding: 5px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: 1px solid map_get(colors.$theme-colors, border);
+  text-align: center !important;
+  transition: $main-transition;
+
+  @media screen and (max-width: $screen-lg) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+  }
+
+  @media screen and (max-width: $screen-xxs) {
+    width: 37px;
+    height: 37px;
+  }
+
+  &:focus {
+    background-color: #fff;
+    color: map_get(colors.$theme-colors, primary);
+    border-color: map_get(colors.$theme-colors, primary);
+  }
+
+  &.is-complete {
+    color: map_get(colors.$theme-colors, primary);
+    background-color: map_get(colors.$theme-colors, info);
+  }
+}
+
+.otp-input::-webkit-inner-spin-button,
+.otp-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/************** End OTP Inputs **************/
+
+/************** Start Quantity Inputs **************/
+
+.number-input {
+  // @include mixins.center;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  input {
+    color: map_get(colors.$theme-colors, dark);
+    background-color: transparent;
+    border: 1px solid #efefef;
+    font-size: 14px;
+    width: 60px;
+    text-align: center;
+    height: 40px;
+    @include mixins.border-radius(5px);
+    @include mixins.transition(all 0.5s ease-in-out);
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 15px;
+      width: 40px;
+    }
+  }
+  .btn-num {
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    @include mixins.shape(40px, 5px);
+    @include mixins.center;
+    background-color: map_get(colors.$theme-colors, primary);
+    border: 1px solid map_get(colors.$theme-colors, primary);
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 14px;
+    }
+
+    i {
+      font-size: 12px;
+    }
+
+    &.minus {
+      background-color: transparent;
+      color: map_get(colors.$theme-colors, primary);
+    }
+
+    &:disabled {
+      cursor: not-allowed !important;
+      pointer-events: auto !important;
+    }
+  }
+}
+/************** End Quantity Inputs **************/
+
+/************** Start Sm Links **************/
+
+.sm_links {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  .sm_link {
+    // border-left: 1px solid map_get(colors.$theme-colors, stroke);
+    padding-inline-start: 12px;
+    color: map_get(colors.$theme-colors, gray);
+    gap: 8px;
+    position: relative;
+    font-size: 13px;
+
+    @media screen and (max-width: $screen-md) {
+      font-size: 12px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include mixins.dir-left(0);
+      width: 1px;
+      height: 12px;
+      background-color: map_get(colors.$theme-colors, stroke);
+    }
+
+    .ic {
+      font-size: 12px;
+      color: map_get(colors.$theme-colors, primary);
+    }
+
+    .count_con {
+      position: relative;
+    }
+
+    .count {
+      position: absolute;
+      top: -5px;
+      @include mixins.dir-left(-8px);
+      @include mixins.shape(14px, 50%);
+      @include mixins.center;
+      color: #fff;
+      background-color: map_get(colors.$theme-colors, red);
+      padding: 4px;
+      font-size: 7px;
+      font-family: "fontReg", sans-serif;
+    }
+
+    .cart_con {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    &:first-child {
+      border-left: none;
+      padding-inline-start: 0 !important;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &.sec {
+      color: map_get(colors.$theme-colors, dark);
+    }
+
+    .drop-text {
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+    }
+  }
+
+  &.lg {
+    gap: 17px;
+    .sm_link {
+      padding-inline-start: 17px;
+      .ic {
+        font-size: 21px;
+
+        @media screen and (max-width: $screen-md) {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+/************** End Sm Links **************/

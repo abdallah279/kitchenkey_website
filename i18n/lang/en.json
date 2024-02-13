@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "home": "Home",
+    "categories": "Categories",
+    "brands": " Brands",
+    "arrived": "Recently arrived",
+    "specialOrder": "Special order",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "beStore": "Be a store",
+    "terms": " Terms and Conditions",
+    "faqs": "FAQs",
+    "login": "Login / Create Account",
+    "notifications": "Notifications",
+    "cart": "Shopping cart",
+    "lang": "Ar",
+    "backHome": "Back To Home",
+    "dropDown": {
+      "profile": " Profile",
+      "orders": "My Orders",
+      "addresses": "Saved Addresses",
+      "brands": "Following Brands",
+      "wallet": " Wallet",
+      "settings": " Account Settings",
+      "logout": " Logout"
+    }
+  },
+  "categories": {
+    "all": " All Categories",
+    "showAll": " Show All Categories"
+  },
+  "search": {
+    "productPlaceholder": "Search by product name ...",
+    "brandPlaceholder": "Search by brand name ...",
+    "btn": "Search"
+  },
+  "offers": {
+    "title": "Exclusive Offers"
+  },
+  "products":{
+    "title": "Products I've viewed",
+    "product":{
+        "detailesBtn": "Show Details",
+        "addToFavourite": " Add To Favourite",
+        "addToCart": " Add To Cart"
+    }
+  },
+  "footer": {
+    "download": " Download Now",
+    "fastLinks": "Quick links",
+    "contact": "Contact Us",
+    "copyRight1": "All Rights Reserved - Kitchenkey ",
+    "copyRight2": " Design and Development by Kitchenkey",
+    "aait": "AAIT"
+  },
+  "sectionHeader": {},
+  "moreBtn": "View more",
+  "sectionTitle": {},
+  "suggestionsForm": {},
+  "loginForm": {},
+  "restorePasswordForm": {},
+  "createAccountForm": {},
+  "changePhoneForm": {},
+  "order": {},
+  "modals": {},
+  "formBtns": {
+    "send": "Send",
+    "sendLoading": "Sending",
+    "login": "Login",
+    "create": "Create Account",
+    "agree": "Agree",
+    "save": "Save",
+    "saveLoading": "Saving",
+    "confirm": "Confirm",
+    "confirming": "Confirming",
+    "changePass": "change Password",
+    "logout": "Logout",
+    "delete": "Delete Account",
+    "receiveCode": "Didn't receive the code?"
+  },
+  "pagesTitle": {},
+  "noData": {},
+  "validation": {
+    "image": "Image required",
+    "name": "Name Is required",
+    "phone": "Please enter phone number",
+    "email": "Please enter a valid Email",
+    "password": "Please enter your password",
+    "confirmPassword": "The password does not match",
+    "newPassword": "Please enter your new password",
+    "conditions": "You must agree to the terms and conditions"
+  }
+}

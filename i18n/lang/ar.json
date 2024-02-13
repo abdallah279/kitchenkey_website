@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "categories": "الأقسام",
+    "brands": "الماركات",
+    "arrived": "نزل حديثاً",
+    "specialOrder": "طلب خاص",
+    "about": "حول المنصة",
+    "contact": "تواصل معنا",
+    "beStore": "كن متجر",
+    "terms": "الشروط والإحكام",
+    "faqs": "أسئلة متكررة",
+    "login": "دخول / إنشاء حساب",
+    "notifications": "الاشعارات",
+    "cart": "سلة المشتريات",
+    "lang": "En",
+    "backHome": "العودة للرئيسية",
+    "dropDown": {
+      "profile": "حسابي",
+      "orders": "طلباتي",
+      "addresses": "العناوين المحفوظة",
+      "brands": "الماركات المتابعة",
+      "wallet": "المحفظة",
+      "settings": "إعدادات الحساب",
+      "logout": "تسجيل خروج"
+    }
+  },
+  "categories": {
+    "all": "جميع الأقسام",
+    "showAll": "عرض جميع الأقسام"
+  },
+  "search": {
+    "productPlaceholder": "ابحث باسم المنتج ...",
+    "brandPlaceholder": "ابحث ب اسم الماركة ...",
+    "btn": "بحث"
+  },
+  "offers": {
+    "title": "العروض الحصرية"
+  },
+  "products":{
+    "title": "منتجات شاهدتها",
+    "product":{
+        "detailesBtn": "عرض التفاصيل",
+        "addToFavourite": "اضافة للمفضلة",
+        "addToCart": "إضافة للسلة"
+    }
+  },
+
+  "footer": {
+    "download": "حمل الآن",
+    "fastLinks": "روابط سريعة",
+    "contact": "تواصل معنا",
+    "copyRight1": "جميع الحقوق محفوظة لKitchenkey - ",
+    "copyRight2": "تصميم وبرمجة شركة",
+    "aait": "أوامر الشبكة"
+  },
+  "sectionHeader": {},
+  "moreBtn": "عرض المزيد",
+  "sectionTitle": {},
+  "loginForm": {},
+  "restorePasswordForm": {},
+  "createAccountForm": {},
+  "changePhoneForm": {},
+  "order": {},
+  "modals": {},
+  "formBtns": {
+    "send": "ارسال",
+    "sendLoading": "جارى الارسال",
+    "login": "تسجيل الدخول",
+    "create": "انشاء حساب",
+    "agree": "موافقة",
+    "save": "حفظ",
+    "saveLoading": "جارى الحفظ",
+    "confirm": "تأكيد",
+    "confirming": "جارى التأكيد",
+    "changePass": "تغيير كلمة المرور",
+    "logout": "تسجيل خروج",
+    "delete": "حذف الحساب",
+    "receiveCode": "لم يصلك الكود ؟"
+  },
+  "pagesTitle": {},
+  "noData": {},
+  "validation": {
+    "image": "الصورة مطلوبة",
+    "name": "من فضلك أدخل الاسم",
+    "phone": "من فضلك أدخل رقم الهاتف",
+    "email": "من فضلك أدخل Email صحيح",
+    "password": "من فضلك أدخل كلمة المرور",
+    "confirmPassword": "كلمة المرور غير متطابقة",
+    "newPassword": "من فضلك أدخل كلمة المرور الجديدة",
+    "conditions": "يجب الموافقة على الشروط والأحكام"
+  }
+}

@@ -1,0 +1,153 @@
+@use "colors";
+@use "mixins";
+@use "global";
+
+.footer {
+  padding: 40px 0 0;
+  background-color: map_get(colors.$theme-colors, info);
+
+  .foot-content {
+    .footer-head {
+      font-size: 16px;
+      color: map_get(colors.$theme-colors, dark);
+      width: fit-content;
+      font-family: fontDemi;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: global.$screen-xs) {
+        font-size: 14px;
+      }
+    }
+
+    .logo{
+        width: fit-content;
+        @media screen and (max-width: global.$screen-sm) {
+            justify-content: center;
+            width: auto;
+            .foot-logo {
+              max-width: 190px;
+              max-height: 75px;
+            }
+        }
+    }
+
+    .footer-info {
+      margin-block: 25px;
+      @include mixins.clamp(7);
+      padding-inline-end: 100px;
+
+      @media screen and (max-width: global.$screen-md) {
+        padding-inline-end: 0;
+      }
+    }
+
+    .footer-links {
+
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        width: fit-content;
+        transition: global.$main-transition;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: transparent;
+        position: relative;
+        color: map_get(colors.$theme-colors, text);
+
+        @media screen and (max-width: global.$screen-xs) {
+          font-size: 13px;
+          margin-bottom: 15px;
+        }
+
+        &.router-link-exact-active {
+          color: map_get(colors.$theme-colors, primary);
+        }
+
+        &:hover {
+          #{global.$ltr} & {
+            transform: translateX(5px);
+          }
+          #{global.$rtl} & {
+            transform: translateX(-5px);
+          }
+        }
+
+        i {
+          font-size: 11px;
+          color: map_get(colors.$theme-colors, primary);
+        }
+
+        .ic {
+          max-width: 15px;
+          max-height: 15px;
+        }
+      }
+    }
+
+    .app_links {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+
+      .app_link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 9px;
+        background-color: map_get(colors.$theme-colors, primary);
+        padding: 8px 25px;
+        min-width: 160px;
+        height: 55px;
+
+        @media screen and (max-width: global.$screen-xxs) {
+          min-width: 130px;
+          padding: 8px 20px;
+        }
+
+        .icon {
+          max-width: 20px;
+        }
+
+        .texts {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          color: #fff;
+        }
+
+        &.app {
+          background-color: transparent;
+          border: 1px solid map_get(colors.$theme-colors, primary);
+        }
+      }
+    }
+  }
+
+  .copy_sec {
+    padding: 15px 0;
+    border-top: 1px solid
+      rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
+
+    .text {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: map_get(colors.$theme-colors, text);
+      margin-bottom: 0;
+      flex-wrap: wrap;
+      line-height: 1.5;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    @media screen and (max-width: global.$screen-xs) {
+      .text {
+        justify-content: center;
+      }
+    }
+  }
+}
