@@ -13,7 +13,8 @@
     "login": "Login / Create Account",
     "notifications": "Notifications",
     "cart": "Shopping cart",
-    "lang": "Ar",
+    "lang": "English",
+    "langIcon": "england.png",
     "backHome": "Back To Home",
     "dropDown": {
       "profile": " Profile",
@@ -37,12 +38,102 @@
   "offers": {
     "title": "Exclusive Offers"
   },
-  "products":{
+  "products": {
     "title": "Products I've viewed",
-    "product":{
-        "detailesBtn": "Show Details",
-        "addToFavourite": " Add To Favourite",
-        "addToCart": " Add To Cart"
+    "product": {
+      "detailesBtn": "Show Details",
+      "addToFavourite": " Add To Favourite",
+      "addToCart": " Add To Cart"
+    },
+    "arrived": {
+      "detailesBtn": "Product Show"
+    }
+  },
+  "brands": {
+    "title": "Brand Details",
+    "followBtn": " Follow",
+    "unFollowBtn": " Unfollow",
+    "detailesBtn": "Show products"
+  },
+  "filterSidebar": {
+    "subCategories": " Sub Categories",
+    "categories": " Categories",
+    "mainCat":" Main Category",
+    "subCat":" Sub Category",
+    "brands": " Brands",
+    "city": " City",
+    "rate": " Rate",
+    "status": "Product Status",
+    "price": " Price",
+    "topRated": " Top Rated",
+    "lowestRated": " Lowest Rated",
+    "new": " New",
+    "used": " Used",
+    "clear": " Clear"
+  },
+  "specialOrder": {
+    "link": {
+      "text": "Product link",
+      "placeholder": "Enter Product link"
+    },
+    "image": {
+      "text": "Product image",
+      "placeholder": "Attach the product image"
+    },
+    "desc": {
+      "text": "Order Description",
+      "placeholder": "Enter the order description"
+    },
+    "address": "Delivery address",
+    "addAddress": "Add Address",
+    "payWay": "Payment method",
+    "shippingCompanies": "Shipping Companies"
+  },
+  "address":{
+    "name":{
+      "text": "Address name",
+      "placeholder": "Enter Address name"
+    },
+    "city":{
+      "text": "City",
+      "placeholder": " Select City"
+    },
+    "street":{
+      "text": "Street Name",
+      "placeholder": "Enter Street Name"
+    },
+    "building":{
+      "text": "Building No",
+      "placeholder": "Enter Building No"
+    }
+  },
+  "contact": {
+    "title": "Contact us via",
+    "form": {
+      "name": {
+        "text": "Name",
+        "placeholder": "Enter Name"
+      },
+      "email": {
+        "text": "Email",
+        "placeholder": "Enter Email"
+      },
+      "phone": {
+        "text": "Phone",
+        "placeholder": "Enter Phone"
+      },
+      "title": {
+        "text": "Message Title",
+        "placeholder": "Enter Message Title"
+      },
+      "image": {
+        "text": "image",
+        "placeholder": "Attach image"
+      },
+      "message": {
+        "text": "Message text",
+        "placeholder": "Enter Message text"
+      }
     }
   },
   "footer": {
@@ -52,6 +143,26 @@
     "copyRight1": "All Rights Reserved - Kitchenkey ",
     "copyRight2": " Design and Development by Kitchenkey",
     "aait": "AAIT"
+  },
+  "product": {
+    "returnable": "Returnable",
+    "brandDetails": "Brand Details",
+    "tabs":{
+      "description":" Product Description",
+      "Category":"Product classification",
+      "rate":"Product Reviews"
+    },
+    "features":"Product features",
+    "color":"Color",
+    "space":"Space",
+    "price":"Price",
+    "avCount":"Available number",
+    "notify":"Notification upon availability",
+    "addCart":"Add to cart",
+    "count":"Count",
+    "added":"Product added to cart",
+    "viewCart":"Complete order",
+    "similarProducts":"Similar Products"
   },
   "sectionHeader": {},
   "moreBtn": "View more",
@@ -78,7 +189,21 @@
     "delete": "Delete Account",
     "receiveCode": "Didn't receive the code?"
   },
-  "pagesTitle": {},
+  "pagesTitle": {
+    "about": "About Us",
+    "contact": "Contact Us",
+    "terms":" Terms and Conditions",
+    "faqs":" FAQs",
+    "notifications": "Notifications",
+    "fav": " Favourites",
+    "categories": "Categories",
+    "catProducts": "Category Products",
+    "exclusive": " Exclusive Offers",
+    "search": " Search Results",
+    "addAddress": "Add Address",
+    "productsViewed": "Products Viewed",
+    "proDetailes": "Product Details"
+  },
   "noData": {},
   "validation": {
     "image": "Image required",

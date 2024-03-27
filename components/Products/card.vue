@@ -13,7 +13,7 @@
 
         <div class="product_content">
 
-            <NuxtLink :to="`/product/${product.id}`" class="pro_link"></NuxtLink>
+            <NuxtLink :to="`/products/${product.id}`" class="pro_link"></NuxtLink>
 
             <div class="image">
                 <img :src="product.image" alt="" class="product_img">
@@ -23,7 +23,9 @@
                 <h3 class="product_name">{{ product.name }}</h3>
 
                 <div class="product_rate">
-                    <Rating v-model="product.avg_rate" class="small justify-content-end gap-1" dir="ltr" readonly :cancel="false" />
+                    <ClientOnly>
+                        <Rating v-model="product.avg_rate" class="small justify-content-end gap-1" dir="ltr" readonly :cancel="false" />
+                    </ClientOnly>
                     <span class="fs12">{{ product.avg_number }}</span>
                 </div>
                 <div class="price_con">
@@ -48,6 +50,7 @@
 </template>
 
 <script setup>
+
 /*************** Plugins **************** */
 
 /*************** DATA **************** */

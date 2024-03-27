@@ -1,5 +1,5 @@
 <template>
-    <SharedProductsFiltersView title="نتائج البحث" />
+    <SharedProductsFiltersView :title="$t('pagesTitle.search')" />
 </template>
 
 <script setup>

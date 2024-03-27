@@ -2,7 +2,7 @@
     <main class="faqs main_padding">
         <div class="container">
 
-            <SharedPageHeader title="أسئلة متكررة" class="mb-5" />
+            <SharedPageHeader :title="$t('pagesTitle.faqs')" class="mb-5" />
 
             <div class="row">
                 <div class="col-lg-9 mx-auto">

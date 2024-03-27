@@ -1,5 +1,5 @@
 <template>
-    <SharedProductsFiltersView title="المفضلة" />
+    <SharedProductsFiltersView :title="$t('pagesTitle.fav')" />
 </template>
 
 <script setup>

@@ -2,7 +2,7 @@
     <main class="main_padding">
         <div class="container">
 
-            <SharedPageHeader title="الأقسام" />
+            <SharedPageHeader :title="$t('pagesTitle.categories')" />
 
             <!-- categories -->
             <div class="section_style pd">

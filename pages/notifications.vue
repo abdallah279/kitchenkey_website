@@ -2,7 +2,7 @@
     <main class="notification main_padding">
         <div class="container">
 
-            <SharedPageHeader title="الإشعارات" class="mb-5" />
+            <SharedPageHeader :title="$t('pagesTitle.notifications')" class="mb-5" />
 
             <div class="row">
                 <div class="col-lg-9 mx-auto">

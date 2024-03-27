@@ -9,7 +9,7 @@
             <h3 class="pro_name">{{ product.name }}</h3>
     
             <NuxtLink :to="`/products/${product.id}`" class="card_link justify-content-end">
-                عرض المنتج
+                {{ $t('products.arrived.detailesBtn') }}
                 <i class="pi pi-angle-left"></i>
             </NuxtLink>
         </div>

@@ -8,7 +8,7 @@
                 <div class="col-lg-6">
                     <div class="section_style pd">
 
-                        <h3 class="fs15 ff-reg mb-3 c-dark">تواصل معنا عبر</h3>
+                        <h3 class="fs15 ff-reg mb-3 c-dark">{{ $t('contact.title') }}</h3>
 
                         <div class="tel_link mt-4">
                             <img src="~/assets/imgs/icons/tel.png" alt="" class="ic">
@@ -33,11 +33,11 @@
                         <!-- Name -->
                         <div class="input-g">
                             <label for="" class="main-label">
-                                الاسم
+                                {{ $t('contact.form.name.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" placeholder="ادخل الاسم" class="input-me">
+                                <input type="text" :placeholder="$t('contact.form.name.placeholder')" class="input-me">
                             </div>
                         </div>
 
@@ -45,12 +45,12 @@
                         <div class="input-g">
 
                             <label for="" class="main-label">
-                                رقم الجوال
+                                {{ $t('contact.form.phone.text') }}
                                 <span class="c-red">*</span>
                             </label>
 
                             <div class="main-input">
-                                <input type="number" class="input-me" name="phone" placeholder="ادخل رقم الجوال">
+                                <input type="number" class="input-me" name="phone" :placeholder="$t('contact.form.phone.placeholder')">
 
                                 <Dropdown v-model="selectedCountry" :options="countries" optionLabel="name"
                                     class="main-icon selectedCountry">
@@ -82,34 +82,35 @@
                         <!-- Title -->
                         <div class="input-g">
                             <label for="" class="main-label">
-                                عنوان الرسالة
+                                {{ $t('contact.form.title.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" placeholder="ادخل عنوان الرسالة" class="input-me">
+                                <input type="text" :placeholder="$t('contact.form.title.placeholder')" class="input-me">
                             </div>
                         </div>
 
                         <!-- Image -->
                         <div class="input-g">
-                            <label for="" class="main-label">صورة</label>
-                            <SharedUploadInput @update="updatedImages" :images="images"  />
+                            <label for="" class="main-label">{{ $t('contact.form.image.text') }}</label>
+                            <SharedUploadInput @update="updatedImages" :placeholder="$t('contact.form.image.placeholder')" :images="images" />
                         </div>
 
                         <!-- Message -->
                         <div class="input-g">
                             <label for="" class="main-label">
-                                نص الرسالة
+                                {{ $t('contact.form.message.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <textarea name="" placeholder="ادخل عنوان الرسالة" class="input-me text-area"></textarea>
+                                <textarea name="" :placeholder="$t('contact.form.message.placeholder')"
+                                    class="input-me text-area"></textarea>
                             </div>
                         </div>
 
                         <!-- Send -->
                         <button type="submit" class="btn btn-primary minw-100 lg" :disabled="loading">
-                            إرسال
+                            {{ $t('formBtns.send') }}
                             <span class="spinner-border spinner-border-sm" v-if="loading" role="status"
                                 aria-hidden="true"></span>
                         </button>
@@ -183,6 +184,9 @@ const countries = ref([
 
 // images
 const images = ref([]);
+
+// loading
+const loading = ref(false);
 
 /*************** Computed **************** */
 

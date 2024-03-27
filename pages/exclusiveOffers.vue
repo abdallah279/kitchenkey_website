@@ -1,5 +1,5 @@
 <template>
-    <SharedProductsFiltersView title="العروض الحصرية" />
+    <SharedProductsFiltersView :title="$t('pagesTitle.exclusive')" />
 </template>
 
 <script setup>

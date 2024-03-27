@@ -2,7 +2,7 @@
     <main class="terms main_padding">
         <div class="container">
 
-            <SharedPageHeader title="الشروط والأحكام" />
+            <SharedPageHeader :title="$t('pagesTitle.terms')" />
 
             <div class="row">
                 <div class="col-lg-9 mx-auto">

@@ -9,7 +9,7 @@
         </div>
 
         <NuxtLink :to="`/brands/${brand.id}`" class="card_link">
-            عرض المنتجات
+            {{ $t('brands.detailesBtn') }}
             <i class="pi pi-angle-left"></i>
         </NuxtLink>
     </div>

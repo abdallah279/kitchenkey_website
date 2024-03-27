@@ -153,7 +153,7 @@ const offers = ref({
 const products = ref({
     id: 1,
     title: t('products.title'),
-    route: { path: '/ProductsViewed' },
+    route: { path: '/Products/Viewed' },
     products: [
         {
             id: 1,

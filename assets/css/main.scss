@@ -446,7 +446,20 @@
 
   .carousel__prev{
     right: unset !important;
-    left: 34px !important;
+
+    #{global.$ltr} & {
+      right: 0 !important;
+    }
+
+    #{global.$rtl} & {
+      left: 34px !important;
+    }
+  }
+
+  .carousel__next{
+    #{global.$ltr} & {
+      right: 34px !important;
+    }
   }
 }
 

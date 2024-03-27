@@ -1,5 +1,5 @@
 <template>
-    <SharedProductsFiltersView title="منتجات القسم" />
+    <SharedProductsFiltersView :title="$t('pagesTitle.catProducts')" />
 </template>
 
 <script setup>

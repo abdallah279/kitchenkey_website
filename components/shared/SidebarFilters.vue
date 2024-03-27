@@ -3,7 +3,7 @@
         <Accordion :multiple="true" :activeIndex="[0]" class="filter">
 
             <!-- Sub Categories -->
-            <AccordionTab header="الأقسام الفرعية" v-if="showSubCats">
+            <AccordionTab :header="$t('filterSidebar.subCategories')" v-if="showSubCats">
                 <label class="form-check fs13 categories_item sm" v-for="category in subCategoryFilters" :key="category.id">
                     <input class="form-check-input" type="checkbox" :value="category.id">
                     <div class="form-check-label c-gray">
@@ -13,7 +13,7 @@
             </AccordionTab>
 
             <!-- Categories -->
-            <AccordionTab header="الأقسام" v-if="!showSubCats">
+            <AccordionTab :header="$t('filterSidebar.categories')" v-if="!showSubCats">
 
                 <div class="dropend" v-for="category in categories" :key="category.id">
                     <button type="button" class="categories_item dropdown-toggle" data-bs-toggle="dropdown"
@@ -40,7 +40,7 @@
             </AccordionTab>
 
             <!-- Brands -->
-            <AccordionTab header="الماركات" v-if="showBrands">
+            <AccordionTab :header="$t('filterSidebar.brands')" v-if="showBrands">
                 <label class="form-check fs13 categories_item sm" v-for="brand in brandsFilters" :key="brand.id">
                     <input class="form-check-input" type="checkbox" :value="brand.id">
                     <div class="form-check-label c-gray">
@@ -50,7 +50,7 @@
             </AccordionTab>
 
             <!-- Cities -->
-            <AccordionTab header="المدينة">
+            <AccordionTab :header="$t('filterSidebar.city')">
                 <label class="form-check fs13 categories_item sm" v-for="city in citiesFilters" :key="city.id">
                     <input class="form-check-input" type="checkbox" :value="city.id">
                     <div class="form-check-label c-gray">
@@ -60,7 +60,7 @@
             </AccordionTab>
 
             <!-- Ratings -->
-            <AccordionTab header="التقييم">
+            <AccordionTab :header="$t('filterSidebar.rate')">
                 <label class="form-check fs13 categories_item sm" v-for="rate in ratingsFilters" :key="rate.id">
                     <input class="form-check-input" type="checkbox" :value="rate.id">
                     <div class="form-check-label c-gray">
@@ -70,7 +70,7 @@
             </AccordionTab>
 
             <!-- Status -->
-            <AccordionTab header="حالة المنتج">
+            <AccordionTab :header="$t('filterSidebar.status')">
                 <label class="form-check fs13 categories_item sm" v-for="status in statusFilters" :key="status.id">
                     <input class="form-check-input" type="checkbox" :value="status.id">
                     <div class="form-check-label c-gray">
@@ -80,7 +80,7 @@
             </AccordionTab>
 
             <!-- Price -->
-            <AccordionTab header="السعر">
+            <AccordionTab :header="$t('filterSidebar.price')">
                 <Slider v-model="price" class="w-full" />
             </AccordionTab>
 
@@ -88,13 +88,16 @@
 
         <!-- Clear Filters -->
         <button class="btn clear_btn minw-100 mt-4">
-            حذف الفلتر
+            {{ $t('filterSidebar.clear') }}
         </button>
     </div>
 </template>
 
 <script setup>
 /*************** Plugins **************** */
+
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n({ useScope: 'global' });
 
 /*************** DATA **************** */
 
@@ -280,11 +283,11 @@ const citiesFilters = ref([
 const ratingsFilters = ref([
     {
         id: 1,
-        name: 'الأعلى تقييماً'
+        name: t('filterSidebar.topRated')
     },
     {
         id: 2,
-        name: 'الأقل تقييماً'
+        name: t('filterSidebar.lowestRated')
     }
 ]);
 
@@ -293,11 +296,11 @@ const ratingsFilters = ref([
 const statusFilters = ref([
     {
         id: 1,
-        name: 'جديد'
+        name: t('filterSidebar.new')
     },
     {
         id: 2,
-        name: 'مستعمل'
+        name: t('filterSidebar.used')
     }
 ]);
 

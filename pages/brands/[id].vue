@@ -1,7 +1,7 @@
 <template>
     <div class="main_padding section_bg">
         <div class="container">
-            <SharedPageHeader title="تفاصيل الماركة" class="mb-5" />
+            <SharedPageHeader :title="$t('brands.title')" class="mb-5" />
 
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7">
@@ -14,8 +14,8 @@
                             <h3 class="brand_name">{{ brand.name }}</h3>
                         </div>
 
-                        <button class="btn btn-primary sm">متابعة</button>
-                        <!-- <button class="btn btn-light-primary sm">الغاء المتابعة</button> -->
+                        <button class="btn btn-primary sm">{{ $t('brands.followBtn') }}</button>
+                        <!-- <button class="btn btn-light-primary sm">{{ $t('brands.unFollowBtn') }}</button> -->
                     </div>
                 </div>
             </div>

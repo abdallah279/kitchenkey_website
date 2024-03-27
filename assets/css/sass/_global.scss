@@ -44,7 +44,14 @@ $screen-xxs: 375px;
 }
 
 .ff-reg {
-  font-family: fontReg;
+  
+  #{$ltr}{
+    font-family: fontLight;
+  }
+  
+  #{$rtl}{
+    font-family: fontReg;
+  }
 }
 
 .ff-demi {
@@ -859,7 +866,9 @@ img.lazyload:not([src]) {
   color: map_get(colors.$theme-colors, dark);
   font-size: 14px;
   padding-bottom: 12px;
-  font-family: fontReg;
+  #{$rtl}{
+    font-family: fontReg;
+  }
 }
 
 .card_link {
@@ -899,7 +908,10 @@ img.lazyload:not([src]) {
   color: map_get(colors.$theme-colors, dark);
   margin-bottom: 12px;
   font-size: 13px;
-  font-family: fontReg;
+  
+  #{$rtl}{
+    font-family: fontReg;
+  }
 }
 
 .main-input {

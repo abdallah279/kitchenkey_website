@@ -11,31 +11,33 @@
                         <!-- Link -->
                         <div class="input-g">
                             <label class="main-label">
-                                رابط المنتج
+                                {{ $t('specialOrder.link.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" class="input-me" placeholder="ادخل رابط المنتج">
+                                <input type="text" class="input-me" :placeholder="$t('specialOrder.link.placeholder')">
                             </div>
                         </div>
 
                         <!-- Image -->
                         <div class="input-g">
                             <label class="main-label">
-                                صورة المنتج
+                                {{ $t('specialOrder.image.text') }}
                                 <span class="c-red">*</span>
                             </label>
-                            <SharedUploadInput @update="updatedImages" :images="images" placeholder="ارفق صورة المنتج" />
+                            <SharedUploadInput @update="updatedImages" :images="images"
+                                :placeholder="$t('specialOrder.image.placeholder')" />
                         </div>
 
                         <!-- Description -->
                         <div class="input-g">
                             <label class="main-label">
-                                وصف الطلب
+                                {{ $t('specialOrder.desc.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <textarea class="input-me text-area sm" placeholder="ادخل وصف الطلب"></textarea>
+                                <textarea class="input-me text-area sm"
+                                    :placeholder="$t('specialOrder.desc.placeholder')"></textarea>
                             </div>
                         </div>
 
@@ -49,11 +51,13 @@
                         <!-- Address -->
                         <div class="input-g">
                             <label class="main-label d-flex align-items-center justify-content-between">
-                                عنوان التوصيل
-                                <NuxtLink to="/addAddress" class="btn btn-primary sm">إضافة عنوان</NuxtLink>
+                                {{ $t('specialOrder.address') }}
+                                <NuxtLink to="/addAddressPage" class="btn btn-primary sm">{{ $t('specialOrder.addAddress') }}</NuxtLink>
                             </label>
                             <div class="radio_card pd mb-3 row mx-0">
-                                <label class="radio-box col-sm-6 mb-sm-0" :class="index < deliveryAddress.length - 1 ? 'mb-4' : 'mb-0' " v-for="(add, index) in deliveryAddress" :key="add.id">
+                                <label class="radio-box col-sm-6 mb-sm-0"
+                                    :class="index < deliveryAddress.length - 1 ? 'mb-4' : 'mb-0'"
+                                    v-for="(add, index) in deliveryAddress" :key="add.id">
                                     <input type="radio" class="input-radio" name="delivery_address" v-model="address"
                                         :value="add.id">
                                     <div class="label-radio d-grid gap-2">
@@ -66,9 +70,11 @@
 
                         <!-- Payment Way -->
                         <div class="input-g">
-                            <label class="main-label">طريقة الدفع</label>
+                            <label class="main-label">{{ $t('specialOrder.payWay') }}</label>
                             <div class="radio_card pd mb-3 row mx-0">
-                                <label class="radio-box col-sm-6 mb-sm-0" :class="index < payWays.length - 1 ? 'mb-4' : 'mb-0' " v-for="(way, index) in payWays" :key="way.id">
+                                <label class="radio-box col-sm-6 mb-sm-0"
+                                    :class="index < payWays.length - 1 ? 'mb-4' : 'mb-0'"
+                                    v-for="(way, index) in payWays" :key="way.id">
                                     <input type="radio" class="input-radio" name="delivery_type" v-model="payWay"
                                         :value="way.id">
                                     <div class="label-radio">
@@ -80,9 +86,11 @@
 
                         <!-- Shipping Companies -->
                         <div class="input-g">
-                            <label class="main-label">شركات الشحن</label>
+                            <label class="main-label">{{ $t('specialOrder.shippingCompanies') }}</label>
                             <div class="radio_card pd mb-3 row mx-0">
-                                <label class="radio-box col-sm-6 mb-sm-0" :class="index < companies.length - 1 ? 'mb-4' : 'mb-0' " v-for="(comp, index) in companies" :key="comp.id">
+                                <label class="radio-box col-sm-6 mb-sm-0"
+                                    :class="index < companies.length - 1 ? 'mb-4' : 'mb-0'"
+                                    v-for="(comp, index) in companies" :key="comp.id">
                                     <input type="radio" class="input-radio" name="companies" v-model="company"
                                         :value="comp.id">
                                     <div class="label-radio">
@@ -92,7 +100,7 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-primary minw-100 lg col-12">إرسال</button>
+                        <button class="btn btn-primary minw-100 lg col-12">{{ $t('formBtns.send') }}</button>
 
                     </div>
                 </div>
@@ -108,7 +116,8 @@
             <div class="col-lg-10 mx-auto">
                 <div class="right_sec">
                     <p class="fs14 c-dark text-center mb-4">
-                        <span class="c-red">عفوا!</span> شركة الشحن ليس بإمكانها توصيل طلبك لهذا العنوان قم باختيار عنوان آخر
+                        <span class="c-red">عفوا!</span> شركة الشحن ليس بإمكانها توصيل طلبك لهذا العنوان قم باختيار
+                        عنوان آخر
                     </p>
                     <div class="buttons justify-content-center">
                         <button type="button" @click="done = false" class="btn btn-primary modal_btn">

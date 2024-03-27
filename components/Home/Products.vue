@@ -33,7 +33,7 @@ const props = defineProps({
         type: String
     },
     route: {
-        type: String
+        type: Object
     },
     products: {
         type: Object

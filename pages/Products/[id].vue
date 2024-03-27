@@ -4,10 +4,11 @@
         <!-- First Section -->
         <section class="main_padding section_bg mb-4">
             <div class="container">
-                <SharedPageHeader title="تفاصيل المنتج" class="mb-5" />
+                <SharedPageHeader :title="$t('pagesTitle.proDetailes')" class="mb-5" />
 
                 <div class="row">
 
+                    <!-- Galleria -->
                     <div class="col-lg-6">
                         <ProductsGalleria :attchements="product.attchements" />
                     </div>
@@ -29,7 +30,7 @@
 
                                 <!-- Left -->
                                 <div class="left d-flex align-items-start gap-2">
-                                    <span class="btn btn-light-primary sm-btn">قابل للإرجاع</span>
+                                    <span class="btn btn-light-primary sm-btn">{{ $t('product.returnable') }}</span>
                                     <button class="btn btn-red sm-btn">
                                         <i class="pi pi-heart"></i>
                                     </button>
@@ -47,7 +48,7 @@
                                 </div>
 
                                 <NuxtLink :to="`/brands/${product.id}`" class="btn btn-primary minw-100">
-                                    عرض تفاصيل الماركة
+                                    {{ $t('product.brandDetails') }}
                                 </NuxtLink>
                             </div>
                         </div>
@@ -57,11 +58,11 @@
             </div>
         </section>
 
-        <!-- Second Section -->
+        <!-- Product features -->
         <section class="main_padding section_bg pb-4">
             <div class="container">
                 <div class="card_style not_hover">
-                    <h4 class="card_title border-bottom">سمات المنتج</h4>
+                    <h4 class="card_title border-bottom">{{ $t('product.features') }}</h4>
 
                     <!-- Selects -->
                     <div class="py-4 border-bottom">
@@ -69,10 +70,10 @@
 
                             <!-- اللون -->
                             <div class="col-md-6">
-                                <label for="" class="main-label">اللون</label>
+                                <label for="" class="main-label">{{ $t('product.color') }}</label>
                                 <div class="main-input">
 
-                                    <Dropdown v-model="selectedcolors" placeholder="اللون" :options="product.colors"
+                                    <Dropdown v-model="selectedcolors" :placeholder="$t('product.color')" :options="product.colors"
                                         optionLabel="name" class="input-me">
                                         <template #value="slotProps">
                                             <div v-if="slotProps.value" class="selected">
@@ -96,10 +97,10 @@
 
                             <!-- المساحة -->
                             <div class="col-md-6">
-                                <label for="" class="main-label">المساحة</label>
+                                <label for="" class="main-label">{{ $t('product.space') }}</label>
                                 <div class="main-input">
 
-                                    <Dropdown v-model="selectedSpace" placeholder="المساحة" :options="product.space"
+                                    <Dropdown v-model="selectedSpace" :placeholder="$t('product.space')" :options="product.space"
                                         optionLabel="name" class="input-me">
                                         <template #value="slotProps">
                                             <div v-if="slotProps.value" class="selected">
@@ -128,42 +129,42 @@
 
                         <!-- Price -->
                         <div class="price_con">
-                            <h5 class=" c-gray">السعر:</h5>
+                            <h5 class=" c-gray">{{ $t('product.price') }}:</h5>
                             <p class="price" v-if="product.discount_price">{{ product.discount_price }} ر.س</p>
                             <p class="price" :class="{ old: product.discount_price }">{{ product.price }} ر.س</p>
                         </div>
 
-                        <!-- Quantity -->
+                        <!-- Available number -->
                         <div class="price_con">
-                            <h5 class=" c-gray">العدد المتوفر:</h5>
+                            <h5 class=" c-gray">{{ $t('product.avCount') }}:</h5>
                             <span class="sm-button transparent-red">{{ product.quantity }}</span>
                             <button class="btn btn-orange">
                                 <i class="pi pi-bell"></i>
-                                إشعار عند التوفر
+                                {{ $t('product.notify') }}
                             </button>
                         </div>
 
                         <!-- Add to cart -->
                         <div class="price_con">
-                            <h5 class=" c-gray">العدد:</h5>
+                            <h5 class=" c-gray">{{ $t('product.count') }}:</h5>
                             <div class="number-input">
                                 <span class="plus btn-num" @click="quantity < product.quantity ? quantity++ : false">
                                     <i class="pi pi-plus"></i>
                                 </span>
-                                <input type="text" :value="quantity" />
+                                <input type="text" :value="quantity" disabled/>
                                 <span class="minus btn-num" @click="quantity > 1 ? quantity-- : false">
                                     <i class="pi pi-minus"></i>
                                 </span>
                             </div>
                             <button class="btn btn-primary" @click="addToCart">
                                 <i class="pi pi-shopping-cart"></i>
-                                إضافة للسلة
+                                {{ $t('product.addCart') }}
                             </button>
 
                             <div class="addDone" :class="{ active: addDone }">
                                 <i class="pi pi-verified c-yellow"></i>
-                                <span class="c-dark fs13">تم إضافة المنتج للسلة</span>
-                                <NuxtLink class="btn btn-primary sm">استكمال الطلب</NuxtLink>
+                                <span class="c-dark fs13">{{ $t('product.added') }}</span>
+                                <NuxtLink class="btn btn-primary sm">{{ $t('product.viewCart') }}</NuxtLink>
                             </div>
                         </div>
 
@@ -180,19 +181,19 @@
                     <TabView>
 
                         <!-- Description -->
-                        <TabPanel header="وصف المنتج">
+                        <TabPanel :header="$t('product.tabs.description')">
                             <p class="ff-light fs13 pt-4">
                                 {{ product.description }}
                             </p>
                         </TabPanel>
 
                         <!-- Category -->
-                        <TabPanel header="تصنيف المنتج">
+                        <TabPanel :header="$t('product.tabs.Category')">
 
                             <div class="border-bottom py-3">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="ff-light c-gray fs13">القسم الرئيسي</span>
+                                        <span class="ff-light c-gray fs13">{{ $t('filterSidebar.mainCat') }}</span>
                                     </div>
                                     <div class="col-6">
                                         <span class="ff-light c-gray fs13"> {{ product.category }} </span>
@@ -203,7 +204,7 @@
                             <div class="border-bottom py-3">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="ff-light c-gray fs13">القسم الفرعي</span>
+                                        <span class="ff-light c-gray fs13">{{ $t('filterSidebar.subCat') }}</span>
                                     </div>
                                     <div class="col-6">
                                         <span class="ff-light c-gray fs13"> {{ product.subCategory }} </span>
@@ -214,7 +215,7 @@
                             <div class="pt-3">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="ff-light c-gray fs13">حالة المنتج</span>
+                                        <span class="ff-light c-gray fs13">{{ $t('filterSidebar.status') }}</span>
                                     </div>
                                     <div class="col-6">
                                         <span class="ff-light c-gray fs13"> {{ product.status }} </span>
@@ -225,7 +226,7 @@
                         </TabPanel>
 
                         <!-- Rates -->
-                        <TabPanel header="تقييمات المنتج">
+                        <TabPanel :header="$t('product.tabs.rate')">
                             <div class="rating-items">
 
                                 <div class="rate-item border-bottom py-3" v-for="rate in product.rates" :key="rate.id">
@@ -252,14 +253,14 @@
             </div>
         </section>
 
-        <!-- Second Section -->
+        <!-- Slider Section -->
         <section class="main_padding section_bg mb-4">
             <div class="container">
                 <div class="card_style not_hover">
-                    <h4 class="card_title border-bottom mb-4">منتجات مشابهة</h4>
+                    <h4 class="card_title border-bottom mb-4">{{ $t('product.similarProducts') }}</h4>
 
                     <div class="product_slider">
-                        <Carousel v-bind="settings" dir="rtl" :breakpoints="breakpoints" :autoplay="3000" wrapAround="true" :transition="2000">
+                        <Carousel v-bind="settings" dir="rtl" :breakpoints="breakpoints" :autoplay="3000" :wrapAround="true" :transition="2000">
                             <Slide v-for="product in products" :key="product.id">
                                 <ProductsCard :product="product" class="mx-1" />
                             </Slide>

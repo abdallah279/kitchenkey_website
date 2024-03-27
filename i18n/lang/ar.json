@@ -13,7 +13,8 @@
     "login": "دخول / إنشاء حساب",
     "notifications": "الاشعارات",
     "cart": "سلة المشتريات",
-    "lang": "En",
+    "lang": "العربية",
+    "langIcon": "saudii.png",
     "backHome": "العودة للرئيسية",
     "dropDown": {
       "profile": "حسابي",
@@ -37,15 +38,104 @@
   "offers": {
     "title": "العروض الحصرية"
   },
-  "products":{
+  "products": {
     "title": "منتجات شاهدتها",
-    "product":{
-        "detailesBtn": "عرض التفاصيل",
-        "addToFavourite": "اضافة للمفضلة",
-        "addToCart": "إضافة للسلة"
+    "product": {
+      "detailesBtn": "عرض التفاصيل",
+      "addToFavourite": "اضافة للمفضلة",
+      "addToCart": "إضافة للسلة"
+    },
+    "arrived": {
+      "detailesBtn": "عرض المنتج"
     }
   },
-
+  "brands": {
+    "title": "تفاصيل الماركة",
+    "followBtn": "متابعة",
+    "unFollowBtn": "الغاء المتابعة",
+    "detailesBtn": "عرض المنتجات"
+  },
+  "filterSidebar": {
+    "subCategories": "الأقسام الفرعية",
+    "categories": "الأقسام",
+    "mainCat":"القسم الرئيسي",
+    "subCat":"القسم الفرعي",
+    "brands": "الماركات",
+    "city": "المدينة",
+    "rate": "التقييم",
+    "status": "حالة المنتج",
+    "price": "السعر",
+    "topRated": "الأعلى تقييماً",
+    "lowestRated": "الأقل تقييماً",
+    "new": "جديد",
+    "used": "مستعمل",
+    "clear": "حذف الفلتر"
+  },
+  "specialOrder": {
+    "link": {
+      "text": "رابط المنتج",
+      "placeholder": "ادخل رابط المنتج"
+    },
+    "image": {
+      "text": "صورة المنتج",
+      "placeholder": "ارفق صورة المنتج"
+    },
+    "desc": {
+      "text": "وصف الطلب",
+      "placeholder": "ادخل وصف الطلب"
+    },
+    "address": "عنوان التوصيل",
+    "addAddress": "اضافة عنوان",
+    "payWay": "طريقة الدفع",
+    "shippingCompanies": "شركات الشحن"
+  },
+  "address": {
+    "name": {
+      "text": "اسم العنوان",
+      "placeholder": "ادخل اسم العنوان"
+    },
+    "city": {
+      "text": "المدينة",
+      "placeholder": "اختر المدينة"
+    },
+    "street": {
+      "text": "اسم الشارع",
+      "placeholder": "ادخل اسم الشارع"
+    },
+    "building": {
+      "text": "رقم المبنى",
+      "placeholder": "ادخل رقم المبنى"
+    }
+  },
+  "contact": {
+    "title": "تواصل معنا عبر",
+    "form": {
+      "name": {
+        "text": "الاسم",
+        "placeholder": "ادخل الاسم"
+      },
+      "email": {
+        "text": "البريد الالكتروني",
+        "placeholder": "ادخل البريد الالكتروني"
+      },
+      "phone": {
+        "text": "رقم الجوال",
+        "placeholder": "ادخل رقم الجوال"
+      },
+      "title": {
+        "text": "عنوان الرسالة",
+        "placeholder": "ادخل عنوان الرسالة"
+      },
+      "image": {
+        "text": "صورة",
+        "placeholder": "ارفق صورة"
+      },
+      "message": {
+        "text": "نص الرسالة",
+        "placeholder": "ادخل نص الرسالة"
+      }
+    }
+  },
   "footer": {
     "download": "حمل الآن",
     "fastLinks": "روابط سريعة",
@@ -53,6 +143,26 @@
     "copyRight1": "جميع الحقوق محفوظة لKitchenkey - ",
     "copyRight2": "تصميم وبرمجة شركة",
     "aait": "أوامر الشبكة"
+  },
+  "product": {
+    "returnable": "قابل للإرجاع",
+    "brandDetails": "عرض تفاصيل الماركة",
+    "tabs":{
+      "description":"وصف المنتج",
+      "Category":"تصنيف المنتج",
+      "rate":"تقييمات المنتج"
+    },
+    "features":"سمات المنتج",
+    "color":"اللون",
+    "space":"المساحة",
+    "price":"السعر",
+    "avCount":"العدد المتوفر",
+    "notify":"إشعار عند التوفر",
+    "addCart":"اضف الي السلة",
+    "count":"العدد",
+    "added":"تم إضافة المنتج للسلة",
+    "viewCart":"استكمال الطلب",
+    "similarProducts":"منتجات مشابهة"
   },
   "sectionHeader": {},
   "moreBtn": "عرض المزيد",
@@ -78,7 +188,21 @@
     "delete": "حذف الحساب",
     "receiveCode": "لم يصلك الكود ؟"
   },
-  "pagesTitle": {},
+  "pagesTitle": {
+    "about": "من نحن",
+    "contact": "تواصل معنا",
+    "terms": "الشروط والإحكام",
+    "faqs": "أسئلة متكررة",
+    "notifications": "الاشعارات",
+    "fav": "المفضلة",
+    "categories": "الأقسام",
+    "catProducts": "منتجات القسم",
+    "exclusive": "العروض الحصرية",
+    "search": "نتائج البحث",
+    "addAddress": "اضافة عنوان",
+    "productsViewed": "منتجات شاهدتها",
+    "proDetailes": "تفاصيل المنتج"
+  },
   "noData": {},
   "validation": {
     "image": "الصورة مطلوبة",
