@@ -10,7 +10,7 @@
                     <!-- Name -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 الاسم
                                 <span class="c-red">*</span>
                             </label>
@@ -23,7 +23,7 @@
                     <!-- Email -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 البريد الإلكتروني
                                 <span class="c-red">*</span>
                             </label>
@@ -37,7 +37,7 @@
                     <div class="col-sm-6">
                         <div class="input-g">
 
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 رقم الجوال
                                 <span class="c-red">*</span>
                             </label>
@@ -45,29 +45,8 @@
                             <div class="main-input">
                                 <input type="number" class="input-me" name="phone" placeholder="ادخل رقم الجوال">
 
-                                <Dropdown v-model="selectedCountry" :options="countries" optionLabel="name"
-                                    class="main-icon selectedCountry">
-                                    <template #value="slotProps">
-                                        <div v-if="slotProps.value" class="selected">
-                                            <img v-if="slotProps.value.image" :alt="slotProps.value.label"
-                                                :src="slotProps.value.image" class="option-img" />
-                                            <div>{{ slotProps.value.key }}</div>
-                                            <i class="pi pi-angle-down ic"></i>
-                                        </div>
-                                        <span v-else>
-                                            {{ slotProps.placeholder }}
-                                        </span>
-                                    </template>
-                                    <template #option="slotProps">
-                                        <div class="option">
-                                            <img v-if="slotProps.option.image" alt="" class="option-img"
-                                                :src="slotProps.option.image" />
-                                            <div>
-                                                {{ slotProps.option.key }}
-                                            </div>
-                                        </div>
-                                    </template>
-                                </Dropdown>
+                                <FormCountryCode @changeCountry="changeCountry" />
+
                             </div>
 
                         </div>
@@ -76,7 +55,7 @@
                     <!-- Id -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 رقم الهوية الوطنية
                                 <span class="c-red">*</span>
                             </label>
@@ -89,7 +68,7 @@
                     <!-- Commerce Number -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 رقم السجل التجاري
                                 <span class="c-red">*</span>
                             </label>
@@ -102,7 +81,7 @@
                     <!-- Tax Number -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 الرقم الضريبي
                                 <span class="c-red">*</span>
                             </label>
@@ -115,7 +94,7 @@
                     <!-- arbic name -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 اسم المتجر باللغة العربية
                                 <span class="c-red">*</span>
                             </label>
@@ -128,7 +107,7 @@
                     <!-- english name -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 اسم المتجر باللغة الانجليزية
                                 <span class="c-red">*</span>
                             </label>
@@ -141,7 +120,7 @@
                     <!-- Store Description -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 وصف المتجر باللغة العربية
                                 <span class="c-red">*</span>
                             </label>
@@ -155,7 +134,7 @@
                     <!-- Store Description -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 وصف المتجر باللغة الانجليزية
                                 <span class="c-red">*</span>
                             </label>
@@ -169,7 +148,7 @@
                     <!-- Categories -->
                     <div class="col-12">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 أقسام نشاط المتجر
                                 <span class="c-red">*</span>
                             </label>
@@ -186,11 +165,12 @@
                     <!-- Image -->
                     <div class="col-sm-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 صورة الشعار
                                 <span class="c-red">*</span>
                             </label>
-                            <SharedUploadInput @update="updatedImages" :images="images" placeholder="ارفق صورة الشعار" />
+                            <SharedUploadInput @update="updatedImages" :images="images"
+                                placeholder="ارفق صورة الشعار" />
                         </div>
                     </div>
 
@@ -198,7 +178,7 @@
                     <div class="col-sm-6">
                         <div class="input-g">
 
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 رقم الواتساب
                                 <span class="c-red">*</span>
                             </label>
@@ -206,29 +186,7 @@
                             <div class="main-input">
                                 <input type="number" class="input-me" name="phone" placeholder="ادخل رقم الواتساب">
 
-                                <Dropdown v-model="selectedCountry" :options="countries" optionLabel="name"
-                                    class="main-icon selectedCountry">
-                                    <template #value="slotProps">
-                                        <div v-if="slotProps.value" class="selected">
-                                            <img v-if="slotProps.value.image" :alt="slotProps.value.label"
-                                                :src="slotProps.value.image" class="option-img" />
-                                            <div>{{ slotProps.value.key }}</div>
-                                            <i class="pi pi-angle-down ic"></i>
-                                        </div>
-                                        <span v-else>
-                                            {{ slotProps.placeholder }}
-                                        </span>
-                                    </template>
-                                    <template #option="slotProps">
-                                        <div class="option">
-                                            <img v-if="slotProps.option.image" alt="" class="option-img"
-                                                :src="slotProps.option.image" />
-                                            <div>
-                                                {{ slotProps.option.key }}
-                                            </div>
-                                        </div>
-                                    </template>
-                                </Dropdown>
+                                <FormCountryCode @changeCountry="changeCountry" />
                             </div>
 
                         </div>
@@ -237,7 +195,7 @@
                     <!-- City -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 المدينة
                                 <span class="c-red">*</span>
                             </label>
@@ -269,7 +227,7 @@
                     <!-- Location -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 موقع المتجر
                                 <span class="c-red">*</span>
                             </label>
@@ -283,7 +241,7 @@
                     <!-- Bank Name -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 اسم البنك
                                 <span class="c-red">*</span>
                             </label>
@@ -296,7 +254,7 @@
                     <!-- Account Name -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 اسم صاحب الحساب
                                 <span class="c-red">*</span>
                             </label>
@@ -310,12 +268,13 @@
                     <!-- Account Number -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 رقم الحساب
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="number" class="input-me" name="account_number" placeholder="ادخل رقم الحساب">
+                                <input type="number" class="input-me" name="account_number"
+                                    placeholder="ادخل رقم الحساب">
                             </div>
                         </div>
                     </div>
@@ -323,12 +282,13 @@
                     <!-- Iban Number -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 رقم الايبان
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" class="input-me" name="account_number" placeholder="ادخل رقم الايبان">
+                                <input type="text" class="input-me" name="account_number"
+                                    placeholder="ادخل رقم الايبان">
                             </div>
                         </div>
                     </div>
@@ -336,7 +296,7 @@
                     <!-- Password -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 كلمة المرور
                                 <span class="c-red">*</span>
                             </label>
@@ -349,7 +309,7 @@
                     <!-- Confirm Password -->
                     <div class="col-md-6">
                         <div class="input-g">
-                            <label for="" class="main-label">
+                            <label class="main-label">
                                 تأكيد كلمة المرور
                                 <span class="c-red">*</span>
                             </label>
@@ -391,31 +351,6 @@
 
 // Image
 const images = ref([]);
-
-// countries
-const selectedCountry = ref({
-    id: 1,
-    key: '996',
-    image: 'https://flagcdn.com/w320/sa.png',
-});
-
-const countries = ref([
-    {
-        id: 1,
-        key: '996',
-        image: 'https://flagcdn.com/w320/us.png'
-    },
-    {
-        id: 2,
-        key: '996',
-        image: 'https://flagcdn.com/w320/sa.png'
-    },
-    {
-        id: 3,
-        key: '996',
-        image: 'https://flagcdn.com/w320/us.png'
-    }
-]);
 
 // cities
 const city = ref(null);
@@ -461,6 +396,11 @@ const categories = ref([
 const updatedImages = (data) => {
     images.value = data;
 }
+
+// changeCountry
+const changeCountry = (country) => {
+    console.log(country);
+};
 
 /*************** Mounted **************** */
 

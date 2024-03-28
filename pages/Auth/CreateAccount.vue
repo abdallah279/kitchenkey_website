@@ -1,28 +1,28 @@
 <template>
     <form class="w-100" @submit.prevent="createAccount">
-        <SharedPageHeader title="إنشاء حساب" desc="قم بالانضمام إلينا" class="mb-5" />
+        <SharedPageHeader :title="$t('pagesTitle.register')" :desc="$t('sectionDesc.register')" class="mb-5" />
 
         <!-- Name -->
         <div class="input-g">
             <label for="" class="main-label">
-                الاسم
+                {{ $t('auth.name.text') }}
                 <span class="c-red">*</span>
             </label>
 
             <div class="main-input">
-                <input type="text" class="input-me" name="name" placeholder="ادخل الاسم">
+                <input type="text" class="input-me" name="name" :placeholder="$t('auth.name.placeholder')">
             </div>
         </div>
 
         <!-- Email -->
         <div class="input-g">
             <label for="" class="main-label">
-                البريد الالكتروني
+                {{ $t('auth.email.text') }}
                 <span class="c-red">*</span>
             </label>
 
             <div class="main-input">
-                <input type="email" class="input-me" name="email" placeholder="ادخل البريد الالكتروني">
+                <input type="email" class="input-me" name="email" :placeholder="$t('auth.email.placeholder')">
             </div>
         </div>
 
@@ -30,35 +30,15 @@
         <div class="input-g">
 
             <label for="" class="main-label">
-                رقم الجوال
+                {{ $t('auth.phone.text') }}
                 <span class="c-red">*</span>
             </label>
 
             <div class="main-input">
-                <input type="number" class="input-me" name="phone" placeholder="ادخل رقم الجوال">
+                <input type="number" class="input-me" name="phone" :placeholder="$t('auth.phone.placeholder')">
 
-                <Dropdown v-model="selectedCountry" :options="countries" optionLabel="name"
-                    class="main-icon selectedCountry">
-                    <template #value="slotProps">
-                        <div v-if="slotProps.value" class="selected">
-                            <img v-if="slotProps.value.image" :alt="slotProps.value.label" :src="slotProps.value.image"
-                                class="option-img" />
-                            <div>{{ slotProps.value.key }}</div>
-                            <i class="pi pi-angle-down ic"></i>
-                        </div>
-                        <span v-else>
-                            {{ slotProps.placeholder }}
-                        </span>
-                    </template>
-                    <template #option="slotProps">
-                        <div class="option">
-                            <img v-if="slotProps.option.image" alt="" class="option-img" :src="slotProps.option.image" />
-                            <div>
-                                {{ slotProps.option.key }}
-                            </div>
-                        </div>
-                    </template>
-                </Dropdown>
+                <FormCountryCode @changeCountry="changeCountry" />
+
             </div>
 
         </div>
@@ -66,24 +46,24 @@
         <!-- Password -->
         <div class="input-g">
             <label for="" class="main-label">
-                كلمة المرور
+                {{ $t('auth.password.text') }}
                 <span class="c-red">*</span>
             </label>
 
             <div class="main-input">
-                <input type="password" class="input-me" name="password" placeholder="ادخل كلمة المرور">
+                <input type="password" class="input-me" name="password" :placeholder="$t('auth.password.placeholder')">
             </div>
         </div>
 
         <!-- Confirm Password -->
         <div class="input-g">
             <label for="" class="main-label">
-                تأكيد كلمة المرور
+                {{ $t('auth.confirmPassword.text') }}
                 <span class="c-red">*</span>
             </label>
 
             <div class="main-input">
-                <input type="password" class="input-me" name="password" placeholder="ادخل كلمة المرور">
+                <input type="password" class="input-me" name="password" :placeholder="$t('auth.password.placeholder')">
             </div>
         </div>
 
@@ -92,23 +72,23 @@
             <input class="form-check-input" type="checkbox" value="" id="terms">
             <div class="d-flex gap-1">
                 <label class="form-check-label c-gray" for="terms">
-                    أوافق على
+                    {{ $t('auth.agree') }}
                 </label>
-                <NuxtLink to="/Auth/Terms" class="text-decoration-underline">الشروط والأحكام</NuxtLink>
+                <NuxtLink to="/Auth/Terms" class="text-decoration-underline">{{ $t('auth.terms') }}</NuxtLink>
             </div>
         </div>
 
         <!-- Submit -->
         <button type="submit" class="btn btn-primary minw-100 lg" :disabled="loading">
-            إنشاء حساب
+            {{ $t('formBtns.create') }}
             <span class="spinner-border spinner-border-sm" v-if="loading" role="status" aria-hidden="true"></span>
         </button>
 
         <!-- Login -->
         <div class="d-flex mt-3 justify-content-center">
             <NuxtLink to="/Auth/login" class="gap-1 fs13">
-                <span class="c-gray_mid">لديك حساب؟</span>
-                <span class="text-decoration-underline">تسجيل دخول</span>
+                <span class="c-gray_mid">{{ $t('auth.havAccount') }}</span>
+                <span class="text-decoration-underline">{{ $t('auth.login') }}</span>
             </NuxtLink>
         </div>
 
@@ -126,36 +106,16 @@ definePageMeta({
 // loading
 const loading = ref(false);
 
-// countries
-const selectedCountry = ref({
-    id: 1,
-    key: '996',
-    image: 'https://flagcdn.com/w320/sa.png',
-});
-
-const countries = ref([
-    {
-        id: 1,
-        key: '996',
-        image: 'https://flagcdn.com/w320/us.png'
-    },
-    {
-        id: 2,
-        key: '996',
-        image: 'https://flagcdn.com/w320/sa.png'
-    },
-    {
-        id: 3,
-        key: '996',
-        image: 'https://flagcdn.com/w320/us.png'
-    }
-]);
-
 /*************** Computed **************** */
 
 /*************** Props **************** */
 
 /*************** Methods **************** */
+
+// changeCountry
+const changeCountry = (country) => {
+    console.log(country);
+};
 
 // createAccount
 const createAccount = () => {

@@ -58,8 +58,8 @@
   "filterSidebar": {
     "subCategories": "الأقسام الفرعية",
     "categories": "الأقسام",
-    "mainCat":"القسم الرئيسي",
-    "subCat":"القسم الفرعي",
+    "mainCat": "القسم الرئيسي",
+    "subCat": "القسم الفرعي",
     "brands": "الماركات",
     "city": "المدينة",
     "rate": "التقييم",
@@ -147,24 +147,53 @@
   "product": {
     "returnable": "قابل للإرجاع",
     "brandDetails": "عرض تفاصيل الماركة",
-    "tabs":{
-      "description":"وصف المنتج",
-      "Category":"تصنيف المنتج",
-      "rate":"تقييمات المنتج"
+    "tabs": {
+      "description": "وصف المنتج",
+      "Category": "تصنيف المنتج",
+      "rate": "تقييمات المنتج"
     },
-    "features":"سمات المنتج",
-    "color":"اللون",
-    "space":"المساحة",
-    "price":"السعر",
-    "avCount":"العدد المتوفر",
-    "notify":"إشعار عند التوفر",
-    "addCart":"اضف الي السلة",
-    "count":"العدد",
-    "added":"تم إضافة المنتج للسلة",
-    "viewCart":"استكمال الطلب",
-    "similarProducts":"منتجات مشابهة"
+    "features": "سمات المنتج",
+    "color": "اللون",
+    "space": "المساحة",
+    "price": "السعر",
+    "avCount": "العدد المتوفر",
+    "notify": "إشعار عند التوفر",
+    "addCart": "اضف الي السلة",
+    "count": "العدد",
+    "added": "تم إضافة المنتج للسلة",
+    "viewCart": "استكمال الطلب",
+    "similarProducts": "منتجات مشابهة"
   },
-  "sectionHeader": {},
+  "auth": {
+    "name":{
+      "text": "الاسم",
+      "placeholder": "ادخل الاسم"
+    },
+    "email": {
+      "text": "البريد الالكتروني",
+      "placeholder": "ادخل البريد الالكتروني"
+    },
+    "phone": {
+      "text": "رقم الجوال",
+      "placeholder": "ادخل رقم الجوال"
+    },
+    "password": {
+      "text": "كلمة المرور",
+      "placeholder": "ادخل كلمة المرور"
+    },
+    "confirmPassword":{
+      "text": "تاكيد كلمة المرور",
+      "placeholder": "ادخل كلمة المرور"
+    },
+    "forgotPass": "هل نسيت كلمة المرور؟",
+    "enter": "دخول",
+    "notAccount": "ليس لديك حساب؟",
+    "havAccount": "لديك حساب؟",
+    "login": "تسجيل دخول",
+    "register": "انشاء حساب",
+    "agree":"أوافق على",
+    "terms": "الشروط والاحكام"
+  },
   "moreBtn": "عرض المزيد",
   "sectionTitle": {},
   "loginForm": {},
@@ -186,7 +215,8 @@
     "changePass": "تغيير كلمة المرور",
     "logout": "تسجيل خروج",
     "delete": "حذف الحساب",
-    "receiveCode": "لم يصلك الكود ؟"
+    "receiveCode": "لم يصلك الكود؟",
+    "resend": "أعد الإرسال"
   },
   "pagesTitle": {
     "about": "من نحن",
@@ -201,7 +231,18 @@
     "search": "نتائج البحث",
     "addAddress": "اضافة عنوان",
     "productsViewed": "منتجات شاهدتها",
-    "proDetailes": "تفاصيل المنتج"
+    "proDetailes": "تفاصيل المنتج",
+    "login": "تسجيل الدخول",
+    "register": "انشاء حساب",
+    "restorePass": "استعادة كلمة المرور",
+    "code":"كود التحقق"
+  },
+  "sectionDesc": {
+    "login": "أهلاً بك وبعودتك",
+    "restorePass": "ادخل رقم جوالك",
+    "code":"ادخل كود التحقق المرسل إليك",
+    "confirmPass":"ادخل كلمة المرور الجديدة",
+    "register":"قم بالانضمام إلينا"
   },
   "noData": {},
   "validation": {

@@ -58,8 +58,8 @@
   "filterSidebar": {
     "subCategories": " Sub Categories",
     "categories": " Categories",
-    "mainCat":" Main Category",
-    "subCat":" Sub Category",
+    "mainCat": " Main Category",
+    "subCat": " Sub Category",
     "brands": " Brands",
     "city": " City",
     "rate": " Rate",
@@ -89,20 +89,20 @@
     "payWay": "Payment method",
     "shippingCompanies": "Shipping Companies"
   },
-  "address":{
-    "name":{
+  "address": {
+    "name": {
       "text": "Address name",
       "placeholder": "Enter Address name"
     },
-    "city":{
+    "city": {
       "text": "City",
       "placeholder": " Select City"
     },
-    "street":{
+    "street": {
       "text": "Street Name",
       "placeholder": "Enter Street Name"
     },
-    "building":{
+    "building": {
       "text": "Building No",
       "placeholder": "Enter Building No"
     }
@@ -147,22 +147,52 @@
   "product": {
     "returnable": "Returnable",
     "brandDetails": "Brand Details",
-    "tabs":{
-      "description":" Product Description",
-      "Category":"Product classification",
-      "rate":"Product Reviews"
+    "tabs": {
+      "description": " Product Description",
+      "Category": "Product classification",
+      "rate": "Product Reviews"
     },
-    "features":"Product features",
-    "color":"Color",
-    "space":"Space",
-    "price":"Price",
-    "avCount":"Available number",
-    "notify":"Notification upon availability",
-    "addCart":"Add to cart",
-    "count":"Count",
-    "added":"Product added to cart",
-    "viewCart":"Complete order",
-    "similarProducts":"Similar Products"
+    "features": "Product features",
+    "color": "Color",
+    "space": "Space",
+    "price": "Price",
+    "avCount": "Available number",
+    "notify": "Notification upon availability",
+    "addCart": "Add to cart",
+    "count": "Count",
+    "added": "Product added to cart",
+    "viewCart": "Complete order",
+    "similarProducts": "Similar Products"
+  },
+  "auth": {
+    "name": {
+      "text": "Name",
+      "placeholder": "Enter Name"
+    },
+    "email": {
+      "text": "Email",
+      "placeholder": "Enter Email"
+    },
+    "phone": {
+      "text": "Phone",
+      "placeholder": "Enter Phone"
+    },
+    "password": {
+      "text": "Password",
+      "placeholder": "Enter Password"
+    },
+    "confirmPassword": {
+      "text": "Confirm Password",
+      "placeholder": "Enter Password"
+    },
+    "forgotPass": "Forgot Password ?",
+    "enter": "Enter",
+    "notAccount": "Don't have an account ?",
+    "havAccount": "Already have an account ?",
+    "login": "Login",
+    "register": "Create Account",
+    "agree": "I agree to",
+    "terms": "Terms and Conditions"
   },
   "sectionHeader": {},
   "moreBtn": "View more",
@@ -187,13 +217,14 @@
     "changePass": "change Password",
     "logout": "Logout",
     "delete": "Delete Account",
-    "receiveCode": "Didn't receive the code?"
+    "receiveCode": "Didn't receive the code?",
+    "resend": "Resend"
   },
   "pagesTitle": {
     "about": "About Us",
     "contact": "Contact Us",
-    "terms":" Terms and Conditions",
-    "faqs":" FAQs",
+    "terms": " Terms and Conditions",
+    "faqs": " FAQs",
     "notifications": "Notifications",
     "fav": " Favourites",
     "categories": "Categories",
@@ -202,7 +233,18 @@
     "search": " Search Results",
     "addAddress": "Add Address",
     "productsViewed": "Products Viewed",
-    "proDetailes": "Product Details"
+    "proDetailes": "Product Details",
+    "login": "Login",
+    "register": "Create Account",
+    "restorePass": "Restore Password",
+    "code": "Activation Code"
+  },
+  "sectionDesc": {
+    "login": "Welcome Back",
+    "restorePass": "Enter your mobile number",
+    "code": "Enter the verification code sent to you",
+    "confirmPass":"Enter your new password",
+    "register":"Join us"
   },
   "noData": {},
   "validation": {

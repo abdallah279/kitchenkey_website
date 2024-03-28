@@ -8,8 +8,8 @@
                     <img src="@/assets/imgs/logo_white.png" alt="" class="login-img">
 
                     <p class="copy_auth">
-                        <span>جميع الحقوق محفوظة لKitchenkey 2023</span> 
-                        <span>تصميم وبرمجة شركة أوامر الشبكة</span>
+                        <span>{{ $t('footer.copyRight1') }} {{ new Date().getFullYear() }}</span>
+                        <span>{{ $t('footer.copyRight2') }}</span>
                     </p>
                 </div>
             </div>
@@ -23,26 +23,11 @@
 
                         <NuxtLink to="/" class="sm_link sec">
                             <i class="pi pi-home ic"></i>
-                            <span class="drop-text">الرئيسية</span>
+                            <span class="drop-text">{{ $t('nav.home') }}</span>
                         </NuxtLink>
 
                         <!-- Language -->
-                        <div class="sm_link dropdown">
-                            <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="~/assets/imgs/icons/saudii.png" class="flag" alt="saudi flag">
-                                <span class="lang drop-text">العربية</span>
-                                <i class="pi pi-angle-down drop-ic"></i>
-                            </button>
-
-                            <ul class="dropdown-menu drop-lang left">
-                                <li>
-                                    <a href="#" class="profile-item" @click="toggleLang('ar')">العربية</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="profile-item" @click="toggleLang('en')">English</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <SharedChangeLangDropdown />
 
                     </div>
 
@@ -70,7 +55,9 @@
 
 /*************** Methods **************** */
 
-/*************** Mounted **************** */
+/*************** Mounted *****************/
+
 </script>
+
 
 <style lang="scss" scoped></style>
