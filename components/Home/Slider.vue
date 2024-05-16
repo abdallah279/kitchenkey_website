@@ -1,9 +1,12 @@
-
 <template>
-    <Carousel :value="slider" :numVisible="1" :numScroll="1" :responsiveOptions="responsiveOptions" circular
-        :autoplayInterval="3000" class="dir-slider">
-        <template #item="slotProps">
-            <img :src="slotProps.data.image" alt="slider-img" class="slider-img" />
+    <Carousel dir="rtl" :autoplay="3000" :wrapAround="true"
+        :transition="2100">
+        <Slide v-for="item in slider" :key="item.id">
+            <img :src="item.image" alt="slider-img" class="slider-img" />
+        </Slide>
+
+        <template #addons>
+            <Pagination />
         </template>
     </Carousel>
 </template>
@@ -11,8 +14,7 @@
 <script setup>
 /*************** Plugins **************** */
 
-import Carousel from 'primevue/carousel';
-
+import { Carousel, Pagination, Slide } from 'vue3-carousel'
 
 /*************** DATA **************** */
 // slider
@@ -27,15 +29,6 @@ const slider = ref([
         image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/modern-kitchen-ideas-navy-blue-1577119453.jpg'
     },
 ]);
-
-const responsiveOptions = ref([
-    {
-        breakpoint: "767px",
-        numVisible: 1,
-        numScroll: 1,
-    },
-]);
-
 /*************** Computed **************** */
 
 /*************** Props **************** */

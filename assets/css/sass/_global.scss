@@ -44,12 +44,11 @@ $screen-xxs: 375px;
 }
 
 .ff-reg {
-  
-  #{$ltr}{
+  #{$ltr} {
     font-family: fontLight;
   }
-  
-  #{$rtl}{
+
+  #{$rtl} {
     font-family: fontReg;
   }
 }
@@ -97,7 +96,7 @@ $screen-xxs: 375px;
   line-height: initial;
   @include mixins.prefix(box-sizing, border-box, webkit ms o);
 
-  &:disabled{
+  &:disabled {
     cursor: not-allowed !important;
   }
 }
@@ -121,6 +120,7 @@ html[lang="en"] {
   body {
     direction: ltr;
     text-align: left;
+    // font-family: fontReg;
   }
 }
 
@@ -142,7 +142,6 @@ p {
   color: map_get(colors.$theme-colors, text);
   line-height: 1.8;
 }
-
 
 .btn {
   @include mixins.border-radius(5px);
@@ -191,13 +190,18 @@ p {
     min-width: 75px;
   }
 
+  &.md{
+    height: 40px;
+  }
+
   &.sm-btn {
     height: $sm-btn-height;
     min-width: $sm-btn-width;
   }
 
   &.lg {
-    height: 44px;
+    height: 47px;
+    min-width: 160px;
   }
 
   &.clear_btn {
@@ -335,7 +339,7 @@ img.lazyload:not([src]) {
 }
 
 .minw-100 {
-  min-width: 100%;
+  min-width: 100% !important;
 }
 
 .fw-600 {
@@ -436,6 +440,15 @@ img.lazyload:not([src]) {
     }
   }
 }
+
+// .card_style {
+//   background-color: #fff;
+//   border-radius: 5px;
+
+//   &.pd {
+//     padding: 40px;
+//   }
+// }
 
 .done_style {
   border: 2px solid map_get(colors.$theme-colors, gray_light) !important;
@@ -832,7 +845,7 @@ img.lazyload:not([src]) {
   }
 }
 
-.p-component{
+.p-component {
   font-family: inherit;
 }
 
@@ -853,6 +866,10 @@ img.lazyload:not([src]) {
     padding: 28px 20px;
   }
 
+  &.pd_lg {
+    padding: 40px;
+  }
+
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   }
@@ -871,7 +888,7 @@ img.lazyload:not([src]) {
   color: map_get(colors.$theme-colors, dark);
   font-size: 14px;
   padding-bottom: 12px;
-  #{$rtl}{
+  #{$rtl} {
     font-family: fontReg;
   }
 }
@@ -913,8 +930,8 @@ img.lazyload:not([src]) {
   color: map_get(colors.$theme-colors, dark);
   margin-bottom: 12px;
   font-size: 13px;
-  
-  #{$rtl}{
+
+  #{$rtl} {
     font-family: fontReg;
   }
 }
@@ -1647,7 +1664,10 @@ textarea {
     .p-tabview-header {
       .p-tabview-nav-link {
         padding: 0 0 20px !important;
-        border-color: rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
+        border-color: rgba(
+          $color: map_get(colors.$theme-colors, stroke),
+          $alpha: 0.5
+        );
 
         .p-tabview-title {
           font-size: 14px;
@@ -1918,6 +1938,49 @@ textarea {
   border-radius: 3px;
 }
 
+
+/********************* Switch *********************/
+
+.switch_con {
+  background-color: map_get(colors.$theme-colors, light);
+  width: 40px;
+  height: 20px;
+  @include mixins.border-radius(20px);
+  position: relative;
+  transition: $main-transition;
+  z-index: 3;
+  cursor: pointer;
+
+  input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    @include mixins.dir-left(3.5px);
+    @include mixins.shape(14px, 50%);
+    background-color: #fff;
+    transition: $main-transition;
+    z-index: -1;
+  }
+
+  &:has(:checked) {
+    background-color: map_get(colors.$theme-colors, primary);
+
+    &::after {
+      @include mixins.dir-left(23px);
+    }
+  }
+}
+
+
+
 /********************* Prime Modal *********************/
 .p-dialog {
   font-family: fontReg !important;
@@ -1974,7 +2037,7 @@ textarea {
   }
 
   &.without-close {
-    padding: 50px 15px;
+    padding: 35px 15px;
 
     @media screen and (max-width: $screen-xs) {
       width: calc(100% - 30px);
@@ -1988,16 +2051,17 @@ textarea {
 
     .p-dialog-content {
       padding: 0 !important;
-      margin-bottom: 40px;
+      overflow: hidden;
+      margin-bottom: 0;
     }
 
-    .p-dialog-footer {
-      padding: 0 !important;
+    // .p-dialog-footer {
+    //   padding: 0 !important;
 
-      button {
-        margin: 0 !important;
-      }
-    }
+    //   button {
+    //     margin: 0 !important;
+    //   }
+    // }
   }
 
   .p-dialog-header {

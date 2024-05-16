@@ -52,7 +52,7 @@
                         <div class="input-g">
                             <label class="main-label d-flex align-items-center justify-content-between">
                                 {{ $t('specialOrder.address') }}
-                                <NuxtLink to="/addAddressPage" class="btn btn-primary sm">{{ $t('specialOrder.addAddress') }}</NuxtLink>
+                                <NuxtLink to="/addresses/add" class="btn btn-primary sm">{{ $t('specialOrder.addAddress') }}</NuxtLink>
                             </label>
                             <div class="radio_card pd mb-3 row mx-0">
                                 <label class="radio-box col-sm-6 mb-sm-0"
@@ -108,26 +108,28 @@
             </form>
 
         </div>
-    </main>
 
-    <!-- Done Modal -->
-    <Dialog id="done" class="" v-model:visible="done" modal>
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <div class="right_sec">
-                    <p class="fs14 c-dark text-center mb-4">
-                        <span class="c-red">عفوا!</span> شركة الشحن ليس بإمكانها توصيل طلبك لهذا العنوان قم باختيار
-                        عنوان آخر
-                    </p>
-                    <div class="buttons justify-content-center">
-                        <button type="button" @click="done = false" class="btn btn-primary modal_btn">
-                            العودة للطلب
-                        </button>
+        <!-- Done Modal -->
+        <Dialog id="done" class="" v-model:visible="done" modal>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="right_sec">
+                        <p class="fs14 c-dark text-center mb-4">
+                            <span class="c-red">عفوا!</span> شركة الشحن ليس بإمكانها توصيل طلبك لهذا العنوان قم باختيار
+                            عنوان آخر
+                        </p>
+                        <div class="buttons justify-content-center">
+                            <button type="button" @click="done = false" class="btn btn-primary modal_btn">
+                                {{ $t('modals.specialOrder.btn') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </Dialog>
+        </Dialog>
+
+    </main>
+
 </template>
 
 <script setup>
@@ -186,12 +188,12 @@ const done = ref(false);
 /*************** Props **************** */
 
 /*************** Methods **************** */
-// uploadedImages
+// uploaded Images
 const updatedImages = (data) => {
     images.value = data;
 }
 
-// addOrder
+// add Order
 const addOrder = () => {
     done.value = true;
 }

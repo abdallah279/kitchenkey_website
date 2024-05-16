@@ -27,7 +27,7 @@
                             <ul class="dropdown-menu sm">
 
                                 <li>
-                                    <NuxtLink to="/" class="profile-item">
+                                    <NuxtLink to="/profile" class="profile-item">
                                         <span class="profile-text">{{ $t('nav.dropDown.profile') }}</span>
                                     </NuxtLink>
                                 </li>
@@ -39,25 +39,25 @@
                                 </li>
 
                                 <li>
-                                    <NuxtLink to="/" class="profile-item">
+                                    <NuxtLink to="/addresses/saved" class="profile-item">
                                         <span class="profile-text">{{ $t('nav.dropDown.addresses') }}</span>
                                     </NuxtLink>
                                 </li>
 
                                 <li>
-                                    <NuxtLink to="/" class="profile-item">
+                                    <NuxtLink to="/brands/followed" class="profile-item">
                                         <span class="profile-text">{{ $t('nav.dropDown.brands') }}</span>
                                     </NuxtLink>
                                 </li>
 
                                 <li>
-                                    <NuxtLink to="/" class="profile-item">
+                                    <NuxtLink to="/wallet" class="profile-item">
                                         <span class="profile-text">{{ $t('nav.dropDown.wallet') }}</span>
                                     </NuxtLink>
                                 </li>
 
                                 <li>
-                                    <NuxtLink to="/" class="profile-item">
+                                    <NuxtLink to="/profile/settings/editProfile" class="profile-item">
                                         <span class="profile-text">{{ $t('nav.dropDown.settings') }}</span>
                                     </NuxtLink>
                                 </li>

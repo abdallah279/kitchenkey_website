@@ -2,7 +2,7 @@
     <main class="contact main_padding">
         <div class="container">
 
-            <SharedPageHeader :title="$t('pagesTitle.addAddress')" class="mb-5" />
+            <SharedPageHeader :title="addressId ? $t('pagesTitle.editAddress') : $t('pagesTitle.addAddress')" class="mb-5" />
 
             <div class="row">
 
@@ -101,6 +101,9 @@
 
 // loading
 const loading = ref(false);
+
+// addressId
+const addressId = useRoute().query.id;
 
 // cities
 const city = ref(null);

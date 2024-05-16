@@ -105,7 +105,10 @@
     "building": {
       "text": "رقم المبنى",
       "placeholder": "ادخل رقم المبنى"
-    }
+    },
+    "addBtn": "إضافة عنوان",
+    "editBtn": "تعديل",
+    "deleteBtn": "حذف"
   },
   "contact": {
     "title": "تواصل معنا عبر",
@@ -165,7 +168,7 @@
     "similarProducts": "منتجات مشابهة"
   },
   "auth": {
-    "name":{
+    "name": {
       "text": "الاسم",
       "placeholder": "ادخل الاسم"
     },
@@ -181,7 +184,7 @@
       "text": "كلمة المرور",
       "placeholder": "ادخل كلمة المرور"
     },
-    "confirmPassword":{
+    "confirmPassword": {
       "text": "تاكيد كلمة المرور",
       "placeholder": "ادخل كلمة المرور"
     },
@@ -191,8 +194,47 @@
     "havAccount": "لديك حساب؟",
     "login": "تسجيل دخول",
     "register": "انشاء حساب",
-    "agree":"أوافق على",
+    "agree": "أوافق على",
     "terms": "الشروط والاحكام"
+  },
+  "wallet": {
+    "current": "الرصيد الحالي",
+    "add": "شحن رصيد"
+  },
+  "profileSidebar": {
+    "profile": "تعديل بيانات الحساب",
+    "editPassword": "تغيير كلمة المرور",
+    "editPhone": "تغيير رقم الجوال",
+    "editEmail": "تغيير البريد الإلكتروني",
+    "notifications": "تفعيل الاشعارات",
+    "delete": "حذف الحساب"
+  },
+  "profileForms":{
+    "name":{
+      "text": "الاسم",
+      "placeholder": "ادخل الاسم"
+    },
+    "newPhone":{
+      "text": "رقم الجوال الجديد",
+      "placeholder": "ادخل رقم الجوال"
+    },
+    "newEmail":{
+      "text": "البريد الإلكتروني الجديد",
+      "placeholder": "ادخل البريد الإلكتروني الجديد"
+    },
+    "currentPassword":{
+      "text": "كلمة المرور الحالية",
+      "placeholder": "ادخل كلمة المرور الحالية"
+    },
+    "newPassword":{
+      "text": "كلمة المرور الجديدة",
+      "placeholder": "ادخل كلمة المرور الجديدة"
+    },
+    "confirmNewPassword":{
+      "text": "تأكيد كلمة المرور الجديدة",
+      "placeholder": "ادخل كلمة المرور الجديدة"
+    },
+    "dontRecive":"لم يصلك الكود؟"
   },
   "moreBtn": "عرض المزيد",
   "sectionTitle": {},
@@ -201,7 +243,19 @@
   "createAccountForm": {},
   "changePhoneForm": {},
   "order": {},
-  "modals": {},
+  "modals": {
+    "deleteAddress": {
+      "title": "هل حقاً تريد حذف العنوان؟",
+      "confirm": "نعم حذف",
+      "cancel": "لا رجوع"
+    },
+    "deleteAccount": {
+      "title": "هل حقاً تريد حذف الحساب؟"
+    },
+    "specialOrder": {
+      "btn": "العودة للطلب"
+    }
+  },
   "formBtns": {
     "send": "ارسال",
     "sendLoading": "جارى الارسال",
@@ -230,19 +284,25 @@
     "exclusive": "العروض الحصرية",
     "search": "نتائج البحث",
     "addAddress": "اضافة عنوان",
+    "editAddress": "تعديل عنوان",
+    "savedAddresses": "العناوين المحفوظة",
     "productsViewed": "منتجات شاهدتها",
     "proDetailes": "تفاصيل المنتج",
     "login": "تسجيل الدخول",
     "register": "انشاء حساب",
     "restorePass": "استعادة كلمة المرور",
-    "code":"كود التحقق"
+    "code": "كود التحقق",
+    "profile": "حسابي",
+    "followedbrands": "الماركات المتابعة",
+    "wallet": "المحفظة",
+    "settings":"إعدادات الحساب"
   },
   "sectionDesc": {
     "login": "أهلاً بك وبعودتك",
     "restorePass": "ادخل رقم جوالك",
-    "code":"ادخل كود التحقق المرسل إليك",
-    "confirmPass":"ادخل كلمة المرور الجديدة",
-    "register":"قم بالانضمام إلينا"
+    "code": "ادخل كود التحقق المرسل إليك",
+    "confirmPass": "ادخل كلمة المرور الجديدة",
+    "register": "قم بالانضمام إلينا"
   },
   "noData": {},
   "validation": {

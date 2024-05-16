@@ -110,7 +110,9 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
+    margin-inline: 5px;
     @include mixins.border-radius(10px);
+    cursor: grab;
 
     @media screen and (max-width: global.$screen-xs) {
       height: 300px;
@@ -179,6 +181,40 @@
       }
     }
   }
+
+  .carousel {
+    position: relative;
+    .carousel__pagination {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 22;
+      transform: translateX(-50%);
+      gap: 8px;
+      padding: 0 !important;
+
+      .carousel__pagination-item {
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        .carousel__pagination-button {
+          display: block;
+          @include mixins.shape(10px, 50%);
+          background-color: rgba($color: #000000, $alpha: 0.1);
+          border: 2px solid #fff;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        .carousel__pagination-button--active {
+          background-color: #fff;
+          width: 36px;
+          @include mixins.border-radius(12px);
+        }
+      }
+    }
+  }
 }
 
 /*************** End Main Slider Section ***************/
@@ -226,11 +262,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   #{global.$ltr} & {
     direction: ltr !important;
   }
-  
+
   #{global.$rtl} & {
     direction: rtl !important;
   }
@@ -427,9 +463,10 @@
   }
 }
 
-.product_slider{
+.product_slider {
   position: relative;
-  .carousel__prev, .carousel__next{
+  .carousel__prev,
+  .carousel__next {
     position: absolute;
     top: -48px;
     @include mixins.shape(28px, 5px);
@@ -438,13 +475,13 @@
     font-size: 12px;
     border: 1px solid map_get(colors.$theme-colors, primary);
 
-    &:hover{
+    &:hover {
       background-color: #fff;
       color: map_get(colors.$theme-colors, primary);
     }
   }
 
-  .carousel__prev{
+  .carousel__prev {
     right: unset !important;
 
     #{global.$ltr} & {
@@ -456,7 +493,7 @@
     }
   }
 
-  .carousel__next{
+  .carousel__next {
     #{global.$ltr} & {
       right: 34px !important;
     }
@@ -755,7 +792,6 @@
 
 // Rate Item
 .rate-item {
-
   &:last-child {
     border-bottom: none !important;
   }
@@ -1146,8 +1182,132 @@
 
 /***************** End Login Page ***************/
 
+/***************** Start profile Page ***************/
+.profile_img_con {
+  position: relative;
+  @include mixins.shape(90px, 50%);
+  overflow: hidden;
+
+  .profile_img_background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img,
+  .user-camera {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include mixins.center;
+  }
+
+  .user-camera {
+    z-index: 2;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    cursor: pointer;
+    i {
+      color: #fff;
+    }
+  }
+
+  .img {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    z-index: 1;
+
+    .profile_img_center {
+      object-fit: cover;
+      @include mixins.shape(80px, 50%);
+      border: 2px solid map_get(colors.$theme-colors, info);
+    }
+  }
+
+  @media screen and (max-width: global.$screen-xs) {
+    @include mixins.shape(70px, 50%);
+
+    .img {
+      .profile_img_center {
+        @include mixins.shape(60px, 50%);
+      }
+    }
+  }
+}
+
+.profile_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .item {
+    min-width: 160px;
+  }
+
+  .line {
+    height: 55px;
+    width: 1px;
+    background-color: map_get(colors.$theme-colors, stroke);
+  }
+
+  @media screen and (max-width: global.$screen-sm) {
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px;
+    .item {
+      min-width: fit-content;
+    }
+
+    .line {
+      display: none;
+    }
+  }
+}
+/***************** End profile Page ***************/
+
+/***************** Start wallet Page ***************/
+.wallet {
+  .wallet_img {
+    max-width: 60px;
+    display: block;
+    margin-inline: auto;
+    margin-bottom: 35px;
+  }
+}
+/***************** End wallet Page ***************/
+
+/***************** Start Profile SideBar *********************/
+
+.profile_sidebar {
+  padding: 0 18px;
+  border: 2px solid map_get(colors.$theme-colors, info);
+  border-radius: 5px;
+}
+.profile_link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  // margin-bottom: 20px;
+  color: map_get(colors.$theme-colors, gray);
+  border-bottom: 1px solid
+    rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
+  padding: 18px 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.router-link-active {
+    color: map_get(colors.$theme-colors, primary);
+  }
+
+  .icon {
+    margin-inline-start: auto;
+    font-size: 13px;
+  }
+}
+
+/***************** End Profile SideBar *********************/
+
 /***************** Start Page Transition ***************/
-
-
 
 /***************** End Page Transition ***************/

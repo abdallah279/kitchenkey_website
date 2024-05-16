@@ -111,4 +111,8 @@ $theme-colors: (
       box-shadow: none !important;
     }
   }
+
+  .bg_#{$color} {
+    background-color: $value !important;
+  }
 }

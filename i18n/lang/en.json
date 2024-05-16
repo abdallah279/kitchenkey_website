@@ -105,7 +105,10 @@
     "building": {
       "text": "Building No",
       "placeholder": "Enter Building No"
-    }
+    },
+    "addBtn": "Add Address",
+    "editBtn": "edit",
+    "deleteBtn": "delete"
   },
   "contact": {
     "title": "Contact us via",
@@ -194,6 +197,45 @@
     "agree": "I agree to",
     "terms": "Terms and Conditions"
   },
+  "wallet": {
+    "current": "current balance",
+    "add": "charge balance"
+  },
+  "profileSidebar": {
+    "profile": "Edit profile",
+    "editPassword": "Edit Password",
+    "editPhone": "Edit Phone",
+    "editEmail": "Edit Email",
+    "notifications": "Activate notifications",
+    "delete": "Delete Account"
+  },
+  "profileForms": {
+    "name": {
+      "text": "Name",
+      "placeholder": "Enter Name"
+    },
+    "newPhone": {
+      "text": "New Phone",
+      "placeholder": "Enter New Phone"
+    },
+    "newEmail": {
+      "text": "New Email",
+      "placeholder": "Enter New Email"
+    },
+    "currentPassword": {
+      "text": "Current Password",
+      "placeholder": "Enter Current Password"
+    },
+    "newPassword": {
+      "text": "New Password",
+      "placeholder": "Enter New Password"
+    },
+    "confirmNewPassword": {
+      "text": "Confirm New Password",
+      "placeholder": "Enter New Password"
+    },
+    "dontRecive": "Didn't receive the code?"
+  },
   "sectionHeader": {},
   "moreBtn": "View more",
   "sectionTitle": {},
@@ -203,7 +245,19 @@
   "createAccountForm": {},
   "changePhoneForm": {},
   "order": {},
-  "modals": {},
+  "modals": {
+    "deleteAddress": {
+      "title": "Do you really want to delete the address?",
+      "confirm": "Yes delete",
+      "cancel": "No, back"
+    },
+    "deleteAccount": {
+      "title": "Do you really want to delete the account?"
+    },
+    "specialOrder": {
+      "btn": "Back to order"
+    }
+  },
   "formBtns": {
     "send": "Send",
     "sendLoading": "Sending",
@@ -232,19 +286,25 @@
     "exclusive": " Exclusive Offers",
     "search": " Search Results",
     "addAddress": "Add Address",
+    "editAddress": "Edit Address",
+    "savedAddresses": "Saved Addresses",
     "productsViewed": "Products Viewed",
     "proDetailes": "Product Details",
     "login": "Login",
     "register": "Create Account",
     "restorePass": "Restore Password",
-    "code": "Activation Code"
+    "code": "Activation Code",
+    "profile": "My Profile",
+    "followedbrands": "followed brands",
+    "wallet": "Wallet",
+    "settings": "Account Settings"
   },
   "sectionDesc": {
     "login": "Welcome Back",
     "restorePass": "Enter your mobile number",
     "code": "Enter the verification code sent to you",
-    "confirmPass":"Enter your new password",
-    "register":"Join us"
+    "confirmPass": "Enter your new password",
+    "register": "Join us"
   },
   "noData": {},
   "validation": {
