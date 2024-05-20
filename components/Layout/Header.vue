@@ -33,7 +33,7 @@
                                 </li>
 
                                 <li>
-                                    <NuxtLink to="/" class="profile-item">
+                                    <NuxtLink to="/orders/products" class="profile-item">
                                         <span class="profile-text">{{ $t('nav.dropDown.orders') }}</span>
                                     </NuxtLink>
                                 </li>

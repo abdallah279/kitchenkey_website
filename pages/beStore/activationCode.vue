@@ -4,7 +4,7 @@
 
             <form class="section_style pd" @submit.prevent="activeAccount">
 
-                <SharedPageHeader title="كود التحقق" desc="ادخل كود التحقق المرسل إليك" />
+                <SharedPageHeader :title="$t('pagesTitle.code')" :desc="$t('sectionDesc.code')" />
 
                 <div class="row">
                     <div class="col-lg-7 col-xl-6 mx-auto">
@@ -14,14 +14,14 @@
 
                         <!-- Submit -->
                         <button type="submit" class="btn btn-primary minw-100 lg" :disabled="loading">
-                            إرسال
+                            {{ $t('formBtns.send') }}
                             <span class="spinner-border spinner-border-sm" v-if="loading" role="status"
                                 aria-hidden="true"></span>
                         </button>
 
                         <!-- Resend Code -->
                         <div class="d-flex mt-3 justify-content-center">
-                            <button type="button" class="bg-transparent c-gray_mid fs13 border-0">لم يصلك الكود؟</button>
+                            <button type="button" class="bg-transparent c-gray_mid fs13 border-0">{{ $t('profileForms.dontRecive') }}</button>
                         </div>
                     </div>
                 </div>

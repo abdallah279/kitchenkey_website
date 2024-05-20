@@ -3,7 +3,7 @@
         <div class="container">
 
             <form class="section_style pd" @submit.prevent="$router.push('/beStore/activationCode')">
-                <SharedPageHeader title="كن متجر" class="mb-5" />
+                <SharedPageHeader :title="$t('pagesTitle.beStore')" class="mb-5" />
 
                 <div class="row gy-2">
 
@@ -11,11 +11,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                الاسم
+                                {{ $t('auth.name.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" placeholder="ادخل الاسم" class="input-me">
+                                <input type="text" :placeholder="$t('auth.name.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -24,11 +24,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                البريد الإلكتروني
+                                {{ $t('auth.email.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="email" placeholder="ادخل البريد الإلكتروني" class="input-me">
+                                <input type="email" :placeholder="$t('auth.email.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -38,12 +38,12 @@
                         <div class="input-g">
 
                             <label class="main-label">
-                                رقم الجوال
+                                {{ $t('auth.phone.text') }}
                                 <span class="c-red">*</span>
                             </label>
 
                             <div class="main-input">
-                                <input type="number" class="input-me" name="phone" placeholder="ادخل رقم الجوال">
+                                <input type="number" class="input-me" name="phone" :placeholder="$t('auth.phone.placeholder')">
 
                                 <FormCountryCode @changeCountry="changeCountry" />
 
@@ -56,11 +56,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                رقم الهوية الوطنية
+                               {{ $t('auth.id.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="number" placeholder="ادخل رقم الهوية الوطنية" class="input-me">
+                                <input type="number" :placeholder="$t('auth.id.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -69,11 +69,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                رقم السجل التجاري
+                                {{ $t('auth.commercialNo.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="number" placeholder="ادخل رقم السجل التجاري" class="input-me">
+                                <input type="number" :placeholder="$t('auth.commercialNo.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -82,11 +82,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                الرقم الضريبي
+                               {{ $t('auth.taxNumber.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="number" placeholder="ادخل الرقم الضريبي" class="input-me">
+                                <input type="number" :placeholder="$t('auth.taxNumber.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -95,11 +95,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                اسم المتجر باللغة العربية
+                                {{ $t('auth.arbicName.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" placeholder="ادخل اسم المتجر باللغة العربية" class="input-me">
+                                <input type="text" :placeholder="$t('auth.arbicName.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -108,11 +108,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                اسم المتجر باللغة الانجليزية
+                                {{ $t('auth.englishName.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" placeholder="ادخل اسم المتجر باللغة الانجليزية" class="input-me">
+                                <input type="text" :placeholder="$t('auth.englishName.placeholder')" class="input-me">
                             </div>
                         </div>
                     </div>
@@ -121,11 +121,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                وصف المتجر باللغة العربية
+                                {{ $t('auth.arbicDesc.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <textarea name="" placeholder="ادخل وصف المتجر باللغة العربية"
+                                <textarea name="" :placeholder="$t('auth.arbicDesc.placeholder')"
                                     class="input-me text-area"></textarea>
                             </div>
                         </div>
@@ -135,11 +135,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                وصف المتجر باللغة الانجليزية
+                                {{ $t('auth.englishDesc.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <textarea name="" placeholder="ادخل وصف المتجر باللغة الانجليزية"
+                                <textarea name="" :placeholder="$t('auth.englishDesc.placeholder')"
                                     class="input-me text-area"></textarea>
                             </div>
                         </div>
@@ -149,13 +149,13 @@
                     <div class="col-12">
                         <div class="input-g">
                             <label class="main-label">
-                                أقسام نشاط المتجر
+                                {{ $t('auth.departmentsActivity.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
 
                                 <MultiSelect v-model="categoriesChoosed" :options="categories" filter optionLabel="name"
-                                    placeholder="اختر أقسام نشاط المتجر" display="chip" class="w-100 input-me" />
+                                    :placeholder="$t('auth.departmentsActivity.placeholder')" display="chip" class="w-100 input-me" />
                                 <i class="pi pi-angle-down main-icon"></i>
 
                             </div>
@@ -166,11 +166,11 @@
                     <div class="col-sm-6">
                         <div class="input-g">
                             <label class="main-label">
-                                صورة الشعار
+                                {{ $t('auth.logo.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <SharedUploadInput @update="updatedImages" :images="images"
-                                placeholder="ارفق صورة الشعار" />
+                                :placeholder="$t('auth.logo.placeholder')" />
                         </div>
                     </div>
 
@@ -179,12 +179,12 @@
                         <div class="input-g">
 
                             <label class="main-label">
-                                رقم الواتساب
+                               {{ $t('auth.watsapp.text') }}
                                 <span class="c-red">*</span>
                             </label>
 
                             <div class="main-input">
-                                <input type="number" class="input-me" name="phone" placeholder="ادخل رقم الواتساب">
+                                <input type="number" class="input-me" name="phone" :placeholder="$t('auth.watsapp.placeholder')">
 
                                 <FormCountryCode @changeCountry="changeCountry" />
                             </div>
@@ -196,12 +196,12 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                المدينة
+                                {{ $t('auth.city.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
 
-                                <Dropdown v-model="city" placeholder="اختر المدينة" :options="cities" optionLabel="name"
+                                <Dropdown v-model="city" :placeholder="$t('auth.city.placeholder')" :options="cities" optionLabel="name"
                                     class="input-me">
                                     <template #value="slotProps">
                                         <div v-if="slotProps.value" class="selected">
@@ -228,11 +228,11 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                موقع المتجر
+                                {{ $t('auth.storeMap.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" class="input-me" name="location" placeholder="ادخل موقع المتجر">
+                                <input type="text" class="input-me" name="location" :placeholder="$t('auth.storeMap.placeholder')">
                                 <i class="main-icon pi pi-map-marker"></i>
                             </div>
                         </div>
@@ -242,11 +242,11 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                اسم البنك
+                                {{ $t('auth.bankName.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="text" class="input-me" name="bank_name" placeholder="ادخل اسم البنك">
+                                <input type="text" class="input-me" name="bank_name" :placeholder="$t('auth.bankName.placeholder')">
                             </div>
                         </div>
                     </div>
@@ -255,12 +255,12 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                اسم صاحب الحساب
+                                {{ $t('auth.accountName.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
                                 <input type="text" class="input-me" name="account_number"
-                                    placeholder="ادخل اسم صاحب الحساب">
+                                    :placeholder="$t('auth.accountName.placeholder')">
                             </div>
                         </div>
                     </div>
@@ -269,12 +269,12 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                رقم الحساب
+                                {{ $t('auth.accountNumber.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
                                 <input type="number" class="input-me" name="account_number"
-                                    placeholder="ادخل رقم الحساب">
+                                    :placeholder="$t('auth.accountNumber.placeholder')">
                             </div>
                         </div>
                     </div>
@@ -283,12 +283,12 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                رقم الايبان
+                               {{ $t('auth.iban.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
                                 <input type="text" class="input-me" name="account_number"
-                                    placeholder="ادخل رقم الايبان">
+                                    :placeholder="$t('auth.iban.placeholder')">
                             </div>
                         </div>
                     </div>
@@ -297,11 +297,11 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                كلمة المرور
+                                {{ $t('auth.password.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="password" class="input-me" name="password" placeholder="ادخل كلمة المرور">
+                                <input type="password" class="input-me" name="password" :placeholder="$t('auth.password.placeholder')">
                             </div>
                         </div>
                     </div>
@@ -310,11 +310,11 @@
                     <div class="col-md-6">
                         <div class="input-g">
                             <label class="main-label">
-                                تأكيد كلمة المرور
+                                {{ $t('auth.confirmPassword.text') }}
                                 <span class="c-red">*</span>
                             </label>
                             <div class="main-input">
-                                <input type="password" class="input-me" name="password" placeholder="ادخل كلمة المرور">
+                                <input type="password" class="input-me" name="password" :placeholder="$t('auth.confirmPassword.placeholder')">
                             </div>
                         </div>
                     </div>
@@ -325,16 +325,16 @@
                             <input class="form-check-input" type="checkbox" value="" id="terms">
                             <div class="d-flex gap-1">
                                 <label class="form-check-label c-gray" for="terms">
-                                    أوافق على
+                                    {{ $t('auth.agree') }}
                                 </label>
-                                <NuxtLink to="/terms" class="text-decoration-underline">الشروط والأحكام</NuxtLink>
+                                <NuxtLink to="/terms" class="text-decoration-underline">{{ $t('auth.terms') }}</NuxtLink>
                             </div>
                         </div>
                     </div>
 
                     <!-- Submit -->
                     <div class="col-md-4 mx-auto">
-                        <button class="btn btn-primary minw-100" type="submit">إنشاء حساب</button>
+                        <button class="btn btn-primary minw-100" type="submit">{{ $t('auth.register') }}</button>
                     </div>
 
                 </div>

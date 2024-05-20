@@ -188,6 +188,70 @@
       "text": "Confirm Password",
       "placeholder": "Enter Password"
     },
+    "id":{
+      "text": "National ID number",
+      "placeholder": "Enter National ID number"
+    },
+    "commercialNo":{
+      "text": "Commercial Registration No",
+      "placeholder": "Enter Commercial Registration No"
+    },
+    "taxNumber":{
+      "text": "Tax Number",
+      "placeholder": "Enter Tax Number"
+    },
+    "arbicName":{
+      "text": "Store name in Arabic",
+      "placeholder": "Enter Store name in Arabic"
+    },
+    "englishName":{
+      "text": "Store name in English",
+      "placeholder": "Enter Store name in English"
+    },
+    "arbicDesc":{
+      "text": "Store description in Arabic",
+      "placeholder": "Enter Store description in Arabic"
+    },
+    "englishDesc":{
+      "text": "Store description in English",
+      "placeholder": "Enter Store description in English"
+    },
+    "departmentsActivity":{
+      "text": "Departments of store activity",
+      "placeholder": "Enter Departments of store activity"
+    },
+    "logo":{
+      "text": "Logo image",
+      "placeholder": "Enter Logo image"
+    },
+    "watsapp":{
+      "text": "Watsapp Number",
+      "placeholder": "Enter Watsapp Number"
+    },
+    "city":{
+      "text": "City",
+      "placeholder": "Select City"
+    },
+    "storeMap":{
+      "text": "Store location",
+      "placeholder": "Enter Store location"
+    },
+    "bankName":{
+      "text": "Bank name",
+      "placeholder": "Enter Bank name"
+    },
+    "accountName":{
+      "text": "Account Holder's Name",
+      "placeholder": " Enter Account Holder's Name"
+    },
+    "accountNumber":{
+      "text": " Account Number",
+      "placeholder": " Enter Account Number"
+    },
+    "iban":{
+      "text": " IBAN",
+      "placeholder": " Enter IBAN"
+    },
     "forgotPass": "Forgot Password ?",
     "enter": "Enter",
     "notAccount": "Don't have an account ?",
@@ -244,7 +308,24 @@
   "restorePasswordForm": {},
   "createAccountForm": {},
   "changePhoneForm": {},
-  "order": {},
+  "order": {
+    "tabs":{
+      "products":"Product orders",
+      "special":"Special Orders",
+      "return":"Return Orders",
+      "waiting": "Waiting Orders",
+      "inProcess": "Orders are pending payment",
+      "current": "Current Orders",
+      "finished": "Finished Orders",
+      "canceled": "Canceled Orders"
+    },
+    "card":{
+      "number": "Order Number",
+      "price": "Order Price",
+      "more": "View details"
+    },
+    "done":"Your Order has been successfully sent"
+  },
   "modals": {
     "deleteAddress": {
       "title": "Do you really want to delete the address?",
@@ -281,7 +362,9 @@
     "faqs": " FAQs",
     "notifications": "Notifications",
     "fav": " Favourites",
+    "orders": "My Orders",
     "categories": "Categories",
+    "beStore":" Be a store",
     "catProducts": "Category Products",
     "exclusive": " Exclusive Offers",
     "search": " Search Results",

@@ -188,6 +188,71 @@
       "text": "تاكيد كلمة المرور",
       "placeholder": "ادخل كلمة المرور"
     },
+    "id":{
+      "text": "رقم الهوية الوطنية",
+      "placeholder": "ادخل رقم الهوية الوطنية"
+    },
+    "commercialNo":{
+      "text": "رقم السجل التجاري",
+      "placeholder": "ادخل رقم السجل التجاري"
+    },
+    "taxNumber":{
+      "text": "الرقم الضريبي",
+      "placeholder": "ادخل الرقم الضريبي"
+    },
+    "arbicName":{
+      "text": "اسم المتجر باللغة العربية",
+      "placeholder": "ادخل اسم المتجر باللغة العربية"
+    },
+    "englishName":{
+      "text": "اسم المتجر باللغة الانجليزية",
+      "placeholder": "ادخل اسم المتجر باللغة الانجليزية"
+    },
+    "arbicDesc":{
+      "text": "وصف المتجر باللغة العربية",
+      "placeholder": "ادخل وصف المتجر باللغة العربية"
+    },
+    "englishDesc":{
+      "text": "وصف المتجر باللغة الانجليزية",
+      "placeholder": "ادخل وصف المتجر باللغة الانجليزية"
+    },
+    "departmentsActivity":{
+      "text": "أقسام نشاط المتجر",
+      "placeholder": "اختر أقسام نشاط المتجر"
+    },
+    "logo":{
+      "text": "صورة الشعار",
+      "placeholder": "ادخل صورة الشعار"
+    },
+    "watsapp":{
+      "text": "رقم الواتساب",
+      "placeholder": "ادخل رقم الواتساب"
+    },
+    "city":{
+      "text": "المدينة",
+      "placeholder": "اختر المدينة"
+    },
+    "storeMap":{
+      "text": "موقع المتجر",
+      "placeholder": "ادخل موقع المتجر"
+    },
+    "bankName":{
+      "text": "اسم البنك",
+      "placeholder": "ادخل اسم البنك"
+    },
+    "accountName":{
+      "text": "اسم صاحب الحساب",
+      "placeholder": "ادخل اسم صاحب الحساب"
+    },
+    "accountNumber":{
+      "text": "رقم الحساب",
+      "placeholder": "ادخل رقم الحساب"
+    },
+    "iban":{
+      "text": "رقم الايبان",
+      "placeholder": "ادخل رقم الايبان"
+    },
+    
     "forgotPass": "هل نسيت كلمة المرور؟",
     "enter": "دخول",
     "notAccount": "ليس لديك حساب؟",
@@ -242,7 +307,24 @@
   "restorePasswordForm": {},
   "createAccountForm": {},
   "changePhoneForm": {},
-  "order": {},
+  "order": {
+    "tabs":{
+      "products":"طلبات المنتجات",
+      "special":"طلبات خاصة",
+      "return":"طلبات الإرجاع",
+      "waiting": "طلبات قيد الانتظار",
+      "inProcess": "طلبات قيد الدفع",
+      "current": "طلبات حالية",
+      "finished": "طلبات منتهية",
+      "canceled": "طلبات ملغية"
+    },
+    "card":{
+      "number": "رقم الطلب",
+      "price": "قيمة الطلب",
+      "more": "عرض التفاصيل"
+    },
+    "done":"تم إرسال طلبك بنجاح"
+  },
   "modals": {
     "deleteAddress": {
       "title": "هل حقاً تريد حذف العنوان؟",
@@ -279,7 +361,9 @@
     "faqs": "أسئلة متكررة",
     "notifications": "الاشعارات",
     "fav": "المفضلة",
+    "orders": "طلباتي",
     "categories": "الأقسام",
+    "beStore":"كن متجر",
     "catProducts": "منتجات القسم",
     "exclusive": "العروض الحصرية",
     "search": "نتائج البحث",

@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    'bootstrap/dist/css/bootstrap.rtl.css',
+    "bootstrap/dist/css/bootstrap.rtl.css",
     "primevue/resources/themes/lara-light-green/theme.css",
     "primeicons/primeicons.css",
     "@fortawesome/fontawesome-svg-core/styles.css",
@@ -28,10 +28,17 @@ export default defineNuxtConfig({
     options: {
       scrollBehaviorType: "smooth",
     },
+    middleware: ["auth"],
   },
-  modules: ["nuxt-primevue", "@hypernym/nuxt-anime", 'vue3-carousel-nuxt'],
+  modules: [
+    "nuxt-primevue",
+    "@hypernym/nuxt-anime",
+    "vue3-carousel-nuxt",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+  ],
   carousel: {
-    prefix: 'MyPrefix'
+    prefix: "MyPrefix",
   },
   devtools: { enabled: true },
 });

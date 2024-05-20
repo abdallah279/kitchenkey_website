@@ -1286,27 +1286,72 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  background-color: transparent;
+  width: 100%;
+  border: none;
   // margin-bottom: 20px;
   color: map_get(colors.$theme-colors, gray);
   border-bottom: 1px solid
     rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
   padding: 18px 0;
+  font-size: 14px;
 
   &:last-child {
     border-bottom: none;
   }
 
-  &.router-link-active {
+  &.router-link-active,
+  &.active {
     color: map_get(colors.$theme-colors, primary);
   }
 
   .icon {
     margin-inline-start: auto;
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 
 /***************** End Profile SideBar *********************/
+
+/***************** Start order_card *********************/
+.order_card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 18px;
+  @include mixins.border-radius(7px);
+  transition: global.$main-transition;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .img-order-con {
+    width: 160px;
+    height: 105px;
+    @include mixins.center;
+    @include mixins.border-radius(7px);
+    border: 2px solid map_get(colors.$theme-colors, info);
+    flex-shrink: 0;
+
+    .order_img {
+      width: 120px;
+    }
+  }
+
+  .order_content{
+    width: 100%;
+
+    .top{
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.3);
+    }
+  }
+
+}
+/***************** End order_card *********************/
 
 /***************** Start Page Transition ***************/
 

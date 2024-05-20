@@ -8,10 +8,10 @@
         
                         <img src="~/assets/imgs/logo.png" alt="logo" class="logo_done">
         
-                        <h1 class="done_title">تم إرسال طلبك بنجاح</h1>
+                        <h1 class="done_title">{{ $t('order.done') }}</h1>
         
                         <NuxtLink to="/" class="btn btn-primary minw-100 lg">
-                            العودة للرئيسية
+                            {{ $t('nav.backHome') }}
                         </NuxtLink>
         
                     </form>

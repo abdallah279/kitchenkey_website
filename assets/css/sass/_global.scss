@@ -169,6 +169,17 @@ p {
     height: 47px;
   }
 
+  &.order_btn{
+    min-width: 190px;
+    height: 50px;
+
+    &.router-link-active, &:hover{
+      background-color: map_get(colors.$theme-colors, primary);
+      color: #fff !important;
+    }
+    
+  }
+
   @media screen and (max-width: $screen-xs) {
     font-size: 12px;
     min-width: 115px;
@@ -2126,6 +2137,11 @@ textarea {
       margin: 0 !important;
     }
   }
+}
+
+/********************* Prime Skeleton *********************/
+.p-skeleton {
+  opacity: .7 !important;
 }
 
 /********************* Prime slider *********************/
