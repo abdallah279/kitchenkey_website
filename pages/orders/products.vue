@@ -54,7 +54,7 @@ const orderName = ref('waiting');
 
 /*************** Provide And Inject *****************/
 
-provide('orderRoute', 'products');
+provide('orderRoute', 'store');
 
 /******************* Methods *******************/
 

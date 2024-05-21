@@ -150,6 +150,9 @@
 // active
 const active = ref(false);
 
+// route
+const route = useRoute();
+
 /*************** Computed **************** */
 
 /*************** Props **************** */
@@ -160,6 +163,13 @@ const active = ref(false);
 const activeFun = () => {
     active.value = !active.value;
 };
+
+/*************** Watch **************** */
+
+// watch route
+watch(() => route.path, () => {
+    active.value = false;
+});
 
 /*************** Mounted *****************/
 

@@ -87,7 +87,9 @@
     "address": "Delivery address",
     "addAddress": "Add Address",
     "payWay": "Payment method",
-    "shippingCompanies": "Shipping Companies"
+    "shippingCompanies": "Shipping Companies",
+    "shippingCompany": "Shipping Company",
+    "time": "Time to receive the order"
   },
   "address": {
     "name": {
@@ -188,67 +190,67 @@
       "text": "Confirm Password",
       "placeholder": "Enter Password"
     },
-    "id":{
+    "id": {
       "text": "National ID number",
       "placeholder": "Enter National ID number"
     },
-    "commercialNo":{
+    "commercialNo": {
       "text": "Commercial Registration No",
       "placeholder": "Enter Commercial Registration No"
     },
-    "taxNumber":{
+    "taxNumber": {
       "text": "Tax Number",
       "placeholder": "Enter Tax Number"
     },
-    "arbicName":{
+    "arbicName": {
       "text": "Store name in Arabic",
       "placeholder": "Enter Store name in Arabic"
     },
-    "englishName":{
+    "englishName": {
       "text": "Store name in English",
       "placeholder": "Enter Store name in English"
     },
-    "arbicDesc":{
+    "arbicDesc": {
       "text": "Store description in Arabic",
       "placeholder": "Enter Store description in Arabic"
     },
-    "englishDesc":{
+    "englishDesc": {
       "text": "Store description in English",
       "placeholder": "Enter Store description in English"
     },
-    "departmentsActivity":{
+    "departmentsActivity": {
       "text": "Departments of store activity",
       "placeholder": "Enter Departments of store activity"
     },
-    "logo":{
+    "logo": {
       "text": "Logo image",
       "placeholder": "Enter Logo image"
     },
-    "watsapp":{
+    "watsapp": {
       "text": "Watsapp Number",
       "placeholder": "Enter Watsapp Number"
     },
-    "city":{
+    "city": {
       "text": "City",
       "placeholder": "Select City"
     },
-    "storeMap":{
+    "storeMap": {
       "text": "Store location",
       "placeholder": "Enter Store location"
     },
-    "bankName":{
+    "bankName": {
       "text": "Bank name",
       "placeholder": "Enter Bank name"
     },
-    "accountName":{
+    "accountName": {
       "text": "Account Holder's Name",
       "placeholder": " Enter Account Holder's Name"
     },
-    "accountNumber":{
+    "accountNumber": {
       "text": " Account Number",
       "placeholder": " Enter Account Number"
     },
-    "iban":{
+    "iban": {
       "text": " IBAN",
       "placeholder": " Enter IBAN"
     },
@@ -309,28 +311,58 @@
   "createAccountForm": {},
   "changePhoneForm": {},
   "order": {
-    "tabs":{
-      "products":"Product orders",
-      "special":"Special Orders",
-      "return":"Return Orders",
+    "tabs": {
+      "products": "Product orders",
+      "special": "Special Orders",
+      "return": "Return Orders",
       "waiting": "Waiting Orders",
       "inProcess": "Orders are pending payment",
       "current": "Current Orders",
       "finished": "Finished Orders",
       "canceled": "Canceled Orders"
     },
-    "card":{
+    "card": {
+      "status": "Order Status",
       "number": "Order Number",
       "price": "Order Price",
-      "more": "View details"
+      "more": "View details",
+      "more2": "View order details"
     },
-    "done":"Your Order has been successfully sent"
+    "done": "Your Order has been successfully sent"
+  },
+  "orderDetails": {
+    "steps": {
+      "current": "Current",
+      "waiting": "Waiting",
+      "inProcess": "Payment pending",
+      "finished": "Finished",
+      "canceled": "Canceled"
+    },
+    "showFatora": "Show invoice",
+    "color": "Color",
+    "space": " Space",
+    "quantity": " Quantity",
+    "notes": "Order Notes",
+    "summary": "Order Summary",
+    "productsValue": "products Value",
+    "deliveryCost": "Delivery Cost",
+    "discountCost": "Discount Cost",
+    "addedTax": "Added tax value",
+    "total": "Order Total",
+    "cancelBtn": "Cancel Order",
+    "payBtn":"Complete Payment",
+    "rateBtn":"Rate Us",
+    "returnBtn":"Return Order"
   },
   "modals": {
     "deleteAddress": {
       "title": "Do you really want to delete the address?",
       "confirm": "Yes delete",
       "cancel": "No, back"
+    },
+    "cancelOrder": {
+      "title": "Reason for canceling the order",
+      "placeholder": "Please write the reason for canceling the order"
     },
     "deleteAccount": {
       "title": "Do you really want to delete the account?"
@@ -363,8 +395,10 @@
     "notifications": "Notifications",
     "fav": " Favourites",
     "orders": "My Orders",
+    "orderDetails": "Order Details",
+    "orderStores": "Requested stores",
     "categories": "Categories",
-    "beStore":" Be a store",
+    "beStore": " Be a store",
     "catProducts": "Category Products",
     "exclusive": " Exclusive Offers",
     "search": " Search Results",

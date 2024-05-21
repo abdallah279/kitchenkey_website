@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="`/orderDetails/${orderRoute}/${1}`" class="order_card card_style">
+    <NuxtLink :to="`/order/${orderRoute}/${1}`" class="order_card card_style">
         <div class="img-order-con">
             <img src="@/assets/imgs/logo.png" class="order_img" title="order-img" alt="order-img">
         </div>

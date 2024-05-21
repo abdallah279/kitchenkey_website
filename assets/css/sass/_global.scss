@@ -141,6 +141,7 @@ html[lang="en"] {
 p {
   color: map_get(colors.$theme-colors, text);
   line-height: 1.8;
+  margin-bottom: 0;
 }
 
 .btn {
@@ -365,7 +366,7 @@ img.lazyload:not([src]) {
   padding: 40px 0;
 
   @media screen and (max-width: $screen-xs) {
-    padding: 25px 0;
+    padding: 35px 0;
   }
 }
 
@@ -525,6 +526,10 @@ img.lazyload:not([src]) {
 
 .c-black {
   color: #202020 !important;
+}
+
+.c-white {
+  color: #fff !important;
 }
 
 .bell {
@@ -705,6 +710,23 @@ img.lazyload:not([src]) {
 
 .cu-auto {
   cursor: default !important;
+}
+
+.star_con{
+  padding: 4px 7px;
+  background-color: map_get(colors.$theme-colors, info);
+  color: map_get(colors.$theme-colors, gray);
+  font-size: 13px;
+  @include mixins.border-radius(5px);
+  // @include mixins.center;
+  gap: 7px;
+  
+  i{
+    color: map_get(colors.$theme-colors, yellow);
+    margin-inline-end: 5px;
+    font-size: 13px;
+    display: inline-block;
+  }
 }
 
 .circle_img {
@@ -967,6 +989,7 @@ img.lazyload:not([src]) {
       font-size: 12px;
       color: map_get(colors.$theme-colors, gray_mid) !important;
       @include mixins.transition(all 0.3s ease-in-out);
+      font-family: fontLight;
 
       @media screen and (max-width: 400px) {
         font-size: 11px !important;
@@ -2012,6 +2035,10 @@ textarea {
     @media screen and (max-width: $screen-md) {
       min-width: 500px;
     }
+  }
+
+  &.md {
+    min-width: 500px;
   }
 
   &.alert_modal {

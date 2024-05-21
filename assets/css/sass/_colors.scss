@@ -52,7 +52,7 @@ $theme-colors: (
 
     &:hover,
     &:focus {
-      box-shadow: inset 0 -4.25em 0 0 $value;
+      box-shadow: inset 0 -4.25em 0 0 $value !important;
       color: #fff !important;
     }
   }
