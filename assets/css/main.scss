@@ -198,7 +198,7 @@
         margin-right: 0 !important;
         .carousel__pagination-button {
           display: block;
-          @include mixins.shape(10px, 50%);
+          @include mixins.shape(9px, 50%);
           background-color: rgba($color: #000000, $alpha: 0.1);
           border: 2px solid #fff;
 
@@ -209,7 +209,7 @@
 
         .carousel__pagination-button--active {
           background-color: #fff;
-          width: 36px;
+          width: 42px;
           @include mixins.border-radius(12px);
         }
       }
@@ -1418,7 +1418,7 @@
   @include mixins.between;
   gap: 10px;
   padding-bottom: 18px;
-  font-size: 13px;
+  font-size: 14px;
 
   &:not(:last-child) {
     margin-bottom: 18px;
@@ -1457,7 +1457,7 @@
   width: 100%;
   background-color: #fff;
   gap: 20px;
-  
+
   @media screen and (max-width: global.$screen-sm) {
     gap: 40px;
     padding: 25px 20px;
@@ -1478,7 +1478,8 @@
     transition: 0.4s ease;
     color: transparent;
     @include mixins.shape(28px, 50%);
-
+    font-size: 11px !important;
+    
     i {
       font-size: 10px !important;
     }
@@ -1486,6 +1487,7 @@
 
   .text {
     color: map_get(colors.$theme-colors, dark);
+    font-size: 14px;
 
     @media screen and (max-width: global.$screen-sm) {
       font-size: 12px !important;
@@ -1530,6 +1532,30 @@
     }
   }
 
+  &.cart {
+    .circle {
+      outline-color: map_get(colors.$theme-colors, orange);
+    }
+
+    &.active {
+      ~ .progress-item {
+        .circle {
+          background-color: map_get(colors.$theme-colors, orange);
+        }
+
+        .line {
+          background-color: map_get(colors.$theme-colors, orange);
+        }
+      }
+      .circle {
+        background-color: rgba(
+          $color: map_get(colors.$theme-colors, orange),
+          $alpha: 20%
+        );
+      }
+    }
+  }
+
   @media screen and (max-width: global.$screen-sm) {
     flex-direction: column;
   }
@@ -1538,12 +1564,28 @@
 /********************* End progress steps *********************/
 
 /********************* Start rate_item *********************/
+
 .rate_item:not(:last-child) {
   padding-bottom: 22px;
   margin-bottom: 22px;
-  border-bottom: 1px solid rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.4);
+  border-bottom: 1px solid
+    rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.4);
 }
+
 /********************* End rate_item *********************/
+
+/********************* Start fatora_con *********************/
+.fatora_con {
+  .logo {
+    max-width: 160px;
+  }
+}
+
+.fatora_img {
+  max-width: 220px;
+  border: 1px solid map_get(colors.$theme-colors, info);
+}
+/********************* End fatora_con *********************/
 
 /***************** Start Page Transition ***************/
 

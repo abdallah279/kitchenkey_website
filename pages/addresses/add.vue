@@ -2,13 +2,18 @@
     <main class="contact main_padding">
         <div class="container">
 
-            <SharedPageHeader :title="addressId ? $t('pagesTitle.editAddress') : $t('pagesTitle.addAddress')" class="mb-5" />
+            <SharedPageHeader :title="addressId ? $t('pagesTitle.editAddress') : $t('pagesTitle.addAddress')"
+                class="mb-5" />
 
             <div class="row">
 
                 <!-- Map -->
                 <div class="col-lg-6">
-                    الخريطة
+                    <div>
+                        <GMapMap :center="center" :zoom="13" map-type-id="terrain" style="width: 100%; height: 400px">
+                            <GMapMarker :position="center" :draggable="true" />
+                        </GMapMap>
+                    </div>
                 </div>
 
                 <!-- Form -->
@@ -34,8 +39,8 @@
                             </label>
                             <div class="main-input">
 
-                                <Dropdown v-model="city" :placeholder="$t('address.city.placeholder')" :options="cities" optionLabel="name"
-                                    class="input-me">
+                                <Dropdown v-model="city" :placeholder="$t('address.city.placeholder')" :options="cities"
+                                    optionLabel="name" class="input-me">
                                     <template #value="slotProps">
                                         <div v-if="slotProps.value" class="selected">
                                             {{ slotProps.value.name }}
@@ -98,6 +103,8 @@
 /*************** Plugins **************** */
 
 /*************** DATA **************** */
+const center = { lat: 37.7749, lng: -122.4194 } // San Francisco coordinates
+const zoom = 8
 
 // loading
 const loading = ref(false);

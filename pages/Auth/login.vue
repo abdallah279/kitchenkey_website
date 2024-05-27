@@ -63,6 +63,9 @@ definePageMeta({
 // loading
 const loading = ref(false);
 
+// cart
+const cart = useRoute().query.cart;
+
 /*************** Computed **************** */
 
 /*************** Props **************** */
@@ -81,7 +84,7 @@ const signIn = () => {
         loading.value = false;
 
         // redirect
-        navigateTo('/');    
+        cart ? navigateTo('/cart/products') : navigateTo('/');   
     }, 1000);
 };
 

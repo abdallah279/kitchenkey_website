@@ -260,7 +260,7 @@
                     <h4 class="card_title border-bottom mb-4">{{ $t('product.similarProducts') }}</h4>
 
                     <div class="product_slider">
-                        <Carousel v-bind="settings" dir="rtl" :breakpoints="breakpoints" :autoplay="3000" :wrapAround="true" :transition="2000">
+                        <!-- <Carousel v-bind="settings" dir="rtl" :breakpoints="breakpoints" :autoplay="3000" :wrapAround="true" :transition="2000">
                             <Slide v-for="product in products" :key="product.id">
                                 <ProductsCard :product="product" class="mx-1" />
                             </Slide>
@@ -268,7 +268,7 @@
                             <template #addons>
                                 <Navigation />
                             </template>
-                        </Carousel>
+                        </Carousel> -->
                     </div>
                 </div>
             </div>
@@ -281,8 +281,8 @@
 /*************** Plugins **************** */
 // import Carousel from 'primevue/carousel';
 
-import { Carousel, Navigation, Slide } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.css'
+// import { Carousel, Navigation, Slide } from 'vue3-carousel'
+// import 'vue3-carousel/dist/carousel.css'
 
 
 /*************** DATA **************** */

@@ -10,7 +10,7 @@ $main-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $main-transition: all 0.3s ease-in-out;
 $img-transition: all 450ms linear;
 $sm-btn-height: 38px;
-$sm-btn-width: 34px;
+$sm-btn-width: 40px;
 
 $screen-xxl: 1720px;
 $screen-xx: 1600px;
@@ -153,6 +153,7 @@ p {
   min-width: 120px;
   font-size: 13px;
   max-width: fit-content;
+  padding-inline: 22px;
   &:hover,
   &:focus {
     outline: none;
@@ -209,11 +210,27 @@ p {
   &.sm-btn {
     height: $sm-btn-height;
     min-width: $sm-btn-width;
+    padding-inline: 15px;
+  }
+
+  &.xs-btn {
+    height: 34px;
+    min-width: 36px;
+    padding-inline: 0;
+
+    i{
+      font-size: 10px;
+    }
   }
 
   &.lg {
     height: 47px;
     min-width: 160px;
+  }
+
+  &.xl {
+    height: 47px;
+    min-width: 185px;
   }
 
   &.clear_btn {
@@ -967,6 +984,11 @@ img.lazyload:not([src]) {
   #{$rtl} {
     font-family: fontReg;
   }
+
+  .ic{
+    max-width: 15px;
+    margin-inline-end: 5px;
+  }
 }
 
 .main-input {
@@ -1550,7 +1572,7 @@ textarea {
 .dropend {
   .dropdown-menu {
     #{$ltr} & {
-      inset: 0px calc(-100%) auto auto;
+      inset: 0px -205px auto auto;
     }
     #{$rtl} & {
       inset: 0px calc(100% + 25px) auto auto;
@@ -1569,7 +1591,7 @@ textarea {
 
     &.show {
       #{$ltr} & {
-        inset: 0px calc(-100%) auto auto !important;
+        inset: 0px -205px auto auto !important;
       }
       #{$rtl} & {
         inset: 0px calc(100% + 25px) auto auto !important;
@@ -1639,6 +1661,16 @@ textarea {
 /********************* Prime Rating *********************/
 .p-rating {
   // justify-content: flex-end;
+
+  &.lg {
+    .p-rating-item {
+      cursor: pointer;
+      .p-rating-icon.p-icon {
+        width: 24px !important;
+        height: 24px !important;
+      }
+    }
+  }
 
   &.md {
     .p-rating-item {
@@ -2017,7 +2049,7 @@ textarea {
 
 /********************* Prime Modal *********************/
 .p-dialog {
-  font-family: fontReg !important;
+  // font-family: fontReg !important;
   border-radius: 7px !important;
   overflow: hidden;
   background-color: #fff;
@@ -2039,6 +2071,9 @@ textarea {
 
   &.md {
     min-width: 500px;
+    max-width: 540px;
+    // min-height: 95vh;
+    max-height: 95vh;
   }
 
   &.alert_modal {
@@ -2131,7 +2166,7 @@ textarea {
 
   .p-dialog-content {
     overflow-y: auto;
-    max-height: 80vh;
+    // max-height: 80vh;
   }
 
   .right_img {
@@ -2281,6 +2316,26 @@ textarea {
     &:disabled {
       cursor: not-allowed !important;
       pointer-events: auto !important;
+    }
+  }
+
+  &.sm{
+    gap: 5px;
+
+    input{
+      width: 50px;
+      height: 34px;
+      font-size: 13px;
+      // font-family: fontMed;
+    }
+
+    .btn-num{
+      width: 36px;
+      height: 34px;
+
+      i{
+        font-size: 10px;
+      }
     }
   }
 }

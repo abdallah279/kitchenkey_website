@@ -1,6 +1,6 @@
 <template>
     <form class="w-100">
-        <SharedPageHeader title="الشروط والأحكام" />
+        <SharedPageHeader :title="$t('pagesTitle.terms')" />
 
         <p v-html="terms" class="lh-lg text-center"></p>
 

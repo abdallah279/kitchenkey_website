@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
+  // ssr: false,
   app: {
     head: {
       title: "Kitchenkey",
@@ -17,6 +18,23 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     },
   },
+  build: {
+    transpile: ["@fawmi/vue-google-maps"],
+  },
+  router: {
+    middleware: ["auth"],
+    // options: {
+    //   hashMode: true
+    // }
+  },
+
+  devtools: { enabled: false },
+  modules: [
+    "nuxt-primevue",
+    "@hypernym/nuxt-anime",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+  ],
   css: [
     "bootstrap/dist/css/bootstrap.rtl.css",
     "primevue/resources/themes/lara-light-green/theme.css",
@@ -24,21 +42,4 @@ export default defineNuxtConfig({
     "@fortawesome/fontawesome-svg-core/styles.css",
     "@/assets/css/main.scss",
   ],
-  router: {
-    options: {
-      scrollBehaviorType: "smooth",
-    },
-    middleware: ["auth"],
-  },
-  modules: [
-    "nuxt-primevue",
-    "@hypernym/nuxt-anime",
-    "vue3-carousel-nuxt",
-    "@pinia/nuxt",
-    "@pinia-plugin-persistedstate/nuxt",
-  ],
-  carousel: {
-    prefix: "MyPrefix",
-  },
-  devtools: { enabled: true },
 });

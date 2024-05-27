@@ -20,20 +20,11 @@
                     </div>
 
                     <!--**** Current ****-->
-                    <div class="progress-item">
-                        <div class="circle">
-                            <i class="pi pi-check"></i>
-                        </div>
-                        <span class="text">{{ $t('orderDetails.steps.current') }}</span>
-                        <span class="line"></span>
-                    </div>
-
-                    <!--**** Paid ****-->
                     <div class="progress-item active">
                         <div class="circle">
                             <i class="pi pi-check"></i>
                         </div>
-                        <span class="text">{{ $t('orderDetails.steps.inProcess') }}</span>
+                        <span class="text">{{ $t('orderDetails.steps.current') }}</span>
                         <span class="line"></span>
                     </div>
 
@@ -47,43 +38,11 @@
                     </div>
                 </div>
 
+
                 <!--**** Order Cards ****-->
-                <div class="row mb-4 gy-3">
+                <div class="row mb-3 gy-3">
 
                     <div class="col-lg-4">
-                        <!-- Order Card -->
-                        <div class="bg-white rounded-2 store_card socail_hover mb-3">
-                            <div class="logo_container mx-auto">
-                                <img src="@/assets/imgs/logo.png" alt="logo" class="logo_img">
-                            </div>
-
-                            <!-- top -->
-                            <div class="mb-4 d-flex align-items-center justify-content-between">
-
-                                <div class="d-flex align-items-center">
-                                    <span class="c-gray"> {{ $t('order.card.number') }}: </span>
-                                    <span class="c-dark">1223</span>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    <span class="c-gray">{{ $t('order.card.price') }}: </span>
-                                    <span class="c-primary">28.000 رس</span>
-                                </div>
-
-                            </div>
-
-                            <!-- Bottom -->
-                            <div class="d-flex align-items-center justify-content-between">
-
-                                <div class="c-gray_mid">5/9/2023</div>
-
-                                <div class="d-flex align-items-center">
-                                    <span class="c-gray">{{ $t('order.card.status') }}: </span>
-                                    <span class="c-primary">قيد الانتظار</span>
-                                </div>
-
-                            </div>
-                        </div>
 
                         <!-- store Card -->
                         <div class="bg-white rounded-2 store_card socail_hover">
@@ -154,9 +113,20 @@
 
                         </div>
 
-                        <!--**** Cancel Reason ****-->
-                        <div class="bg-white rounded-3 p-4 mt-3">
-                            <div class="order_item c-dark ff-med">{{ $t('modals.cancelOrder.title') }}</div>
+                    </div>
+
+                </div>
+
+
+                <!--**** Order Details ****-->
+                <div class="row gy-3">
+
+                    <!-- Right -->
+                    <div class="col-lg-6">
+
+                        <!--**** Return Reason ****-->
+                        <div class="bg-white rounded-3 p-4 mb-3">
+                            <div class="order_item c-dark ff-med">سبب الإرجاع</div>
                             <p class="ff-light fs13">
                                 هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
                                 النص العربى،
@@ -170,34 +140,8 @@
                                 يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف
                                 التى يولدها
                                 التطبيق
-                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
                             </p>
                         </div>
-                    </div>
-
-                </div>
-
-                <!--**** Order Notes ****-->
-                <div class="bg-white rounded-3 p-4 mb-4">
-                    <div class="order_item c-dark ff-med">{{ $t('orderDetails.notes') }}</div>
-                    <p class="ff-light fs13">
-                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                        حيث
-                        يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
-                        التطبيق
-                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
-                        حيث
-                        يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
-                        التطبيق
-                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
-                    </p>
-                </div>
-
-                <!--**** Order Details ****-->
-                <div class="row gy-3 mb-4">
-
-                    <!-- Right -->
-                    <div class="col-lg-6">
 
                         <!--** Address **-->
                         <div class="bg-white rounded-3 p-4 mb-3">
@@ -212,18 +156,8 @@
                             </div>
                         </div>
 
-                        <!--** Pay Way **-->
-                        <div class="bg-white rounded-3 p-4 mb-3">
-                            <label class="main-label">{{ $t('specialOrder.payWay') }}</label>
-                            <div class="radio_card pd">
-                                <label class="radio-box">
-                                    <div class="label-radio">المحفظة (120.00 رس)</div>
-                                </label>
-                            </div>
-                        </div>
-
                         <!--** Shipping Company **-->
-                        <div class="bg-white rounded-3 p-4">
+                        <div class="bg-white rounded-3 p-4 mb-3">
                             <label class="main-label">{{ $t('specialOrder.shippingCompany') }}</label>
                             <div class="radio_card pd">
                                 <label class="radio-box">
@@ -232,66 +166,56 @@
                             </div>
                         </div>
 
+                        <!--** Order Summary **-->
+                        <cartSummary :refund="true" />
+
                     </div>
 
                     <!-- Left -->
                     <div class="col-lg-6">
 
-                        <!--** Time **-->
+                        <!--** Products Images **-->
                         <div class="bg-white rounded-3 p-4 mb-3">
-                            <label class="main-label">{{ $t('specialOrder.time') }}</label>
-                            <div class="radio_card pd">
-                                <label class="radio-box">
-                                    <div class="label-radio">5/9/2023 - 10pm</div>
-                                </label>
+                            <label class="main-label">صور المنتجات</label>
+                            <div class="radio_card pd d-flex gap-2">
+
+                                <div class="logo_container xs mb-0 flex-shrink-0" v-for="i in 3" :key="i">
+                                    <img src="@/assets/imgs/product2.png" alt="logo" class="logo_img">
+                                </div>
+
                             </div>
                         </div>
 
-                        <!--** Order Summary **-->
-                        <cartSummary />
+                        <!--** Fatora Image **-->
+                        <div class="bg-white rounded-3 p-4 mb-3">
+                            <label class="main-label">صورة الفاتورة</label>
+                            <div class="radio_card pd">
+                                <img src="@/assets/imgs/fatora.png" alt="logo" class="fatora_img">
+                            </div>
+                        </div>
 
                     </div>
 
                 </div>
 
-                <!--**** Order Rates ****-->
-                <div class="bg-white rounded-3 p-4">
-                    <div class="order_item c-dark ff-med">تقييمي</div>
-                    <div class="rate_items">
-
-                        <!-- Rate Item -->
-                        <div class="rate_item" v-for="i in 2" :key="i">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="logo_container xs mb-0 flex-shrink-0">
-                                    <img src="@/assets/imgs/product2.png" alt="logo" class="logo_img">
-                                </div>
-                                <div>
-                                    <h5 class="fs13 mb-4 c-gray ff-med">خزانات مطبخ حديثة جاهزة طراز أوروبي</h5>
-                                    <ClientOnly>
-                                        <Rating v-model="avg_rate" class="small justify-content-end gap-1" dir="ltr"
-                                            readonly :cancel="false" />
-                                    </ClientOnly>
-                                </div>
-                            </div>
-
-                            <p class="mt-3 fs13">
-                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص
-                                العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى هذا النص هو مثال لنص
-                                يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن
-                                تولد مثل هذا النص أو العديد من النصوص الأخرى
-                            </p>
-
-                            <div class="d-flex align-items-center gap-3 mt-3">
-                                <img src="@/assets/imgs/brand_3.png" alt="brand_3" class="circle_img sm" />
-                                <h6 class="fs13 c-dark ff-med">كيتشن ستور</h6>
-                            </div>
-
-                            <p class="mt-3 fs13">
-                                بى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
-                            </p>
-                        </div>
-
-                    </div>
+                <!--**** Cancel Reason ****-->
+                <div class="bg-white rounded-3 p-4 mt-3">
+                    <div class="order_item c-dark ff-med">{{ $t('modals.cancelOrder.title') }}</div>
+                    <p class="ff-light fs13">
+                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                        النص العربى،
+                        حيث
+                        يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف
+                        التى يولدها
+                        التطبيق
+                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                        النص العربى،
+                        حيث
+                        يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف
+                        التى يولدها
+                        التطبيق
+                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
+                    </p>
                 </div>
 
             </div>
@@ -305,13 +229,10 @@
                     <button class="btn lg btn-outline-red" @click="cancelModal = true">
                         {{ $t('orderDetails.cancelBtn') }}
                     </button>
-                    <button class="btn lg btn-primary">{{ $t('orderDetails.payBtn') }}</button>
-                    <NuxtLink :to="`/order/${id}/rate`" class="btn lg btn-primary">
+                    <!-- <button class="btn lg btn-primary">{{ $t('orderDetails.payBtn') }}</button> -->
+                    <!-- <button class="btn lg btn-primary" @click="rateModal = true">
                         {{ $t('orderDetails.rateBtn') }}
-                    </NuxtLink>
-                    <NuxtLink :to="`/order/${id}/return`" class="btn lg btn-outline-primary">
-                        {{ $t('orderDetails.returnBtn') }}
-                    </NuxtLink>
+                    </button> -->
                 </div>
             </div>
         </section>
@@ -330,6 +251,34 @@
                             <div class="main-input">
                                 <textarea class="input-me text-area sm" name="message"
                                     :placeholder="$t('modals.cancelOrder.placeholder')"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary modal_btn">
+                            {{ $t('formBtns.send') }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </Dialog>
+
+
+        <!--**** Rate Modal ****-->
+        <Dialog id="rateModal" class="md" v-model:visible="rateModal" modal>
+            <div class="row">
+                <div class="col-lg-11 mx-auto">
+                    <form class="right_sec">
+                        <h4 class="c-dark fs15 ff-med text-center mb-4">{{ $t('modals.rateOrder.title') }}</h4>
+
+                        <ClientOnly>
+                            <Rating v-model="avg_rate" class="lg justify-content-center gap-2 mb-4" dir="ltr"
+                                :cancel="false" />
+                        </ClientOnly>
+
+                        <div class="input-g">
+                            <div class="main-input">
+                                <textarea class="input-me text-area sm" name="message"
+                                    :placeholder="$t('modals.rateOrder.placeholder')"></textarea>
                             </div>
                         </div>
 
@@ -460,9 +409,10 @@ const { id } = useRoute().params;
 // Dailogs
 const cancelModal = ref(false);
 const showFatora = ref(false);
+const rateModal = ref(false);
 
 // avg_rate
-const avg_rate = ref(4);
+const avg_rate = ref(0);
 
 // products
 const products = ref([
@@ -485,6 +435,7 @@ const products = ref([
         type: "مستعمل"
     }
 ]);
+
 /*************** Computed **************** */
 
 /*************** Props **************** */

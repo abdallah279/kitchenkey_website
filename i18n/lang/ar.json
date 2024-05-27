@@ -169,6 +169,26 @@
     "viewCart": "استكمال الطلب",
     "similarProducts": "منتجات مشابهة"
   },
+  "cart":{
+    "forms":{
+      "notes":"ادخل ملاحظات الطلب",
+      "time":"ادخل وقت استلام الطلب",
+      "copoun":"هل لديك كوبون خصم؟"
+    },
+    "progress":{
+      "address":"عنوان التوصيل",
+      "payment":"طريقة الدفع",
+      "confirm":"تأكيد الطلب"
+    },
+    "buttons":{
+      "update":"تحديث",
+      "active":"تفعيل",
+      "next":"التالي",
+      "complete":"استكمال الطلب",
+      "send":"إرسال الطلب",
+      "return":"رجوع"
+    }
+  },
   "auth": {
     "name": {
       "text": "الاسم",
@@ -327,7 +347,27 @@
       "more": "عرض التفاصيل",
       "more2": "عرض تفاصيل الطلب"
     },
-    "done": "تم إرسال طلبك بنجاح"
+    "prices":{
+      "accept":"قبول",
+      "reject":"رفض"
+    },
+    "return":"العودة لتفاصيل الطلب",
+    "productLink":"رابط المنتج",
+    "productImage":"صورة المنتج",
+    "orderDesc":"وصف الطلب",
+    "done": "تم إرسال طلبك بنجاح",
+    "fatora":{
+      "orderDate":"تاريخ إرسال الطلب",
+      "orderTime":"وقت إرسال الطلب",
+      "proName":"اسم المنتج",
+      "proPrice":"قيمة المنتج",
+      "storeDesc":"تفاصيل المتجر",
+      "storeName":"اسم المتجر",
+      "storeNumber":"رقم السجل التجاري",
+      "totalPrice":"المبلغ الكلى",
+      "totalQuantity":"عدد المنتجات",
+      "fatoraNumber":"رقم الفاتورة"
+    }
   },
   "orderDetails": {
     "steps": {
@@ -345,7 +385,7 @@
     "summary": "ملخص الطلب",
     "productsValue": "قيمة المنتجات",
     "deliveryCost": "قيمة التوصيل",
-    "discountCost": "قيم الخصم",
+    "discountCost": "قيمة الخصم",
     "addedTax": "قيمة الضريبة المضافة",
     "total": "إجمالي الطلب",
     "cancelBtn": "إلغاء الطلب",
@@ -362,6 +402,10 @@
     "cancelOrder": {
       "title": "سبب إلغاء الطلب",
       "placeholder": "الرجاء كتابة سبب الغاء الطلب"
+    },
+    "rateOrder": {
+      "title": "أضف تقييمك",
+      "placeholder": "أضف تعليقك"
     },
     "deleteAccount": {
       "title": "هل حقاً تريد حذف الحساب؟"
@@ -394,12 +438,16 @@
     "notifications": "الاشعارات",
     "fav": "المفضلة",
     "orders": "طلباتي",
+    "cart": "سلة المشتريات",
+    "cartProducts": "منتجات غير قابلة للارجاع",
+    "completeOrder": "استكمال الطلب",
     "orderDetails": "تفاصيل الطلب",
     "orderStores": "المتاجر المطلوب منها",
     "categories": "الأقسام",
     "beStore": "كن متجر",
     "catProducts": "منتجات القسم",
     "exclusive": "العروض الحصرية",
+    "prices":"عروض الأسعار",
     "search": "نتائج البحث",
     "addAddress": "اضافة عنوان",
     "editAddress": "تعديل عنوان",

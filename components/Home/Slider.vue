@@ -1,6 +1,5 @@
 <template>
-    <Carousel dir="rtl" :autoplay="3000" :wrapAround="true"
-        :transition="2100">
+    <!-- <Carousel dir="rtl" :autoplay="3000" :wrapAround="true" :transition="2100">
         <Slide v-for="item in slider" :key="item.id">
             <img :src="item.image" alt="slider-img" class="slider-img" />
         </Slide>
@@ -8,13 +7,22 @@
         <template #addons>
             <Pagination />
         </template>
+</Carousel> -->
+    <Carousel :value="slider" :numVisible="1" :showNavigators="false" :transition="2100" :numScroll="1" circular :autoplayInterval="3000"
+        class="dir-slider">
+        <template #item="slotProps">
+            <img loading="lazy" :src="slotProps.data.image" alt="slider-img" class="slider-img" />
+        </template>
     </Carousel>
+
 </template>
+
 
 <script setup>
 /*************** Plugins **************** */
 
-import { Carousel, Pagination, Slide } from 'vue3-carousel'
+// import { Carousel, Pagination, Slide } from 'vue3-carousel';
+// import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 /*************** DATA **************** */
 // slider

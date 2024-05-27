@@ -169,6 +169,26 @@
     "viewCart": "Complete order",
     "similarProducts": "Similar Products"
   },
+  "cart": {
+    "forms": {
+      "notes": "Enter order notes",
+      "time": "Enter order pickup time",
+      "copoun": "Do you have a discount coupon?"
+    },
+    "progress": {
+      "address": "Delivery address",
+      "payment": "Payment method",
+      "confirm": "Confirm order"
+    },
+    "buttons": {
+      "update": "Update",
+      "active": "Activate",
+      "next":"Next",
+      "complete": "Complete order",
+      "send":"Send order",
+      "return":"Return"
+    }
+  },
   "auth": {
     "name": {
       "text": "Name",
@@ -328,7 +348,27 @@
       "more": "View details",
       "more2": "View order details"
     },
-    "done": "Your Order has been successfully sent"
+    "prices":{
+      "accept":"accept",
+      "reject":"reject"
+    },
+    "return":"Back To order",
+    "productLink":"Product Link",
+    "productImage":"Product Image",
+    "orderDesc":"Order Description",
+    "done": "Your Order has been successfully sent",
+    "fatora": {
+      "orderDate": "Order Date",
+      "orderTime": "Order Time",
+      "proName": "Product Name",
+      "proPrice": "Product Price",
+      "storeDesc": "Store Description",
+      "storeName": "Store Name",
+      "storeNumber": "Store Registration Number",
+      "totalPrice": "Total Price",
+      "totalQuantity": "Total Quantity",
+      "fatoraNumber": "Invoice Number"
+    }
   },
   "orderDetails": {
     "steps": {
@@ -350,9 +390,9 @@
     "addedTax": "Added tax value",
     "total": "Order Total",
     "cancelBtn": "Cancel Order",
-    "payBtn":"Complete Payment",
-    "rateBtn":"Rate Us",
-    "returnBtn":"Return Order"
+    "payBtn": "Complete Payment",
+    "rateBtn": "Rate Us",
+    "returnBtn": "Return Order"
   },
   "modals": {
     "deleteAddress": {
@@ -363,6 +403,10 @@
     "cancelOrder": {
       "title": "Reason for canceling the order",
       "placeholder": "Please write the reason for canceling the order"
+    },
+    "rateOrder": {
+      "title": "Your Rating",
+      "placeholder": "Your Comment"
     },
     "deleteAccount": {
       "title": "Do you really want to delete the account?"
@@ -395,12 +439,16 @@
     "notifications": "Notifications",
     "fav": " Favourites",
     "orders": "My Orders",
+    "cart": "Shopping cart",
+    "cartProducts": "Non-returnable products",
+    "completeOrder": "Complete order",
     "orderDetails": "Order Details",
     "orderStores": "Requested stores",
     "categories": "Categories",
     "beStore": " Be a store",
     "catProducts": "Category Products",
     "exclusive": " Exclusive Offers",
+    "prices": "Price offers",
     "search": " Search Results",
     "addAddress": "Add Address",
     "editAddress": "Edit Address",
