@@ -21,7 +21,7 @@
                             $t('specialOrder.addAddress') }}</NuxtLink>
                     </label>
                     <div class="radio_card pd row mx-0">
-                        <label class="radio-box col-sm-6 mb-sm-0"
+                        <label class="radio-box col-sm-4 col-md-3 mb-sm-0"
                             :class="index < deliveryAddress.length - 1 ? 'mb-4' : 'mb-0'"
                             v-for="(add, index) in deliveryAddress" :key="add.id">
                             <input type="radio" class="input-radio" name="delivery_address"

@@ -8,12 +8,14 @@
         <i class="pi pi-upload main-icon"></i>
     </div>
 
-    <div class='hidden-img mt-4' v-for="(img, i) in images" :key="img">
-        <img :src='img.previewUrl' :class="`img${i}`" :alt="img.name" />
-
-        <span class='remove-img' @click="removeImage(i)">
-            <i class="pi pi-times"></i>
-        </span>
+    <div class="d-flex flex-wrap gap-3">
+        <div class='hidden-img mt-4' :class="{small : multiple}" v-for="(img, i) in images" :key="img">
+            <img :src='img.previewUrl' :class="`img${i}`" :alt="img.name" />
+    
+            <span class='remove-img' @click="removeImage(i)">
+                <i class="pi pi-times"></i>
+            </span>
+        </div>
     </div>
 </template>
 

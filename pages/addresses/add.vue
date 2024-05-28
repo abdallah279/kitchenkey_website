@@ -9,8 +9,8 @@
 
                 <!-- Map -->
                 <div class="col-lg-6">
-                    <div>
-                        <GMapMap :center="center" :zoom="13" map-type-id="terrain" style="width: 100%; height: 400px">
+                    <div class="h-100">
+                        <GMapMap :center="center" :zoom="13" map-type-id="terrain" style="width: 100%; height: 100%; border-radius: 5px;">
                             <GMapMarker :position="center" :draggable="true" />
                         </GMapMap>
                     </div>

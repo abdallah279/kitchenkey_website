@@ -55,7 +55,7 @@ const activeAccount = () => {
         loading.value = false;
 
         // redirect
-        navigateTo('/beStore/done');
+        navigateTo('/donePage');
 
     }, 1000);
 }

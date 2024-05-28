@@ -171,11 +171,12 @@ p {
     height: 47px;
   }
 
-  &.order_btn{
+  &.order_btn {
     min-width: 190px;
     height: 50px;
 
-    &.router-link-active, &:hover{
+    &.router-link-active,
+    &:hover {
       background-color: map_get(colors.$theme-colors, primary);
       color: #fff !important;
     }
@@ -184,10 +185,13 @@ p {
       min-width: 150px;
     }
 
-    @media screen and (max-width: $screen-xxs) {
-      min-width: 200px;
+    @media screen and (max-width: $screen-xs) {
+      min-width: 48.5% !important;
+
+      &:last-child {
+        min-width: 100% !important;
+      }
     }
-    
   }
 
   @media screen and (max-width: $screen-xs) {
@@ -211,7 +215,7 @@ p {
     min-width: 75px;
   }
 
-  &.md{
+  &.md {
     height: 40px;
   }
 
@@ -226,7 +230,7 @@ p {
     min-width: 36px;
     padding-inline: 0;
 
-    i{
+    i {
       font-size: 10px;
     }
   }
@@ -592,7 +596,7 @@ img.lazyload:not([src]) {
   padding-inline-start: 4rem !important;
 
   @media screen and (max-width: $screen-xs) {
-    &.res{
+    &.res {
       padding-inline-start: 1rem !important;
     }
   }
@@ -612,6 +616,16 @@ img.lazyload:not([src]) {
 @for $i from 1 through 10 {
   .clamp_#{$i} {
     @include mixins.clamp($i);
+  }
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+
+  &[dir="ltr"] {
+    #{$ltr} & {
+      justify-content: flex-start !important;
+    }
   }
 }
 
@@ -766,7 +780,7 @@ img.lazyload:not([src]) {
   cursor: default !important;
 }
 
-.star_con{
+.star_con {
   padding: 4px 7px;
   background-color: map_get(colors.$theme-colors, info);
   color: map_get(colors.$theme-colors, gray);
@@ -774,8 +788,8 @@ img.lazyload:not([src]) {
   @include mixins.border-radius(5px);
   // @include mixins.center;
   gap: 7px;
-  
-  i{
+
+  i {
     color: map_get(colors.$theme-colors, yellow);
     margin-inline-end: 5px;
     font-size: 13px;
@@ -1026,7 +1040,7 @@ img.lazyload:not([src]) {
     font-family: fontReg;
   }
 
-  .ic{
+  .ic {
     max-width: 15px;
     margin-inline-end: 5px;
   }
@@ -1498,6 +1512,11 @@ textarea {
     object-fit: cover;
     border: 1px solid map_get(colors.$theme-colors, border);
     @include mixins.border-radius(5px);
+  }
+
+  &.small {
+    height: 100px;
+    width: 120px;
   }
 }
 
@@ -2049,7 +2068,6 @@ textarea {
   border-radius: 3px;
 }
 
-
 /********************* Switch *********************/
 
 .switch_con {
@@ -2089,8 +2107,6 @@ textarea {
     }
   }
 }
-
-
 
 /********************* Prime Modal *********************/
 .p-dialog {
@@ -2248,7 +2264,7 @@ textarea {
 
 /********************* Prime Skeleton *********************/
 .p-skeleton {
-  opacity: .7 !important;
+  opacity: 0.7 !important;
 }
 
 /********************* Prime slider *********************/
@@ -2364,21 +2380,21 @@ textarea {
     }
   }
 
-  &.sm{
+  &.sm {
     gap: 5px;
 
-    input{
+    input {
       width: 50px;
       height: 34px;
       font-size: 13px;
       // font-family: fontMed;
     }
 
-    .btn-num{
+    .btn-num {
       width: 36px;
       height: 34px;
 
-      i{
+      i {
         font-size: 10px;
       }
     }

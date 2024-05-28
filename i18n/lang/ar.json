@@ -369,6 +369,18 @@
       "fatoraNumber":"رقم الفاتورة"
     }
   },
+  "returnOrder":{
+    "reason":"سبب الإرجاع",
+    "reasonPlaceholder":"ادخل سبب الإرجاع",
+    "products":"صور المنتجات",
+    "productsPlaceholder":"ارفق صور المنتجات",
+    "fatora":"صورة الفاتورة",
+    "fatoraPlaceholder":"ارفق صورة الفاتورة"
+  },
+  "rateOrder":{
+    "rateProduct":"تقييم المنتج",
+    "commentProduct":"ادخل تعليقك"
+  },
   "orderDetails": {
     "steps": {
       "current": "حالي",
@@ -443,6 +455,8 @@
     "completeOrder": "استكمال الطلب",
     "orderDetails": "تفاصيل الطلب",
     "orderStores": "المتاجر المطلوب منها",
+    "returnOrder": "طلب إرجاع",
+    "raterder": "أضف تقييمك",
     "categories": "الأقسام",
     "beStore": "كن متجر",
     "catProducts": "منتجات القسم",

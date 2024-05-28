@@ -17,7 +17,7 @@
 
                     <!-- Left -->
                     <div class="col-lg-6">
-                        <div class="card_style not_hover product_detailes_top">
+                        <div class="card_style not_hover product_detailes_top h-100">
                             <div class="top border-bottom">
 
                                 <!-- Right -->
@@ -167,7 +167,7 @@
                             <div class="addDone" :class="{ active: addDone }">
                                 <i class="pi pi-verified c-yellow"></i>
                                 <span class="c-dark fs13">{{ $t('product.added') }}</span>
-                                <NuxtLink class="btn btn-primary sm">{{ $t('product.viewCart') }}</NuxtLink>
+                                <NuxtLink to="/cart" class="btn btn-primary sm">{{ $t('product.viewCart') }}</NuxtLink>
                             </div>
                         </div>
 

@@ -370,6 +370,18 @@
       "fatoraNumber": "Invoice Number"
     }
   },
+  "returnOrder": {
+    "reason": "Reason for Return",
+    "reasonPlaceholder": "Enter the reason for return",
+    "products": "Product Images",
+    "productsPlaceholder": "Attach product images",
+    "fatora": "Invoice Image",
+    "fatoraPlaceholder": "Attach invoice image"
+  },
+  "rateOrder": {
+    "rateProduct": "Rate the Product",
+    "commentProduct": "Enter your comment"
+  },
   "orderDetails": {
     "steps": {
       "current": "Current",
@@ -444,6 +456,8 @@
     "completeOrder": "Complete order",
     "orderDetails": "Order Details",
     "orderStores": "Requested stores",
+    "returnOrder": "Return Order",
+    "raterder": "Add your rating",
     "categories": "Categories",
     "beStore": " Be a store",
     "catProducts": "Category Products",
