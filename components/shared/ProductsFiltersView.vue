@@ -7,14 +7,18 @@
             <div class="row gy-4 flex-column-reverse flex-lg-row">
 
                 <!-- Filters -->
-                <div class="col-xl-3 col-lg-4 categories_sidebar">
+                <div class="col-xl-3 col-lg-4 categories_sidebar" :class="{ 'active': showFilter }">
 
                     <SharedSidebarFilters />
 
                 </div>
 
                 <!-- Search And products -->
-                <div class="col-xl-9 col-lg-8 ps-6">
+                <div class="col-xl-9 col-lg-8 ps-6 res">
+
+                    <button class="btn mb-3 d-lg-none sm-btn btn-primary" @click="showFilter = !showFilter">
+                        <i class="pi pi-filter"></i>
+                    </button>
 
                     <!-- Search -->
                     <form action="" class="search_form mb-3">
@@ -33,6 +37,9 @@
 
                 </div>
             </div>
+
+            <div class="nav-overlay" :class="{ active: showFilter }" @click="showFilter = !showFilter"></div>
+
         </div>
     </main>
 </template>
@@ -41,6 +48,9 @@
 /*************** Plugins **************** */
 
 /*************** DATA **************** */
+
+// showFilter
+const showFilter = ref(false);
 
 import product1 from '@/assets/imgs/product1.png';
 import product2 from '@/assets/imgs/product2.png';

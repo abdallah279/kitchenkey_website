@@ -1,5 +1,5 @@
 <template>
-    <section class="row">
+    <section class="row gy-4">
         <div class="col-12 col-xl-3 col-lg-4">
             <div class="profile_sidebar">
 
@@ -27,7 +27,7 @@
 
         </div>
         <div class="col-12 col-xl-9 col-lg-8">
-            <div class="section_style p-4">
+            <div class="section_style p-lg-4 p-3">
 
                 <ordersCards :orderName="orderName" />
 

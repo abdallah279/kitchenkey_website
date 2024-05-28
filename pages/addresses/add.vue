@@ -5,7 +5,7 @@
             <SharedPageHeader :title="addressId ? $t('pagesTitle.editAddress') : $t('pagesTitle.addAddress')"
                 class="mb-5" />
 
-            <div class="row">
+            <div class="row gy-4">
 
                 <!-- Map -->
                 <div class="col-lg-6">

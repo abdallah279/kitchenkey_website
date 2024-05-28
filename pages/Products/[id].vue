@@ -6,7 +6,7 @@
             <div class="container">
                 <SharedPageHeader :title="$t('pagesTitle.proDetailes')" class="mb-5" />
 
-                <div class="row">
+                <div class="row gy-4">
 
                     <!-- Galleria -->
                     <div class="col-lg-6">
@@ -128,7 +128,7 @@
                     </div>
 
                     <!-- Info -->
-                    <div class="product_det_cart d-flex align-items-center gap-5 pt-4">
+                    <div class="product_det_cart pt-4">
 
                         <!-- Price -->
                         <div class="price_con">
@@ -307,12 +307,24 @@ const settings = ref({
 });
 
 const breakpoints = ref({
-    // 700px and up
-    700: {
-        itemsToShow: 3.5,
+    // 320 and up
+    320: {
+        itemsToShow: 1.5,
+    },
+    // 450 and up
+    450: {
+        itemsToShow: 2,
+    },
+    // 768 and up
+    768: {
+        itemsToShow: 3,
     },
     // 1024 and up
     1024: {
+        itemsToShow: 4,
+    },
+    // 1200 and up
+    1200: {
         itemsToShow: 5,
     },
 })

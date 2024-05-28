@@ -8,7 +8,7 @@
             <div class="content w-100">
 
                 <!--** Title **-->
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center justify-content-between mb-3 gap-2 flex-wrap">
 
                     <!--** Title And Star **-->
                     <div class="d-flex align-items-center gap-3">

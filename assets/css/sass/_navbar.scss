@@ -198,21 +198,3 @@
     }
   }
 }
-
-.nav-overlay {
-  @media screen and (max-width: global.$screen-lg) {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 333;
-    background-color: rgba($color: #000000, $alpha: 0.5);
-    transition: 0.7s;
-    @include mixins.dir-right(0);
-    @include mixins.translate(100%);
-
-    &.active {
-      transform: translateX(0) !important;
-    }
-  }
-}

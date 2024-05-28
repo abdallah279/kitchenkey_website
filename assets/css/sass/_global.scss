@@ -179,6 +179,14 @@ p {
       background-color: map_get(colors.$theme-colors, primary);
       color: #fff !important;
     }
+
+    @media screen and (max-width: $screen-md) {
+      min-width: 150px;
+    }
+
+    @media screen and (max-width: $screen-xxs) {
+      min-width: 200px;
+    }
     
   }
 
@@ -255,6 +263,25 @@ p {
     color: map_get(colors.$theme-colors, red);
     background-color: transparent;
     border: 1px solid map_get(colors.$theme-colors, red);
+  }
+}
+
+.nav-overlay {
+  @media screen and (max-width: $screen-lg) {
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 333;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    transition: 0.7s;
+    @include mixins.dir-right(0);
+    @include mixins.translate(100%);
+
+    &.active {
+      transform: translateX(0) !important;
+    }
   }
 }
 
@@ -450,6 +477,10 @@ img.lazyload:not([src]) {
 
   &.pd {
     padding: 22px 18px;
+
+    @media screen and (max-width: $screen-xs) {
+      padding: 15px;
+    }
   }
 }
 
@@ -559,6 +590,12 @@ img.lazyload:not([src]) {
 
 .ps-6 {
   padding-inline-start: 4rem !important;
+
+  @media screen and (max-width: $screen-xs) {
+    &.res{
+      padding-inline-start: 1rem !important;
+    }
+  }
 }
 
 @keyframes bell-animation {
@@ -927,6 +964,10 @@ img.lazyload:not([src]) {
   &.not_hover {
     border: none;
     padding: 25px;
+
+    @media screen and (max-width: $screen-xs) {
+      padding: 18px 12px;
+    }
 
     &:hover {
       box-shadow: none;
@@ -1740,6 +1781,10 @@ textarea {
           color: map_get(colors.$theme-colors, gray);
           font-weight: 500;
           font-family: fontLight;
+        }
+
+        @media screen and (max-width: $screen-xs) {
+          padding-bottom: 12px !important;
         }
       }
     }

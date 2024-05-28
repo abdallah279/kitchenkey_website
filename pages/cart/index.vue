@@ -65,7 +65,7 @@
                                     <!-- Price -->
                                     <span class="c-dark">{{ product.price }}</span>
 
-                                    <div class="d-flex gap-3 justify-content-end">
+                                    <div class="d-flex gap-3 justify-content-end mt-3 mt-lg-1">
                                         <div class="number-input sm">
                                             <span class="plus btn-num"
                                                 @click="product.quantity < product.quantity ? product.quantity++ : false">

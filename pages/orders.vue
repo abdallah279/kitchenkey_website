@@ -5,7 +5,7 @@
             <SharedPageHeader :title="$t('pagesTitle.orders')" class="mb-5" />
 
             <!-- Orders Tabs -->
-            <div class="d-flex align-items-center justify-content-center gap-4 mb-5">
+            <div class="d-flex align-items-center justify-content-start justify-content-lg-center gap-lg-4 gap-2 flex-wrap mb-4 mb-lg-5">
                 <NuxtLink to="/orders/products" class="btn btn-white order_btn">{{ $t('order.tabs.products') }}</NuxtLink>
                 <NuxtLink to="/orders/special" class="btn btn-white order_btn">{{ $t('order.tabs.special') }}</NuxtLink>
                 <NuxtLink to="/orders/refund" class="btn btn-white order_btn">{{ $t('order.tabs.return') }}</NuxtLink>

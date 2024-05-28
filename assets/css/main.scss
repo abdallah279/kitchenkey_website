@@ -13,6 +13,8 @@
 
 .categories_sidebar {
   height: 100%;
+  transition: all 0.8s cubic-bezier(0.68, -0.3, 0.265, 1.3);
+
   .categories_sidebar_title {
     font-size: 14px;
     background-color: map_get(colors.$theme-colors, primary);
@@ -70,6 +72,35 @@
     &:hover {
       color: map_get(colors.$theme-colors, primary) !important;
     }
+  }
+
+  @media screen and (max-width: global.$screen-lg) {
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    @include mixins.dir-left(0);
+    height: 100vh;
+    width: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    z-index: 2000;
+    padding: 30px 20px;
+    gap: 8px;
+
+    #{global.$ltr} & {
+      transform: translateX(-150%);
+    }
+    #{global.$rtl} & {
+      transform: translateX(150%);
+    }
+
+    &.active {
+      transform: translateX(0) !important;
+    }
+
+    overflow-y: auto;
+    overflow-x: clip;
   }
 }
 
@@ -337,7 +368,7 @@
     }
 
     @media screen and (max-width: 365px) {
-      height: 145px;
+      height: 165px;
     }
   }
 
@@ -384,7 +415,7 @@
     gap: 5px;
 
     @media screen and (max-width: global.$screen-product) {
-      padding: 10px 0;
+      padding: 13px 0;
       justify-content: center;
     }
   }
@@ -499,8 +530,15 @@
     }
   }
 
-  .product_card{
+  .product_card {
     height: 100%;
+  }
+
+  @media screen and (max-width: global.$screen-xs) {
+    .carousel__prev,
+    .carousel__next {
+      top: -46px;
+    }
   }
 }
 
@@ -605,11 +643,20 @@
   &.brand_details {
     position: relative;
     padding: 20px;
+
+    @media screen and (max-width: global.$screen-xs) {
+      padding: 15px;
+    }
+
     .top {
       border-bottom: none;
       padding: 0;
       margin: 0;
       gap: 25px;
+
+      @media screen and (max-width: global.$screen-xs) {
+        gap: 15px;
+      }
 
       .brand_img {
         @include mixins.shape(75px, 50%);
@@ -628,6 +675,12 @@
       position: absolute;
       top: 20px;
       @include mixins.dir-right(20px);
+
+      @media screen and (max-width: global.$screen-xs) {
+        top: 50%;
+        transform: translateY(-50%);
+        @include mixins.dir-right(15px);
+      }
     }
   }
 
@@ -733,6 +786,7 @@
 .product_detailes_top {
   .top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 15px;
     padding-bottom: 26px;
@@ -760,6 +814,10 @@
 
 // product_det_cart
 .product_det_cart {
+  display: flex;
+  align-items: center;
+  gap: 15px 50px;
+  flex-wrap: wrap;
   .price_con {
     position: relative;
 
@@ -877,9 +935,9 @@
       height: 350px;
     }
 
-    @media screen and (max-width: global.$screen-xs) {
-      height: 300px;
-    }
+    // @media screen and (max-width: global.$screen-xs) {
+    //   height: 300px;
+    // }
   }
 }
 
@@ -922,11 +980,11 @@
   .p-galleria-thumbnail-item {
     opacity: 1;
     overflow: visible;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 
     .p-galleria-thumbnail-item-content {
       position: relative;
-      height: 100px;
+      height: 95px;
       width: 120px;
       border-radius: 5px;
       border: 1px solid rgba($color: #c7cbcb, $alpha: 0.8);
@@ -960,6 +1018,28 @@
         &::after {
           opacity: 0;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: global.$screen-lg) {
+    .p-galleria-thumbnail-items-container {
+      height: 350px !important;
+    }
+
+    .p-galleria-thumbnail-item {
+      .p-galleria-thumbnail-item-content {
+        height: 80px;
+        width: 100px;
+      }
+    }
+  }
+
+  @media screen and (max-width: global.$screen-xs) {
+    .p-galleria-thumbnail-item {
+      .p-galleria-thumbnail-item-content {
+        height: 75px;
+        width: 90px;
       }
     }
   }
@@ -1014,6 +1094,7 @@
 
           @media screen and (max-width: global.$screen-xs) {
             line-height: 25px;
+            font-size: 13px;
           }
         }
       }
@@ -1313,6 +1394,14 @@
     margin-inline-start: auto;
     font-size: 11px;
   }
+
+  &:hover {
+    @include mixins.translate(3px)
+  }
+
+  @media screen and (max-width: global.$screen-xs) {
+    font-size: 13px;
+  }
 }
 
 /***************** End Profile SideBar *********************/
@@ -1353,6 +1442,18 @@
       padding-bottom: 25px;
       border-bottom: 1px solid
         rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.3);
+    }
+  }
+
+  @media screen and (max-width: global.$screen-md) {
+    flex-direction: column;
+    gap: 25px;
+
+    .order_content {  
+      .top {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+      }
     }
   }
 }
@@ -1429,6 +1530,10 @@
     border-bottom: 1px solid
       rgba($color: map_get(colors.$theme-colors, stroke), $alpha: 0.5);
   }
+
+  @media screen and (max-width: global.$screen-xs) {
+    font-size: 13px;
+  }
 }
 
 /***************** End store_card *********************/
@@ -1483,7 +1588,7 @@
     color: transparent;
     @include mixins.shape(28px, 50%);
     font-size: 11px !important;
-    
+
     i {
       font-size: 10px !important;
     }
