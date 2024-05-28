@@ -37,7 +37,7 @@
 const props = defineProps({
     summary: {
         type: Object,
-        required: true,
+        // required: true,
     },
     refund: {
         type: Boolean,

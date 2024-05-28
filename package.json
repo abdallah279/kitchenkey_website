@@ -16,7 +16,8 @@
     "nuxt": "^3.9.3",
     "nuxt-primevue": "^0.2.2",
     "vue": "^3.4.14",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue3-carousel-nuxt": "^1.1.1"
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.72",

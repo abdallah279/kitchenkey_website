@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     "@hypernym/nuxt-anime",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
+    'vue3-carousel-nuxt'
   ],
   css: [
     "bootstrap/dist/css/bootstrap.rtl.css",
